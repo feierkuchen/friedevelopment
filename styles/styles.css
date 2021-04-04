@@ -60,6 +60,7 @@ header {
   width: 100%;
   padding: 2vh 2vw;
   background: #be0014;
+  background: blue;
   background: -webkit-gradient(linear, left top, left bottom, from(#be0014), to(rgba(224, 17, 17, 0)));
   background: linear-gradient(180deg, #be0014 0%, rgba(224, 17, 17, 0) 100%);
 }
