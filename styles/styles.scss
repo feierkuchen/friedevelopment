@@ -38,7 +38,7 @@ body{
 p{
     color:rgba($light-blue,0.6);
     //opacity: 85%;
-    line-height: 1.5em;
+    line-height: 2em;
 }
 h2, h3{
     color:rgba($dark-blue,0.6);
@@ -274,10 +274,40 @@ section, div{
         flex-direction: column;
         justify-items: center;
         align-content: center;
-        padding:3vh 10vw;
-       
+        padding:3vh 3vw;
+        @media screen and (min-width: 1200px){
+            padding:3vh 10vw;
+        }
 
         .service-card{
+            &.service-d{
+                background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+                color:rgba(40, 17, 60, 0.6) !important;
+                p{
+                    color:rgba(40, 17, 60, 0.6);
+                }
+            }
+            &.service-fs{
+                background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+                color:rgba(40, 17, 60, 0.6) !important;
+                p{
+                    color:rgba(40, 17, 60, 0.6);
+                }
+            }
+            &.service-os{
+                background-image: linear-gradient(to top, #9890e3 0%, #b1f4cf 100%);
+                color:rgba(40, 17, 60, 0.6) !important;
+                p{
+                    color:rgba(40, 17, 60, 0.6);
+                }
+            }
+            &.service-seo{
+                background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);;
+                color:rgba(40, 17, 60, 0.6) !important;
+                p{
+                    color:rgba(40, 17, 60, 0.6);
+                }
+            }
             
             border:2px, solid, #2c2c2c;
             box-shadow: 10px 10px 29px -5px rgba(0,0,0,0.38);
@@ -320,6 +350,7 @@ section, div{
     .moreContentOver{
         overflow: hidden;
         width: 100%;
+      //  border: yellow 1px solid;
     }
 
     .services{
@@ -332,23 +363,31 @@ section, div{
             left: 0;
            // height: 40%;
            //width: 4*100vh;
-           width:min-content;
+           width:max-content;
         //    border: #be0014 1px solid;
-           @media screen and (min-width: 740px){
-              
+        //halber viewport-breite card-margin-margin-card
+            margin-left: calc(50vw - 40vw - 3vw - 3vw);
+           @media screen and (min-width: 1200px){
+                margin-left: calc(50vw - 400px - 10vw - 3vw);
             }
-            margin-left: calc(50vw - 400px - 10vw - 3vw);
+            
            
             .service-card{
-                border: springgreen 1px solid;
+               // border: springgreen 1px solid;
                 border:2px, solid, #2c2c2c;
                 box-shadow: 10px 10px 29px -5px rgba(0,0,0,0.38);
                 margin:6vh 3vw;
                 padding:6vh 3vw;
                 display: flex;
                 flex-direction: column;
-                height: 70vh;
-                width: 800px;
+                min-height: 70vh;
+                width: 80vw;
+                margin-right: 10vw;
+                @media screen and (min-width: 1200px){
+                    width: 800px;
+                    //width: calc(min(800px,80vw));
+                    margin:6vh 3vw;
+                }
                 //width:clamp(100px, 60vw, 800px);
                 gap:2em;
                 .service-title{

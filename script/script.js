@@ -3,7 +3,7 @@
 if (true) {
   frieDevelopment();
   heroText();
-  //servicesMoreContent();
+  servicesMoreContent();
   // services();
   welcomeText();
 }
