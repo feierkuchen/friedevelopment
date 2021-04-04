@@ -60,9 +60,11 @@ header {
   width: 100%;
   padding: 2vh 2vw;
   background: #be0014;
-  background: blue;
   background: -webkit-gradient(linear, left top, left bottom, from(#be0014), to(rgba(224, 17, 17, 0)));
   background: linear-gradient(180deg, #be0014 0%, rgba(224, 17, 17, 0) 100%);
+  background: #2c2c2c;
+  background: -webkit-gradient(linear, left top, left bottom, from(#2c2c2c), to(rgba(44, 44, 44, 0)));
+  background: linear-gradient(180deg, #2c2c2c 0%, rgba(44, 44, 44, 0) 100%);
 }
 
 header #fd-logo {
@@ -70,7 +72,7 @@ header #fd-logo {
 }
 
 header .header-cta svg {
-  width: clamp(10px, 10vw, 100px);
+  width: clamp(10px, 12vw, 100px);
 }
 
 section, div {
@@ -301,6 +303,7 @@ section, div {
           flex-direction: column;
   gap: 1em;
   width: clamp(100px, 80vw, 600px);
+  width: 80vw;
 }
 
 .service-container .service-card .service-title {
@@ -365,14 +368,21 @@ section, div {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  top: 0;
+  left: 0;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  margin-left: calc(50vw - 400px - 10vw - 3vw);
 }
 
 .service-container .services.moreContent .service-card {
+  border: springgreen 1px solid;
   border: 2px, solid, #2c2c2c;
   -webkit-box-shadow: 10px 10px 29px -5px rgba(0, 0, 0, 0.38);
           box-shadow: 10px 10px 29px -5px rgba(0, 0, 0, 0.38);
-  margin: 6vh 6vw;
-  padding: 6vh 6vw;
+  margin: 6vh 3vw;
+  padding: 6vh 3vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -381,6 +391,7 @@ section, div {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 70vh;
+  width: 800px;
   gap: 2em;
 }
 
@@ -400,7 +411,6 @@ section, div {
 
 .service-container .services .extended-content {
   height: 70%;
-  width: 40vw;
 }
 
 .service-container .services div {

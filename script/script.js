@@ -3,7 +3,7 @@
 if (true) {
   frieDevelopment();
   heroText();
-  servicesMoreContent();
+  //servicesMoreContent();
   // services();
   welcomeText();
 }
@@ -226,6 +226,7 @@ function servicesMoreContent() {
     invalidateOnRefresh: true,
     pin: true,
     scrub: 1,
+    snap:0.2,
     end: () => "+=" + container.offsetWidth
       },
     });
