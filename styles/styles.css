@@ -62,9 +62,6 @@ header {
   background: #be0014;
   background: -webkit-gradient(linear, left top, left bottom, from(#be0014), to(rgba(224, 17, 17, 0)));
   background: linear-gradient(180deg, #be0014 0%, rgba(224, 17, 17, 0) 100%);
-  background: #2c2c2c;
-  background: -webkit-gradient(linear, left top, left bottom, from(#2c2c2c), to(rgba(44, 44, 44, 0)));
-  background: linear-gradient(180deg, #2c2c2c 0%, rgba(44, 44, 44, 0) 100%);
 }
 
 header #fd-logo {
