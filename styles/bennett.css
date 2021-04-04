@@ -1,0 +1,21 @@
+#c {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.section .col {
+  width: 50%;
+}
+
+#gallery3d {
+  width: 100%;
+  height: 50%;
+}
+/*# sourceMappingURL=bennett.css.map */

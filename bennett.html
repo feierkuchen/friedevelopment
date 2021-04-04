@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/bennett.css">
+</head>
+<body>
+    <section class="section">
+        <div class="col"><div id="gallery3d"></div></div>
+        <div class="col">
+            <div>
+            <babylon model="https://res.cloudinary.com/friede/image/upload/v1616781438/scene_znproh.glb" height="200px"></babylon>
+        </div>
+        </div>
+    
+</section>
+<!-- <babylon templates.main.params.fill-screen="true">
+    <scene glow="true">
+        <main-color r="0.8" g="0.8" b="0.6"></main-color>
+    </scene>
+    <lab>
+        <environment-main-color r="0.8" g="0.8" b="0.8"></environment-main-color>
+    </lab>
+    <model url="images/glTF/scene.gltf">
+        <animation auto-start="true"></animation>
+    </model>
+    <camera beta="0.8" lowerRadiusLimit="1000" upperRadiusLimit="0" radius="10"></camera>
+</babylon> -->
+<babylon >
+    <scene >
+        <!-- Set the scene's main color (for both skybox and ground) -->
+        <main-color r="0.8" g="0.8" b="0.6"></main-color>
+        <!-- Enable and set the image processing configuration -->
+        
+    </scene>
+    <model url="https://res.cloudinary.com/friede/image/upload/v1616781438/scene_znproh.glb">
+        <animation auto-start="true"></animation>
+    </model>
+</babylon>
+
+<!-- <script src="https://cdn.babylonjs.com/babylon.js"></script> -->
+<!-- <script src="https://cdn.babylonjs.com/babylon.max.js"></script> -->
+<!-- <script src="script/babylonjs.loaders.js"></script> -->
+<script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+
+<!-- <script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.js"></script> -->
+<!-- <script  src="script/babylon.glTFFileLoader.js"></script> -->
+<script src="https://cdn.babylonjs.com/viewer/babylon.viewer.js"></script>
+<!-- <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script> -->
+<script src="https://product-gallery.cloudinary.com/all.js" type="text/javascript">
+</script> 
+    <script type="module" src="script/bennett.js"></script>
+</body> 
+</html>
