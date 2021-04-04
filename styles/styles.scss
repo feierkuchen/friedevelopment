@@ -57,7 +57,8 @@ footer{
     min-height: 20vh;
 }
 header{
-    display: flex;
+    display: flex !important;
+    flex-direction: row;
     height:auto;
     position:fixed;
     justify-content: space-between;
