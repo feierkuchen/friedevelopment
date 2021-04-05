@@ -18,7 +18,7 @@ function frieDevelopment(param) {
       //s:true,
       trigger: ".frieDevelopment",
       start: "top top",
-      end: "+=2500",
+      end: "+=1500",
       //scrub:true,
       pin: true,
     },
