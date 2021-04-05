@@ -80,11 +80,6 @@ section, div {
           box-sizing: border-box;
 }
 
-.marker {
-  border: 1px solid yellow;
-  width: 100%;
-}
-
 #fd {
   width: 80%;
 }

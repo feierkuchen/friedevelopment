@@ -165,7 +165,7 @@ function welcomeText(param) {
   // });
   const tweenWlecomeText = gsap.timeline({
     scrollTrigger: {
-      markers: true,
+      //markers: true,
       trigger: ".welcomeContainer",
       start: "top top",
       // end: "+=5000px",
@@ -210,7 +210,7 @@ function servicesMoreContent() {
   const tweenServicesPin = gsap.timeline({
     scrollTrigger: {
       trigger: ".service",
-     //start: "top top",
+     start: "top +=70vh",
       end: "+=" + (container.offsetWidth + 100),
       pin: true
     },
@@ -222,8 +222,8 @@ function servicesMoreContent() {
       x: () => -(container.scrollWidth) + "px",
   ease: "none",
   scrollTrigger: {
-    trigger: ".moreContentOver",
-    start: "top top",
+    trigger: ".service",
+    start:"top +=100vh",
     invalidateOnRefresh: true,
     //pin: true,
     scrub: 1,
