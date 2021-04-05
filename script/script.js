@@ -207,14 +207,14 @@ function welcomeText(param) {
 
 function servicesMoreContent() {
   let container = document.getElementById("moreContent");
-  // const tweenServicesPin = gsap.timeline({
-  //   scrollTrigger: {
-  //     trigger: ".service",
-  //     start: "top top",
-  //     end: "4500px",
-  //     pin: true
-  //   },
-  // });
+  const tweenServicesPin = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".service",
+     //start: "top top",
+      end: "+=" + (container.offsetWidth + 100),
+      pin: true
+    },
+  });
   
   if (container) {
     const tweenServices = gsap.to(".moreContent", 
@@ -222,12 +222,13 @@ function servicesMoreContent() {
       x: () => -(container.scrollWidth) + "px",
   ease: "none",
   scrollTrigger: {
-    trigger: ".service",
+    trigger: ".moreContentOver",
+    start: "top top",
     invalidateOnRefresh: true,
-    pin: true,
+    //pin: true,
     scrub: 1,
     snap:0.2,
-    end: () => "+=" + container.offsetWidth
+    end: () => "+=" + (container.offsetWidth)
       },
     });
   }
