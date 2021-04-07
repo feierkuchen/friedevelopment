@@ -1,8 +1,12 @@
 //gsap.registerPlugin(DrawSVGPlugin);
+gsap.registerPlugin(Flip);
 
 if (true) {
+
   frieDevelopment();
-  heroText();
+
+  //logoFlip();
+  //heroText();
   servicesMoreContent();
   // services();
   welcomeText();
@@ -18,24 +22,35 @@ function frieDevelopment(param) {
       //s:true,
       trigger: ".frieDevelopment",
       start: "top top",
-      end: "+=1500",
+      end: "+=4000",
       //scrub:true,
       pin: true,
     },
   });
+  //timelinge fürs logo erscheinen und in den header laufen
   const tween = gsap.timeline({
     scrollTrigger: {
       //  markers:true,
-      trigger: ".fdContainer",
+      trigger: ".triggerLogo",
       start: "top top",
-      end: "+=500",
-      scrub: true,
+      end: "+=4000",
+      scrub: 1,
       //pin: true
     },
+    defaults: { duration: 1 },
   });
 
-  let de = $("path", "#fd");
+  //let de = $("path", "#fd");
+   let de = gsap.utils.toArray("#fd path");
+   //tween.to(de, { autoAlpha: 1});
+   //tween.to(".cta", { autoAlpha: 1});
 
+   gsap.set("#hero-cta-svg", { position: "fixed" });
+   gsap.set("#hero-cta-svg", { y: 0 });
+   gsap.set("#hero-cta-svg", { x: 0 });
+   gsap.set("#hero-cta-svg", { width: "15vw" });
+  
+  
   $.each(de, function (indexInArray, valueOfElement) {
     let currentElem = $(valueOfElement);
     if (currentElem.hasClass("fd-dev-d"))
@@ -48,49 +63,86 @@ function frieDevelopment(param) {
       tween.set(".fd-dev-e", { display: "none" });
 
     tween.from(valueOfElement, {
-      duration: 1,
+      //duration: 60,
       //duration: 1,
       //display:"none",
       autoAlpha: 0,
-      ease: Linear.easeNone,
+      ease: Linear.easeNone
+      //delay:10
     });
   });
+  tween.to("#hero-cta-svg",
+  {duration:20, autoAlpha:1});
 
-  let transform = gsap.getProperty("#fd", "y");
-  const tweenlogo = gsap.timeline({
-    scrollTrigger: {
-      // markers: true,
-      trigger: ".fdContainer",
-      start: "bottom -=500",
-      end: "+=1000",
-      scrub: true,
-    },
-  });
-  tweenlogo.to("#fd, #hero-cta-svg", {
-    display: "none",
-  });
-  tweenlogo.from("#fd-logo", {
-    duration: 1,
-    y: "280px",
-    //y: transform.y,
-    x: "-215px",
-    display: "none",
-    width: "75vw",
-  });
+  tween.add(logoFlip(),"+=10");
+  //tween.add(ctaFlip());
+  tween.set("#hero-cta-svg",{position: "absolute"});
+ tween.to("#hero-cta-svg",
+   {
+    position: "fixed",
+    duration: 10,
+     top:"13px",
+     right:"20px",
+     left:"unset",
+     width:"10vh"
+   });//AHA:can is not pinned!!!!(schätz ich=)
 
-  tweenlogo.from(
-    "#header-cta-svg",
+    //gsap.set("#hero-cta-svg", { position: "fixed" });
+}
+
+function ctaFlip(){
+    return gsap.to("#hero-cta-svg",
     {
-      duration: 1,
-      y: "400px",
-      //y: transform.y,
-      x: "-435px",
-      display: "none",
-      //autoAlpha:0,
-      width: "20vw",
-    },
-    "<"
-  );
+      duration: 10,
+      x:0,
+      width:"10vw",
+      autoAlpha:0
+    });
+}
+
+function logoFlip() {
+  // let states = [ toInitState, toFirstState, toLastState, toInvertState, toPlayState, toEndState ],
+  let stateIndex = 0,
+    //stateIndexWrap = gsap.utils.wrap(0, states.length),
+    logo = document.querySelector(".fdContainer"),
+    cta = document.querySelector(".cta"),
+    originalContainerLogo = document.querySelector(".frieDevelopment"),
+    originalContainerCta = document.querySelector(".btn-container"),
+    finalContainerLogo = document.querySelector(".logo-header");
+  finalontainerCta = document.querySelector(".header-cta");
+
+  //gsap.defaults({ duration: 0.4, overwrite: 'auto' });
+
+  let transitionLogo, transitionCta;
+  transitionLogo && transitionLogo.kill();
+  transitionCta && transitionCta.kill();
+  // reset (put back in original container and remove any inline styles)
+  	originalContainerLogo.appendChild(logo);
+//    originalContainerCta.appendChild(cta);
+  logo.style.cssText = "";
+  cta.style.cssText = "";
+
+  // grab the original state
+  const stateLogo = Flip.getState(logo);
+  const stateCta = Flip.getState(cta);
+  gsap.to(".cta",
+  {autoAlpha:1});
+  // put into the new container
+   finalContainerLogo.appendChild(logo);
+   //finalontainerCta.appendChild(cta);
+	// //originalContainerLogo.appendChild(logo);
+  // // FLIP!
+  transitionLogo = Flip.from(stateLogo, {
+    duration: 10,
+    ease: "none"
+  })
+  // transitionCta = Flip.from(stateCta, {
+  //   duration: 10,
+  //   ease: "none"
+  // })
+  //transitionLogo.add(transitionCta);
+  return transitionLogo;
+  return transitionCta;
 }
 
 function heroText() {
@@ -210,25 +262,24 @@ function servicesMoreContent() {
   const tweenServicesPin = gsap.timeline({
     scrollTrigger: {
       trigger: ".service",
-     start: "top +=70vh",
+      start: "top +=70vh",
       end: "+=" + (container.offsetWidth + 100),
-      pin: true
+      pin: true,
     },
   });
-  
+
   if (container) {
-    const tweenServices = gsap.to(".moreContent", 
-    {
-      x: () => -(container.scrollWidth) + "px",
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".service",
-    start:"top +=100vh",
-    invalidateOnRefresh: true,
-    //pin: true,
-    scrub: 1,
-    snap:0.2,
-    end: () => "+=" + (container.offsetWidth)
+    const tweenServices = gsap.to(".moreContent", {
+      x: () => -container.scrollWidth + "px",
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".service",
+        start: "top +=100vh",
+        invalidateOnRefresh: true,
+        //pin: true,
+        scrub: 1,
+        snap: 0.2,
+        end: () => "+=" + container.offsetWidth,
       },
     });
   }
