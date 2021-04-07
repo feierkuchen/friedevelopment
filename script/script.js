@@ -3,13 +3,14 @@ gsap.registerPlugin(Flip);
 
 if (true) {
 
-  frieDevelopment();
+  //frieDevelopment();
 
   //logoFlip();
   //heroText();
-  servicesMoreContent();
-  // services();
-  welcomeText();
+  heroAnim();
+  // servicesMoreContent();
+  // // services();
+  // welcomeText();
 }
 
 // gsap.registerPlugin(ScrollTrigger);
@@ -145,6 +146,31 @@ function logoFlip() {
   return transitionCta;
 }
 
+function heroAnim() {
+  const tweenpinhero = gsap.timeline({
+    scrollTrigger: {
+      //s:true,
+      trigger: ".heroText",
+      start: "top top+=100",
+      end: "+=3500",
+      //scrub:true,
+      pin: true,
+    },
+  });
+  const tweenHeroAnim = gsap.timeline({
+    scrollTrigger: {
+      //  markers:true,
+      trigger: ".responsive-anim",
+      start: "top top",
+      end:"+=1500",
+     scrub:true
+    },
+  });
+  tweenHeroAnim.to(".heroContainer",
+  {
+    y:-300
+  });
+}
 function heroText() {
   wordpressParallax();
 

@@ -532,7 +532,11 @@ body {
 
 .heroText .responsive-anim {
   text-align: center;
-  width: 80%;
+  width: 100%;
+}
+
+.heroText .responsive-anim #responsive {
+  height: 80vh;
 }
 
 .heroText .responsive-anim #ipod {
@@ -556,7 +560,7 @@ body {
 }
 
 .heroText .responsive-anim #watch {
-  font-size: 10px;
+  font-size: 20px;
 }
 
 .heroText .responsive-anim .heroContainer {
