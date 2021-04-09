@@ -44,7 +44,7 @@ p {
 h2,
 h3 {
   color: rgba($dark-blue, 0.6);
- // margin: 2vh 0;
+  // margin: 2vh 0;
   line-height: 1em;
   text-align: center;
 }
@@ -54,6 +54,7 @@ h3 {
 }
 section {
   min-height: 100vh;
+  margin-bottom: 30vh;
 }
 footer {
   background-color: white;
@@ -123,6 +124,7 @@ div {
 }
 .fd {
   width: 80%;
+  height: 100vh;
   //width: 200px;
   //position: fixed;
   path {
@@ -133,26 +135,27 @@ div {
   //border:solid 1px green;
   width: 100%;
   text-align: center;
+  //margin-top: -300px;
 }
 header {
-    .cta{
-        top:0;
-        svg {
-            width: 10px;
-          }
+  .cta {
+    top: 0;
+    svg {
+      width: 10px;
     }
+  }
 }
-body{
-    position: relative;
+body {
+  position: relative;
 }
 #hero-cta-svg {
   visibility: hidden;
- z-index: 6666;
-   top:70vh;
-   left:80vw;
-//   svg {
-//     width: clamp(20px, 20vw, 200px);
-//   }
+  z-index: 6666;
+  top: 70vh;
+  left: 80vw;
+  //   svg {
+  //     width: clamp(20px, 20vw, 200px);
+  //   }
 }
 .frieDevelopment {
   .btn-container {
@@ -164,7 +167,7 @@ body{
   display: flex;
   flex-direction: column;
   // padding:0 20vw ;
-  justify-content: center;
+  //justify-content: center;
 
   #cta-contact {
     width: 20%;
@@ -358,7 +361,7 @@ body{
     width: 80vw;
     // box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.15),
     //   -2px -2px 12px rgba(255, 255, 255, 0.08);
-      box-shadow: //2px 4px 6px rgba(0, 0, 0, 0.15),
+    box-shadow: //2px 4px 6px rgba(0, 0, 0, 0.15),
       -2px -2px 12px $highlight;
 
     //height: 70%;
@@ -421,7 +424,7 @@ body{
         // box-shadow: 10px 10px 29px -5px rgba(0, 0, 0, 0.38);
         // box-shadow: 2px 10px 10px 0px rgba(0, 0, 0, 0.15),
         //   -2px -2px 30px 0px rgba(255, 255, 255, 0.08);
-          box-shadow: //2px 4px 6px rgba(0, 0, 0, 0.15),
+        box-shadow: //2px 4px 6px rgba(0, 0, 0, 0.15),
           -2px -2px 12px $highlight;
         margin: 6vh 3vw;
         padding: 6vh 3vw;
@@ -479,6 +482,7 @@ body{
   }
   .more {
     z-index: 800000;
+
     cursor: pointer;
     border-radius: 50%;
     background: #1d71b8;
@@ -494,6 +498,7 @@ body{
     flex-direction: column;
     font-size: 0.7em;
     font-weight: 800;
+    display: none;
   }
   .service-background {
     opacity: 0.1;
@@ -513,59 +518,101 @@ body{
   bottom: -20vh;
   right: 30vw;
 }
+.logo-anim {
+  height: 100vh;
+}
+#responsive {
+  path,
+  circle,
+  rect,
+  foreignObject {
+    visibility: hidden;
+    .heroContainer {
+      // background-color: aquamarine;
+      //margin-top: 2%;
+      h3{
+        margin-top:190px;
+      }
+    }
+  }
+}
+.screen {
+  // background-color: aquamarine;
+  //margin-top: 2%;
+  h3{
+    margin-top:100px;
+  }
+}
+.logo-anim {
+  text-align: center;
+  width: 100%;
+  // visibility: hidden;
+  // svg path{visibility: hidden;}
+  #responsive {
+    height: 80vh;
+  }
+
+  #ipod {
+    font-size: 0vh;
+  }
+  #desktop {
+    font-size: 60px;
+    // transform: translate(323.01px, 45.22px);
+    // height: 412.39px;
+    // width: 718.25px;
+    //font-size:calc(min(10vw, 60px));
+  }
+  #phone {
+    font-size: 20px;
+    // transform: translate(580px, 831px);
+    // width:143.41px;
+    // height:206.31px;
+    // #nm{
+    //   background: blueviolet;
+    //   transform: translate(580px, 831px);
+    // }
+  }
+  #tablet {
+    font-size: 40px;
+    // transform: translate(848.16px, 684.03px);
+    // height: 310.94px;
+    // width: 250.38px;
+  }
+  #laptop {
+    font-size: 45px;
+    //transform: translate(580px, 831px);
+  }
+  #watch {
+    font-size: 20px;
+  }
+
+  .heroContainer {
+    //margin-top: 300px;
+    width: 100%;
+  }
+}
 .heroText {
   // align-content: center;
   // align-items: center;
   position: relative;
   display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    .responsive-anim{
-        text-align: center;
-        width: 100%;
-        #responsive{
-            height:80vh;}
+  flex-direction: column;
+  align-items: center;
 
-        #ipod{
-            font-size: 0vh;
-        }
-        #desktop{
-            font-size: 60px;
-            //font-size:calc(min(10vw, 60px));
-        }
-        #phone{
-            font-size: 20px;
-        }
-        #tablet{
-            font-size: 40px;
-        }
-        #laptop{
-            font-size: 45px;
-        }
-        #watch{
-            font-size: 20px;
-        }
-
-        .heroContainer{
-            margin-top: 40px;
-            width: 100%;
-        }
-    }
-//   @media screen and (min-width: 740px) {
-//     font-size: 4em;
-//   }
-//   font-size: 2em;
-//   div {
-//     visibility: hidden;
-//   }
+  //   @media screen and (min-width: 740px) {
+  //     font-size: 4em;
+  //   }
+  //   font-size: 2em;
+  //   div {
+  //     visibility: hidden;
+  //   }
 }
 .hrT-wp,
 .hrT-ws {
   font-weight: 900;
 }
-#responsive{
-    width: 60%;
+#responsive {
+  width: 60%;
 }
 .welcomeText {
   display: flex;

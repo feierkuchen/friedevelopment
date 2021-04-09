@@ -1,14 +1,14 @@
 //gsap.registerPlugin(DrawSVGPlugin);
-gsap.registerPlugin(Flip);
+gsap.registerPlugin(Flip, MorphSVGPlugin);
 
 if (true) {
 
-  //frieDevelopment();
+  frieDevelopment();
 
   //logoFlip();
   //heroText();
   heroAnim();
-  // servicesMoreContent();
+   servicesMoreContent();
   // // services();
   // welcomeText();
 }
@@ -23,22 +23,22 @@ function frieDevelopment(param) {
       //s:true,
       trigger: ".frieDevelopment",
       start: "top top",
-      end: "+=4000",
+      //end: "+=5000",
       //scrub:true,
       pin: true,
     },
   });
   //timelinge fürs logo erscheinen und in den header laufen
   const tween = gsap.timeline({
-    scrollTrigger: {
-      //  markers:true,
-      trigger: ".triggerLogo",
-      start: "top top",
-      end: "+=4000",
-      scrub: 1,
-      //pin: true
-    },
-    defaults: { duration: 1 },
+    // scrollTrigger: {
+    //   //  markers:true,
+    //   trigger: ".triggerLogo",
+    //   start: "top top",
+    //   end: "+=5000",
+    //   scrub: 1,
+    //   //pin: true
+    // },
+    defaults: { duration: 0.1 },
   });
 
   //let de = $("path", "#fd");
@@ -54,14 +54,14 @@ function frieDevelopment(param) {
   
   $.each(de, function (indexInArray, valueOfElement) {
     let currentElem = $(valueOfElement);
-    if (currentElem.hasClass("fd-dev-d"))
-      tween.set(".fd-friede-d", { display: "none" });
-    if (currentElem.hasClass("fd-dev-e"))
-      tween.set(".fd-friede-e2", { display: "none" });
-    if (currentElem.hasClass("fd-de-d"))
-      tween.set(".fd-dev-d", { display: "none" });
-    if (currentElem.hasClass("fd-de-e"))
-      tween.set(".fd-dev-e", { display: "none" });
+    // if (currentElem.hasClass("fd-dev-d"))
+    //   tween.set(".fd-friede-d", { display: "none" });
+    // if (currentElem.hasClass("fd-dev-e"))
+    //   tween.set(".fd-friede-e2", { display: "none" });
+    // if (currentElem.hasClass("fd-de-d"))
+    //   tween.set(".fd-dev-d", { display: "none" });
+    // if (currentElem.hasClass("fd-de-e"))
+    //   tween.set(".fd-dev-e", { display: "none" });
 
     tween.from(valueOfElement, {
       //duration: 60,
@@ -72,34 +72,104 @@ function frieDevelopment(param) {
       //delay:10
     });
   });
-  tween.to("#hero-cta-svg",
-  {duration:20, autoAlpha:1});
 
-  tween.add(logoFlip(),"+=10");
-  //tween.add(ctaFlip());
-  tween.set("#hero-cta-svg",{position: "absolute"});
- tween.to("#hero-cta-svg",
-   {
-    position: "fixed",
-    duration: 10,
-     top:"13px",
-     right:"20px",
-     left:"unset",
-     width:"10vh"
-   });//AHA:can is not pinned!!!!(schätz ich=)
-
-    //gsap.set("#hero-cta-svg", { position: "fixed" });
-}
-
-function ctaFlip(){
-    return gsap.to("#hero-cta-svg",
+  //MorphSVGPlugin.convertToPath("#responsive circle, #responsive rect");
+ // MorphSVGPlugin.convertToPath("#fd circle, #fd rect");
+  let logoPaths = gsap.utils.toArray("#fd path");
+  let responsivePaths = gsap.utils.toArray("#responsive path");
+console.log(logoPaths);
+console.log(responsivePaths);
+  // tween.set(".fd",{attr: {viewBox: "0 0 2000 200"}});
+  // tween.set(".fd path",{autoAlpha:1});
+console.log("responsivePaths.length ", responsivePaths.length);
+  $.each(logoPaths, function (indexInArray, valueOfElement) {
+    let currentElem = $(valueOfElement);
+    let currentTarget = $(responsivePaths[indexInArray]);
+    // console.log(indexInArray);
+    // console.log(currentElem.is(":visible"));
+    // console.log(currentElem);
+    // console.log(currentElem.attr("class"));
+    // console.log(currentTarget);
+   
+    //   console.log(currentTarget.attr("class"));
+      
+    // if (currentTarget.hasClass("screen"))
+    // {
+    //  console.log("hasscreen--------------------------------YYYYYYYYY"); 
+    // // currentElem.parent().append('<foreignObject class="screen" transform="translate(-55.98 -97.41)" width="718.25" height="412.39"><div class="heroContainer"><div class="hrT-wp light">Wordpress</div><div class="hrT-ws middle">Webseiten</div><div class="hrT-sa dark">mit Spaß und Anspruch</div> <i class="fab fa-wordpress-simple wordpress parallax"></i> </div></foreignObject> ');
+    //   //console.log("currentTarget.parent()",currentTarget.parent());
+    //   return;
+    // }
+    if (responsivePaths[indexInArray] && 
+      (indexInArray <= responsivePaths.length) 
+     // && $(responsivePaths[indexInArray]).prop("tagName") != "foreignObject"
+      // && $(responsivePaths[indexInArray]).prop("tagName") != "circle"
+      // && currentElem.is(":visible")
+      //(currentElem.is(":visible") || currentElem.hasClass("ph") ) 
+    
+    )
     {
-      duration: 10,
-      x:0,
-      width:"10vw",
-      autoAlpha:0
-    });
+      tween.to(currentElem, {
+        //morphSVG:responsivePaths[indexInArray],
+        morphSVG: {
+          shape: responsivePaths[indexInArray],
+          type: "rotational",
+          origin: "20% 60%" //or "20% 60%,35% 90%" if there are different values for the start and end shapes.
+      },
+        onComplete:function(el, target){
+          console.log("el", el);
+          console.log("d,",target);
+          el.addClass(target.attr("class"));
+        },
+        onCompleteParams:[currentElem,currentTarget],
+        duration:0.2
+      });
+      
+     
+      
+    }
+    
+    console.log("--------------........................-");
+
+  });
+  // tween.set(".phone-screen foreignObject",{width:"143.41", height:"206.31"});
+  // tween.set(".phone-screen",{x:"580.55px",y:"831.33px"});
+  tween.to("#responsive .screen", {autoAlpha:1});
+  tween.to(".hide", {autoAlpha:0});
+
+
+  // tween.to(".fd-friede-f", {morphSVG:"#desktop .morph"});
+  // tween.set("#desktop",{autoAlpha:1});
+  // tween.to(".fd-friede-r", {morphSVG:"#phone .morph"});
+  // tween.set("#phone",{autoAlpha:1});
+  // tween.to(".fd-friede-i", {morphSVG:"#tablet .morph"});
+  // tween.set("#tablet",{autoAlpha:1});
+  // tween.to(".fd-friede-e", {morphSVG:"#laptop .morph"});
+  // tween.set("#laptop",{autoAlpha:1});
+  // tween.to(".fd-de-d", {morphSVG:"#watch .morph"});
+  // tween.set("#watch",{autoAlpha:1});
+  // tween.to(".fd-de-e", {morphSVG:"#ipod .morph"});
+  // tween.set("#ipod",{autoAlpha:1});
+
+
+  // tween.to("#hero-cta-svg",
+  // {duration:20, autoAlpha:1});
+
+//   tween.add(logoFlip(),"+=10");
+//   tween.set("#hero-cta-svg",{position: "absolute"});
+//  tween.to("#hero-cta-svg",
+//    {
+//     position: "fixed",
+//     duration: 10,
+//      top:"13px",
+//      right:"20px",
+//      left:"unset",
+//      width:"10vh"
+//    });
+
 }
+
+
 
 function logoFlip() {
   // let states = [ toInitState, toFirstState, toLastState, toInvertState, toPlayState, toEndState ],
@@ -147,23 +217,23 @@ function logoFlip() {
 }
 
 function heroAnim() {
-  const tweenpinhero = gsap.timeline({
-    scrollTrigger: {
-      //s:true,
-      trigger: ".heroText",
-      start: "top top+=100",
-      end: "+=3500",
-      //scrub:true,
-      pin: true,
-    },
-  });
+  // const tweenpinhero = gsap.timeline({
+  //   scrollTrigger: {
+  //     //s:true,
+  //     trigger: ".fdContainer",
+  //     start: "top top+=100",
+  //     end: "+=3500",
+  //     //scrub:true,
+  //     pin: true,
+  //   },
+  // });
   const tweenHeroAnim = gsap.timeline({
     scrollTrigger: {
       //  markers:true,
-      trigger: ".responsive-anim",
-      start: "top top",
-      end:"+=1500",
-     scrub:true
+      trigger: ".marker",
+      start: "top +=800",
+      end:"+=6500",
+    scrub:true
     },
   });
   tweenHeroAnim.to(".heroContainer",

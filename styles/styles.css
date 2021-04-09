@@ -37,6 +37,7 @@ h3 {
 
 section {
   min-height: 100vh;
+  margin-bottom: 30vh;
 }
 
 footer {
@@ -84,6 +85,7 @@ div {
 
 .fd {
   width: 80%;
+  height: 100vh;
 }
 
 .fd path {
@@ -122,9 +124,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   /*END BASE BUTTON*/
   /*ROTATE*/
 }
@@ -497,6 +496,7 @@ body {
           flex-direction: column;
   font-size: 0.7em;
   font-weight: 800;
+  display: none;
 }
 
 .service-container .service-background {
@@ -516,6 +516,65 @@ body {
   right: 30vw;
 }
 
+.logo-anim {
+  height: 100vh;
+}
+
+#responsive path,
+#responsive circle,
+#responsive rect,
+#responsive foreignObject {
+  visibility: hidden;
+}
+
+#responsive path .heroContainer h3,
+#responsive circle .heroContainer h3,
+#responsive rect .heroContainer h3,
+#responsive foreignObject .heroContainer h3 {
+  margin-top: 190px;
+}
+
+.screen h3 {
+  margin-top: 100px;
+}
+
+.logo-anim {
+  text-align: center;
+  width: 100%;
+}
+
+.logo-anim #responsive {
+  height: 80vh;
+}
+
+.logo-anim #ipod {
+  font-size: 0vh;
+}
+
+.logo-anim #desktop {
+  font-size: 60px;
+}
+
+.logo-anim #phone {
+  font-size: 20px;
+}
+
+.logo-anim #tablet {
+  font-size: 40px;
+}
+
+.logo-anim #laptop {
+  font-size: 45px;
+}
+
+.logo-anim #watch {
+  font-size: 20px;
+}
+
+.logo-anim .heroContainer {
+  width: 100%;
+}
+
 .heroText {
   position: relative;
   display: -webkit-box;
@@ -528,44 +587,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.heroText .responsive-anim {
-  text-align: center;
-  width: 100%;
-}
-
-.heroText .responsive-anim #responsive {
-  height: 80vh;
-}
-
-.heroText .responsive-anim #ipod {
-  font-size: 0vh;
-}
-
-.heroText .responsive-anim #desktop {
-  font-size: 60px;
-}
-
-.heroText .responsive-anim #phone {
-  font-size: 20px;
-}
-
-.heroText .responsive-anim #tablet {
-  font-size: 40px;
-}
-
-.heroText .responsive-anim #laptop {
-  font-size: 45px;
-}
-
-.heroText .responsive-anim #watch {
-  font-size: 20px;
-}
-
-.heroText .responsive-anim .heroContainer {
-  margin-top: 40px;
-  width: 100%;
 }
 
 .hrT-wp,
