@@ -8,6 +8,7 @@ if (true) {
   //logoFlip();
   //heroText();
   heroAnim();
+  //wordpressParallax();
    servicesMoreContent();
   // // services();
   // welcomeText();
@@ -23,21 +24,21 @@ function frieDevelopment(param) {
       //s:true,
       trigger: ".frieDevelopment",
       start: "top top",
-      //end: "+=5000",
+      end: "+=5000",
       //scrub:true,
       pin: true,
     },
   });
   //timelinge fürs logo erscheinen und in den header laufen
   const tween = gsap.timeline({
-    // scrollTrigger: {
-    //   //  markers:true,
-    //   trigger: ".triggerLogo",
-    //   start: "top top",
-    //   end: "+=5000",
-    //   scrub: 1,
-    //   //pin: true
-    // },
+    scrollTrigger: {
+      //  markers:true,
+      trigger: ".triggerLogo",
+      start: "top top",
+      end: "+=5000",
+      scrub: 1,
+      //pin: true
+    },
     defaults: { duration: 0.1 },
   });
 
@@ -54,14 +55,14 @@ function frieDevelopment(param) {
   
   $.each(de, function (indexInArray, valueOfElement) {
     let currentElem = $(valueOfElement);
-    // if (currentElem.hasClass("fd-dev-d"))
-    //   tween.set(".fd-friede-d", { display: "none" });
-    // if (currentElem.hasClass("fd-dev-e"))
-    //   tween.set(".fd-friede-e2", { display: "none" });
-    // if (currentElem.hasClass("fd-de-d"))
-    //   tween.set(".fd-dev-d", { display: "none" });
-    // if (currentElem.hasClass("fd-de-e"))
-    //   tween.set(".fd-dev-e", { display: "none" });
+    if (currentElem.hasClass("fd-dev-d"))
+      tween.set(".fd .fd-friede-d", { display: "none" });
+    if (currentElem.hasClass("fd-dev-e"))
+      tween.set(".fd .fd-friede-e2", { display: "none" });
+    if (currentElem.hasClass("fd-de-d"))
+      tween.set(".fd .fd-dev-d", { display: "none" });
+    if (currentElem.hasClass("fd-de-e"))
+      tween.set(".fd .fd-dev-e", { display: "none" });
 
     tween.from(valueOfElement, {
       //duration: 60,
@@ -73,69 +74,69 @@ function frieDevelopment(param) {
     });
   });
 
-  //MorphSVGPlugin.convertToPath("#responsive circle, #responsive rect");
- // MorphSVGPlugin.convertToPath("#fd circle, #fd rect");
-  let logoPaths = gsap.utils.toArray("#fd path");
-  let responsivePaths = gsap.utils.toArray("#responsive path");
-console.log(logoPaths);
-console.log(responsivePaths);
-  // tween.set(".fd",{attr: {viewBox: "0 0 2000 200"}});
-  // tween.set(".fd path",{autoAlpha:1});
-console.log("responsivePaths.length ", responsivePaths.length);
-  $.each(logoPaths, function (indexInArray, valueOfElement) {
-    let currentElem = $(valueOfElement);
-    let currentTarget = $(responsivePaths[indexInArray]);
-    // console.log(indexInArray);
-    // console.log(currentElem.is(":visible"));
-    // console.log(currentElem);
-    // console.log(currentElem.attr("class"));
-    // console.log(currentTarget);
+//   //MorphSVGPlugin.convertToPath("#responsive circle, #responsive rect");
+//  // MorphSVGPlugin.convertToPath("#fd circle, #fd rect");
+//   let logoPaths = gsap.utils.toArray("#fd path");
+//   let responsivePaths = gsap.utils.toArray("#responsive path");
+// console.log(logoPaths);
+// console.log(responsivePaths);
+//   // tween.set(".fd",{attr: {viewBox: "0 0 2000 200"}});
+//   // tween.set(".fd path",{autoAlpha:1});
+// console.log("responsivePaths.length ", responsivePaths.length);
+//   $.each(logoPaths, function (indexInArray, valueOfElement) {
+//     let currentElem = $(valueOfElement);
+//     let currentTarget = $(responsivePaths[indexInArray]);
+//     // console.log(indexInArray);
+//     // console.log(currentElem.is(":visible"));
+//     // console.log(currentElem);
+//     // console.log(currentElem.attr("class"));
+//     // console.log(currentTarget);
    
-    //   console.log(currentTarget.attr("class"));
+//     //   console.log(currentTarget.attr("class"));
       
-    // if (currentTarget.hasClass("screen"))
-    // {
-    //  console.log("hasscreen--------------------------------YYYYYYYYY"); 
-    // // currentElem.parent().append('<foreignObject class="screen" transform="translate(-55.98 -97.41)" width="718.25" height="412.39"><div class="heroContainer"><div class="hrT-wp light">Wordpress</div><div class="hrT-ws middle">Webseiten</div><div class="hrT-sa dark">mit Spaß und Anspruch</div> <i class="fab fa-wordpress-simple wordpress parallax"></i> </div></foreignObject> ');
-    //   //console.log("currentTarget.parent()",currentTarget.parent());
-    //   return;
-    // }
-    if (responsivePaths[indexInArray] && 
-      (indexInArray <= responsivePaths.length) 
-     // && $(responsivePaths[indexInArray]).prop("tagName") != "foreignObject"
-      // && $(responsivePaths[indexInArray]).prop("tagName") != "circle"
-      // && currentElem.is(":visible")
-      //(currentElem.is(":visible") || currentElem.hasClass("ph") ) 
+//     // if (currentTarget.hasClass("screen"))
+//     // {
+//     //  console.log("hasscreen--------------------------------YYYYYYYYY"); 
+//     // // currentElem.parent().append('<foreignObject class="screen" transform="translate(-55.98 -97.41)" width="718.25" height="412.39"><div class="heroContainer"><div class="hrT-wp light">Wordpress</div><div class="hrT-ws middle">Webseiten</div><div class="hrT-sa dark">mit Spaß und Anspruch</div> <i class="fab fa-wordpress-simple wordpress parallax"></i> </div></foreignObject> ');
+//     //   //console.log("currentTarget.parent()",currentTarget.parent());
+//     //   return;
+//     // }
+//     if (responsivePaths[indexInArray] && 
+//       (indexInArray <= responsivePaths.length) 
+//      // && $(responsivePaths[indexInArray]).prop("tagName") != "foreignObject"
+//       // && $(responsivePaths[indexInArray]).prop("tagName") != "circle"
+//       // && currentElem.is(":visible")
+//       //(currentElem.is(":visible") || currentElem.hasClass("ph") ) 
     
-    )
-    {
-      tween.to(currentElem, {
-        //morphSVG:responsivePaths[indexInArray],
-        morphSVG: {
-          shape: responsivePaths[indexInArray],
-          type: "rotational",
-          origin: "20% 60%" //or "20% 60%,35% 90%" if there are different values for the start and end shapes.
-      },
-        onComplete:function(el, target){
-          console.log("el", el);
-          console.log("d,",target);
-          el.addClass(target.attr("class"));
-        },
-        onCompleteParams:[currentElem,currentTarget],
-        duration:0.2
-      });
+//     )
+//     {
+//       tween.to(currentElem, {
+//         //morphSVG:responsivePaths[indexInArray],
+//         morphSVG: {
+//           shape: responsivePaths[indexInArray],
+//           type: "rotational",
+//           origin: "20% 60%" //or "20% 60%,35% 90%" if there are different values for the start and end shapes.
+//       },
+//         onComplete:function(el, target){
+//           console.log("el", el);
+//           console.log("d,",target);
+//           el.addClass(target.attr("class"));
+//         },
+//         onCompleteParams:[currentElem,currentTarget],
+//         duration:0.2
+//       });
       
      
       
-    }
+//     }
     
-    console.log("--------------........................-");
+//     console.log("--------------........................-");
 
-  });
-  // tween.set(".phone-screen foreignObject",{width:"143.41", height:"206.31"});
-  // tween.set(".phone-screen",{x:"580.55px",y:"831.33px"});
-  tween.to("#responsive .screen", {autoAlpha:1});
-  tween.to(".hide", {autoAlpha:0});
+//   });
+//   // tween.set(".phone-screen foreignObject",{width:"143.41", height:"206.31"});
+//   // tween.set(".phone-screen",{x:"580.55px",y:"831.33px"});
+//   tween.to("#responsive .screen", {autoAlpha:1});
+//   tween.to(".hide", {autoAlpha:0});
 
 
   // tween.to(".fd-friede-f", {morphSVG:"#desktop .morph"});
@@ -155,7 +156,7 @@ console.log("responsivePaths.length ", responsivePaths.length);
   // tween.to("#hero-cta-svg",
   // {duration:20, autoAlpha:1});
 
-//   tween.add(logoFlip(),"+=10");
+   tween.add(logoFlip(),"+=10");
 //   tween.set("#hero-cta-svg",{position: "absolute"});
 //  tween.to("#hero-cta-svg",
 //    {
@@ -169,7 +170,36 @@ console.log("responsivePaths.length ", responsivePaths.length);
 
 }
 
+function friedevLogoAnim(selector, scrollTrigger){
+  const tween = gsap.timeline({
+    scrollTrigger: scrollTrigger,
+    defaults: { duration: 0.1 },
+  });
 
+ //  let de = gsap.utils.toArray("#fd path");
+  let de = $("path", selector);
+  // tween.set(paths,{autoAlpha:0});
+  $.each(de, function (indexInArray, valueOfElement) {
+    let currentElem = $(valueOfElement);
+    if (currentElem.hasClass("fd-dev-d"))
+      tween.set(".fd-friede-d", { display: "none" });
+    if (currentElem.hasClass("fd-dev-e"))
+      tween.set(".fd-friede-e2", { display: "none" });
+    if (currentElem.hasClass("fd-de-d"))
+      tween.set(".fd-dev-d", { display: "none" });
+    if (currentElem.hasClass("fd-de-e"))
+      tween.set(".fd-dev-e", { display: "none" });
+
+    tween.from(valueOfElement, {
+      //duration: 60,
+      //duration: 1,
+      //display:"none",
+      autoAlpha: 0,
+      ease: Linear.easeNone
+      //delay:10
+    });
+  });
+}
 
 function logoFlip() {
   // let states = [ toInitState, toFirstState, toLastState, toInvertState, toPlayState, toEndState ],
@@ -220,29 +250,40 @@ function heroAnim() {
   // const tweenpinhero = gsap.timeline({
   //   scrollTrigger: {
   //     //s:true,
-  //     trigger: ".fdContainer",
+  //     trigger: ".hero",
   //     start: "top top+=100",
   //     end: "+=3500",
   //     //scrub:true,
   //     pin: true,
   //   },
   // });
+  friedevLogoAnim("#logo-use",{
+    //  markers:true,
+    trigger: ".triggerFd",
+    start: "top bottom-=200",
+    end:"+=500",
+    scrub:true
+  });
   const tweenHeroAnim = gsap.timeline({
     scrollTrigger: {
       //  markers:true,
-      trigger: ".marker",
-      start: "top +=800",
-      end:"+=6500",
-    scrub:true
+      trigger: ".responsive",
+      start: "top bottom",
+      end:"+=1500",
+    scrub:1
     },
   });
   tweenHeroAnim.to(".heroContainer",
   {
-    y:-300
+    y:-600
   });
+  tweenHeroAnim.to(".heroContainer i",
+  {
+    y:-1000
+  },0);
 }
 function heroText() {
-  wordpressParallax();
+  
 
   const tweenpinhero = gsap.timeline({
     scrollTrigger: {
@@ -450,3 +491,23 @@ function wordpressParallax(param) {
     },
   });
 }
+
+// $("#spotiframe").on("load", function() {
+//   console.log(this.style);
+//   let head = $("#spotiframe").contents().find("head");
+//   let body = $("#spotiframe").contents().find("body");
+//   $("#spotiframe").contents().find("#main").addClass("hidden");
+//   head = $("")
+//   console.log($("#spotiframe").contents());
+//   console.log(body);
+//   //body.attr("style", "")
+//   let css = '<style>#main{visibility:hidden;}</style>';
+//   $(head).append(css);
+
+//   body.append("<div></div>");
+// });
+// window.onload = function() {
+//   let frameElement = document.getElementById("spotiframe");
+//   let doc = frameElement.contentDocument;
+//   doc.body.innerHTML = doc.body.innerHTML + '<style>#main {visibility:hidden;}</style>';
+// }

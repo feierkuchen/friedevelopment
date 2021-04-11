@@ -1,4 +1,5 @@
 $gray: #2c2c2c;
+//$gray:white;
 $red: rgba(148, 0, 0, 1);
 $dark-blue: rgba(0, 100, 148, 1);
 $middle-blue: #1d71b8;
@@ -13,7 +14,7 @@ $highlight: rgba(26, 188, 156, 1);
   box-sizing: border-box;
 }
 body {
-  background: rgb(44, 44, 44);
+  background: $gray;
   //padding: 2vh 6vw;
   position: relative;
   height: 100vh;
@@ -63,7 +64,7 @@ footer {
 header {
   display: flex !important;
   flex-direction: row;
-  height: auto;
+  height: 20vh;
   position: fixed;
   justify-content: space-between;
   z-index: 999;
@@ -84,6 +85,8 @@ header {
     rgba(44, 44, 44, 1) 0%,
     rgba(44, 44, 44, 0) 100%
   );
+  background: rgb(44,44,44);
+background: linear-gradient(0deg, rgba($gray,0) 0%, rgba($gray,0.6250875350140056) 20%, rgba($gray,0.742734593837535) 37%, rgba($gray,1) 64%, rgba($gray,1) 100%);
 }
 
 section,
@@ -122,21 +125,15 @@ div {
     width: clamp(10px, 12vw, 100px);
   }
 }
-.fd {
+.fd , #logo-use{
   width: 80%;
-  height: 100vh;
   //width: 200px;
   //position: fixed;
-  path {
-    visibility: hidden;
-  }
+  // path {
+  //   visibility: hidden;
+  // }
 }
-.fdContainer {
-  //border:solid 1px green;
-  width: 100%;
-  text-align: center;
-  //margin-top: -300px;
-}
+
 header {
   .cta {
     top: 0;
@@ -158,17 +155,21 @@ body {
   //   }
 }
 .frieDevelopment {
+  margin:0;
   .btn-container {
     display: flex;
+  }
+  .fdContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
   }
   //overflow: hidden;
   //position: relative;
   //text-align: center;
-  display: flex;
-  flex-direction: column;
-  // padding:0 20vw ;
-  //justify-content: center;
-
+  
   #cta-contact {
     width: 20%;
     display: none;
@@ -515,80 +516,108 @@ body {
   opacity: 0.1;
   position: absolute;
   //bottom:-100px;
-  bottom: -20vh;
-  right: 30vw;
+  //bottom: -20vh;
+ // right: 30vw;
 }
 .logo-anim {
   height: 100vh;
+  width: 100vw;
 }
-#responsive {
-  path,
-  circle,
-  rect,
-  foreignObject {
-    visibility: hidden;
-    .heroContainer {
-      // background-color: aquamarine;
-      //margin-top: 2%;
-      h3{
-        margin-top:190px;
-      }
-    }
-  }
+// #responsive {
+//   path,
+//   circle,
+//   rect,
+//   foreignObject {
+//     //visibility: hidden;
+//     .heroContainer {
+//       // background-color: aquamarine;
+//       //margin-top: 2%;
+//       h3 {
+//         margin-top: 190px;
+//       }
+//     }
+//   }
+// }
+
+.hero{
+  background: linear-gradient(0deg, rgba(44,44,44,0) 0%, rgba(44,44,44,0.6250875350140056) 20%, rgba(44,44,44,0.742734593837535) 37%, rgba(44,44,44,1) 64%, rgba(44,44,44,1) 100%);
 }
-.screen {
-  // background-color: aquamarine;
-  //margin-top: 2%;
-  h3{
-    margin-top:100px;
-  }
-}
-.logo-anim {
-  text-align: center;
+.responsive {
+  position: relative;
   width: 100%;
-  // visibility: hidden;
-  // svg path{visibility: hidden;}
-  #responsive {
-    height: 80vh;
+  height: 100vh;
+  padding: 2vh 2vw;
+  .cls-1 {
+    fill: #383838;
+  }
+
+  .cls-2 {
+    fill: #fff;
+  }
+  .cls-3 {
+    fill: none;
+    stroke: #383838;
+    stroke-miterlimit: 10;
+    stroke-width: 2px;
+  }
+  svg {
+    position: absolute;
+  }
+  h3{
+    font-size: 1em;
+    margin: 3em 0 ;
+  }
+  .portrait h3{
+    font-size: 1em;
+    margin: 10em 0 ;
   }
 
   #ipod {
+    width: 5vw;
+    //top:20vh;
     font-size: 0vh;
   }
   #desktop {
+    width: 50vw;
+    left: 10vw;
+    bottom: 0;
     font-size: 60px;
-    // transform: translate(323.01px, 45.22px);
-    // height: 412.39px;
-    // width: 718.25px;
-    //font-size:calc(min(10vw, 60px));
   }
+
   #phone {
-    font-size: 20px;
-    // transform: translate(580px, 831px);
-    // width:143.41px;
-    // height:206.31px;
-    // #nm{
-    //   background: blueviolet;
-    //   transform: translate(580px, 831px);
-    // }
+    width: 10vw;
+    right: 15vw;
+    //bottom: 0px;
+    font-size: 13px;
   }
   #tablet {
-    font-size: 40px;
-    // transform: translate(848.16px, 684.03px);
-    // height: 310.94px;
-    // width: 250.38px;
+    width: 14vw;
+    right:0;
+    font-size:20px;
   }
   #laptop {
-    font-size: 45px;
-    //transform: translate(580px, 831px);
+    
+    width: 40vw;
+  bottom: 0;
+    right: 20vw;
+    font-size: 35px;
   }
   #watch {
     font-size: 20px;
   }
 
   .heroContainer {
-    //margin-top: 300px;
+    position: relative;
+    padding: 2rem ;
+    padding-top:200px;
     width: 100%;
+    background: $gray;
+    background: white;
+    background:#2c2c2c;
+    svg{
+      margin-bottom: 130px;
+      position: relative;
+    }
   }
 }
 .heroText {
@@ -611,9 +640,7 @@ body {
 .hrT-ws {
   font-weight: 900;
 }
-#responsive {
-  width: 60%;
-}
+
 .welcomeText {
   display: flex;
   justify-items: center;

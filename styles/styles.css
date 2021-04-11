@@ -53,7 +53,7 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  height: auto;
+  height: 20vh;
   position: fixed;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -67,6 +67,9 @@ header {
   background: #2c2c2c;
   background: -webkit-gradient(linear, left top, left bottom, from(#2c2c2c), to(rgba(44, 44, 44, 0)));
   background: linear-gradient(180deg, #2c2c2c 0%, rgba(44, 44, 44, 0) 100%);
+  background: #2c2c2c;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(44, 44, 44, 0)), color-stop(20%, rgba(44, 44, 44, 0.625088)), color-stop(37%, rgba(44, 44, 44, 0.742735)), color-stop(64%, #2c2c2c), to(#2c2c2c));
+  background: linear-gradient(0deg, rgba(44, 44, 44, 0) 0%, rgba(44, 44, 44, 0.625088) 20%, rgba(44, 44, 44, 0.742735) 37%, #2c2c2c 64%, #2c2c2c 100%);
 }
 
 section,
@@ -83,18 +86,8 @@ div {
   width: clamp(10px, 12vw, 100px);
 }
 
-.fd {
+.fd, #logo-use {
   width: 80%;
-  height: 100vh;
-}
-
-.fd path {
-  visibility: hidden;
-}
-
-.fdContainer {
-  width: 100%;
-  text-align: center;
 }
 
 header .cta {
@@ -117,13 +110,7 @@ body {
 }
 
 .frieDevelopment {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  margin: 0;
   /*END BASE BUTTON*/
   /*ROTATE*/
 }
@@ -132,6 +119,23 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.frieDevelopment .fdContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 100vh;
 }
 
 .frieDevelopment #cta-contact {
@@ -512,67 +516,102 @@ body {
   color: #006494;
   opacity: 0.1;
   position: absolute;
-  bottom: -20vh;
-  right: 30vw;
 }
 
 .logo-anim {
   height: 100vh;
+  width: 100vw;
 }
 
-#responsive path,
-#responsive circle,
-#responsive rect,
-#responsive foreignObject {
-  visibility: hidden;
+.hero {
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(44, 44, 44, 0)), color-stop(20%, rgba(44, 44, 44, 0.625088)), color-stop(37%, rgba(44, 44, 44, 0.742735)), color-stop(64%, #2c2c2c), to(#2c2c2c));
+  background: linear-gradient(0deg, rgba(44, 44, 44, 0) 0%, rgba(44, 44, 44, 0.625088) 20%, rgba(44, 44, 44, 0.742735) 37%, #2c2c2c 64%, #2c2c2c 100%);
 }
 
-#responsive path .heroContainer h3,
-#responsive circle .heroContainer h3,
-#responsive rect .heroContainer h3,
-#responsive foreignObject .heroContainer h3 {
-  margin-top: 190px;
-}
-
-.screen h3 {
-  margin-top: 100px;
-}
-
-.logo-anim {
-  text-align: center;
+.responsive {
+  position: relative;
   width: 100%;
+  height: 100vh;
+  padding: 2vh 2vw;
 }
 
-.logo-anim #responsive {
-  height: 80vh;
+.responsive .cls-1 {
+  fill: #383838;
 }
 
-.logo-anim #ipod {
+.responsive .cls-2 {
+  fill: #fff;
+}
+
+.responsive .cls-3 {
+  fill: none;
+  stroke: #383838;
+  stroke-miterlimit: 10;
+  stroke-width: 2px;
+}
+
+.responsive svg {
+  position: absolute;
+}
+
+.responsive h3 {
+  font-size: 1em;
+  margin: 3em 0;
+}
+
+.responsive .portrait h3 {
+  font-size: 1em;
+  margin: 10em 0;
+}
+
+.responsive #ipod {
+  width: 5vw;
   font-size: 0vh;
 }
 
-.logo-anim #desktop {
+.responsive #desktop {
+  width: 50vw;
+  left: 10vw;
+  bottom: 0;
   font-size: 60px;
 }
 
-.logo-anim #phone {
+.responsive #phone {
+  width: 10vw;
+  right: 15vw;
+  font-size: 13px;
+}
+
+.responsive #tablet {
+  width: 14vw;
+  right: 0;
   font-size: 20px;
 }
 
-.logo-anim #tablet {
-  font-size: 40px;
+.responsive #laptop {
+  width: 40vw;
+  bottom: 0;
+  right: 20vw;
+  font-size: 35px;
 }
 
-.logo-anim #laptop {
-  font-size: 45px;
-}
-
-.logo-anim #watch {
+.responsive #watch {
   font-size: 20px;
 }
 
-.logo-anim .heroContainer {
+.responsive .heroContainer {
+  position: relative;
+  padding: 2rem;
+  padding-top: 200px;
   width: 100%;
+  background: #2c2c2c;
+  background: white;
+  background: #2c2c2c;
+}
+
+.responsive .heroContainer svg {
+  margin-bottom: 130px;
+  position: relative;
 }
 
 .heroText {
@@ -592,10 +631,6 @@ body {
 .hrT-wp,
 .hrT-ws {
   font-weight: 900;
-}
-
-#responsive {
-  width: 60%;
 }
 
 .welcomeText {
