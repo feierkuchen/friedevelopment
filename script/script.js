@@ -24,7 +24,7 @@ function frieDevelopment(param) {
       //s:true,
       trigger: ".frieDevelopment",
       start: "top top",
-      end: "+=5000",
+      end: "+=1800",
       //scrub:true,
       pin: true,
     },
@@ -35,7 +35,7 @@ function frieDevelopment(param) {
       //  markers:true,
       trigger: ".triggerLogo",
       start: "top top",
-      end: "+=5000",
+      end: "+=1000",
       scrub: 1,
       //pin: true
     },

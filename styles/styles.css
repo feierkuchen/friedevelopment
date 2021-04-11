@@ -78,16 +78,12 @@ div {
           box-sizing: border-box;
 }
 
-.logo-header {
-  width: 20vw;
+.logo-header, .header-cta {
+  height: 5vh;
 }
 
-.header-cta svg {
-  width: clamp(10px, 12vw, 100px);
-}
-
-.fd, #logo-use {
-  width: 80%;
+.logo-header svg, .header-cta svg {
+  height: 100%;
 }
 
 header .cta {
@@ -110,7 +106,6 @@ body {
 }
 
 .frieDevelopment {
-  margin: 0;
   /*END BASE BUTTON*/
   /*ROTATE*/
 }
