@@ -156,7 +156,7 @@ function frieDevelopment(param) {
   // tween.to("#hero-cta-svg",
   // {duration:20, autoAlpha:1});
 
-   tween.add(logoFlip(),"+=10");
+  // tween.add(logoFlip(),"+=10");
 //   tween.set("#hero-cta-svg",{position: "absolute"});
 //  tween.to("#hero-cta-svg",
 //    {
