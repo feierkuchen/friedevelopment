@@ -3,8 +3,8 @@ gsap.registerPlugin(Flip, MorphSVGPlugin);
 
 if (true) {
 
-  frieDevelopment();
-
+ // frieDevelopment();
+  morphIcon();
   //logoFlip();
   //heroText();
   heroAnim();
@@ -31,14 +31,14 @@ function frieDevelopment(param) {
   });
   //timelinge fürs logo erscheinen und in den header laufen
   const tween = gsap.timeline({
-    scrollTrigger: {
-      //  markers:true,
-      trigger: ".triggerLogo",
-      start: "top top",
-      end: "+=1000",
-      scrub: 1,
-      //pin: true
-    },
+    // scrollTrigger: {
+    //   //  markers:true,
+    //   trigger: ".triggerLogo",
+    //   start: "top top",
+    //   end: "+=1000",
+    //   scrub: 1,
+    //   //pin: true
+    // },
     defaults: { duration: 0.1 },
   });
 
@@ -393,8 +393,18 @@ function welcomeText(param) {
   //   },
   // });
 }
-
-function servicesMoreContent() {
+function servicesMoreContentMorpth(){
+  let container = document.getElementById("moreContent");
+  const tweenServicesPin = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".service",
+      start: "top +=70vh",
+      end: "+=" + (container.offsetWidth + 100),
+      pin: true,
+    },
+  });
+}
+function servicesMoreContentScrollVertical() {
   let container = document.getElementById("moreContent");
   const tweenServicesPin = gsap.timeline({
     scrollTrigger: {
@@ -492,22 +502,37 @@ function wordpressParallax(param) {
   });
 }
 
-// $("#spotiframe").on("load", function() {
-//   console.log(this.style);
-//   let head = $("#spotiframe").contents().find("head");
-//   let body = $("#spotiframe").contents().find("body");
-//   $("#spotiframe").contents().find("#main").addClass("hidden");
-//   head = $("")
-//   console.log($("#spotiframe").contents());
-//   console.log(body);
-//   //body.attr("style", "")
-//   let css = '<style>#main{visibility:hidden;}</style>';
-//   $(head).append(css);
-
-//   body.append("<div></div>");
-// });
-// window.onload = function() {
-//   let frameElement = document.getElementById("spotiframe");
-//   let doc = frameElement.contentDocument;
-//   doc.body.innerHTML = doc.body.innerHTML + '<style>#main {visibility:hidden;}</style>';
-// }
+function morphIcon(element){
+ // MorphSVGPlugin.convertToPath("#responsive circle, #responsive rect");
+ // MorphSVGPlugin.convertToPath("#fd circle, #fd rect");
+ gsap.set("#Cog path",{visibility:"hidden"});
+  let squarePaths = gsap.utils.toArray(".square path");
+  let iconPaths = gsap.utils.toArray("#Cog path");
+  //MorphSVGPlugin.convertToPath(".square rect");
+console.log(iconPaths);
+console.log(squarePaths);
+let tl1 = gsap.timeline();
+tl1.to(
+  ".morphcog",{x:0,y:0}
+)
+  $.each(iconPaths, function (indexInArray, valueOfElement) {
+    let currentElem = squarePaths[indexInArray];
+      console.log(currentElem);
+      $(valueOfElement).addClass("pujnm");
+      tl1.to(".morphcog", {  
+        //morphSVG:responsivePaths[indexInArray],
+        morphSVG: {
+          shape: valueOfElement,
+          type: "rotational",
+          origin: "20% 60%" //or "20% 60%,35% 90%" if there are different values for the start and end shapes.
+      },
+        duration:20,
+        // scrollTrigger: {
+        //   trigger: ".service-background",
+        //   scrub: true,
+        //   //pin: true
+        // }
+      },">");
+      
+});
+}
