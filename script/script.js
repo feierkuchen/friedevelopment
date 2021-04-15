@@ -2,14 +2,13 @@
 gsap.registerPlugin(Flip, MorphSVGPlugin);
 
 if (true) {
-
- // frieDevelopment();
-  morphIcon();
+  // frieDevelopment();
+  //morphIcon();
   //logoFlip();
   //heroText();
   heroAnim();
   //wordpressParallax();
-   servicesMoreContent();
+  servicesMoreContentMorph();
   // // services();
   // welcomeText();
 }
@@ -43,16 +42,15 @@ function frieDevelopment(param) {
   });
 
   //let de = $("path", "#fd");
-   let de = gsap.utils.toArray("#fd path");
-   //tween.to(de, { autoAlpha: 1});
-   //tween.to(".cta", { autoAlpha: 1});
+  let de = gsap.utils.toArray("#fd path");
+  //tween.to(de, { autoAlpha: 1});
+  //tween.to(".cta", { autoAlpha: 1});
 
-   gsap.set("#hero-cta-svg", { position: "fixed" });
-   gsap.set("#hero-cta-svg", { y: 0 });
-   gsap.set("#hero-cta-svg", { x: 0 });
-   gsap.set("#hero-cta-svg", { width: "15vw" });
-  
-  
+  gsap.set("#hero-cta-svg", { position: "fixed" });
+  gsap.set("#hero-cta-svg", { y: 0 });
+  gsap.set("#hero-cta-svg", { x: 0 });
+  gsap.set("#hero-cta-svg", { width: "15vw" });
+
   $.each(de, function (indexInArray, valueOfElement) {
     let currentElem = $(valueOfElement);
     if (currentElem.hasClass("fd-dev-d"))
@@ -69,75 +67,72 @@ function frieDevelopment(param) {
       //duration: 1,
       //display:"none",
       autoAlpha: 0,
-      ease: Linear.easeNone
+      ease: Linear.easeNone,
       //delay:10
     });
   });
 
-//   //MorphSVGPlugin.convertToPath("#responsive circle, #responsive rect");
-//  // MorphSVGPlugin.convertToPath("#fd circle, #fd rect");
-//   let logoPaths = gsap.utils.toArray("#fd path");
-//   let responsivePaths = gsap.utils.toArray("#responsive path");
-// console.log(logoPaths);
-// console.log(responsivePaths);
-//   // tween.set(".fd",{attr: {viewBox: "0 0 2000 200"}});
-//   // tween.set(".fd path",{autoAlpha:1});
-// console.log("responsivePaths.length ", responsivePaths.length);
-//   $.each(logoPaths, function (indexInArray, valueOfElement) {
-//     let currentElem = $(valueOfElement);
-//     let currentTarget = $(responsivePaths[indexInArray]);
-//     // console.log(indexInArray);
-//     // console.log(currentElem.is(":visible"));
-//     // console.log(currentElem);
-//     // console.log(currentElem.attr("class"));
-//     // console.log(currentTarget);
-   
-//     //   console.log(currentTarget.attr("class"));
-      
-//     // if (currentTarget.hasClass("screen"))
-//     // {
-//     //  console.log("hasscreen--------------------------------YYYYYYYYY"); 
-//     // // currentElem.parent().append('<foreignObject class="screen" transform="translate(-55.98 -97.41)" width="718.25" height="412.39"><div class="heroContainer"><div class="hrT-wp light">Wordpress</div><div class="hrT-ws middle">Webseiten</div><div class="hrT-sa dark">mit Spaß und Anspruch</div> <i class="fab fa-wordpress-simple wordpress parallax"></i> </div></foreignObject> ');
-//     //   //console.log("currentTarget.parent()",currentTarget.parent());
-//     //   return;
-//     // }
-//     if (responsivePaths[indexInArray] && 
-//       (indexInArray <= responsivePaths.length) 
-//      // && $(responsivePaths[indexInArray]).prop("tagName") != "foreignObject"
-//       // && $(responsivePaths[indexInArray]).prop("tagName") != "circle"
-//       // && currentElem.is(":visible")
-//       //(currentElem.is(":visible") || currentElem.hasClass("ph") ) 
-    
-//     )
-//     {
-//       tween.to(currentElem, {
-//         //morphSVG:responsivePaths[indexInArray],
-//         morphSVG: {
-//           shape: responsivePaths[indexInArray],
-//           type: "rotational",
-//           origin: "20% 60%" //or "20% 60%,35% 90%" if there are different values for the start and end shapes.
-//       },
-//         onComplete:function(el, target){
-//           console.log("el", el);
-//           console.log("d,",target);
-//           el.addClass(target.attr("class"));
-//         },
-//         onCompleteParams:[currentElem,currentTarget],
-//         duration:0.2
-//       });
-      
-     
-      
-//     }
-    
-//     console.log("--------------........................-");
+  //   //MorphSVGPlugin.convertToPath("#responsive circle, #responsive rect");
+  //  // MorphSVGPlugin.convertToPath("#fd circle, #fd rect");
+  //   let logoPaths = gsap.utils.toArray("#fd path");
+  //   let responsivePaths = gsap.utils.toArray("#responsive path");
+  // console.log(logoPaths);
+  // console.log(responsivePaths);
+  //   // tween.set(".fd",{attr: {viewBox: "0 0 2000 200"}});
+  //   // tween.set(".fd path",{autoAlpha:1});
+  // console.log("responsivePaths.length ", responsivePaths.length);
+  //   $.each(logoPaths, function (indexInArray, valueOfElement) {
+  //     let currentElem = $(valueOfElement);
+  //     let currentTarget = $(responsivePaths[indexInArray]);
+  //     // console.log(indexInArray);
+  //     // console.log(currentElem.is(":visible"));
+  //     // console.log(currentElem);
+  //     // console.log(currentElem.attr("class"));
+  //     // console.log(currentTarget);
 
-//   });
-//   // tween.set(".phone-screen foreignObject",{width:"143.41", height:"206.31"});
-//   // tween.set(".phone-screen",{x:"580.55px",y:"831.33px"});
-//   tween.to("#responsive .screen", {autoAlpha:1});
-//   tween.to(".hide", {autoAlpha:0});
+  //     //   console.log(currentTarget.attr("class"));
 
+  //     // if (currentTarget.hasClass("screen"))
+  //     // {
+  //     //  console.log("hasscreen--------------------------------YYYYYYYYY");
+  //     // // currentElem.parent().append('<foreignObject class="screen" transform="translate(-55.98 -97.41)" width="718.25" height="412.39"><div class="heroContainer"><div class="hrT-wp light">Wordpress</div><div class="hrT-ws middle">Webseiten</div><div class="hrT-sa dark">mit Spaß und Anspruch</div> <i class="fab fa-wordpress-simple wordpress parallax"></i> </div></foreignObject> ');
+  //     //   //console.log("currentTarget.parent()",currentTarget.parent());
+  //     //   return;
+  //     // }
+  //     if (responsivePaths[indexInArray] &&
+  //       (indexInArray <= responsivePaths.length)
+  //      // && $(responsivePaths[indexInArray]).prop("tagName") != "foreignObject"
+  //       // && $(responsivePaths[indexInArray]).prop("tagName") != "circle"
+  //       // && currentElem.is(":visible")
+  //       //(currentElem.is(":visible") || currentElem.hasClass("ph") )
+
+  //     )
+  //     {
+  //       tween.to(currentElem, {
+  //         //morphSVG:responsivePaths[indexInArray],
+  //         morphSVG: {
+  //           shape: responsivePaths[indexInArray],
+  //           type: "rotational",
+  //           origin: "20% 60%" //or "20% 60%,35% 90%" if there are different values for the start and end shapes.
+  //       },
+  //         onComplete:function(el, target){
+  //           console.log("el", el);
+  //           console.log("d,",target);
+  //           el.addClass(target.attr("class"));
+  //         },
+  //         onCompleteParams:[currentElem,currentTarget],
+  //         duration:0.2
+  //       });
+
+  //     }
+
+  //     console.log("--------------........................-");
+
+  //   });
+  //   // tween.set(".phone-screen foreignObject",{width:"143.41", height:"206.31"});
+  //   // tween.set(".phone-screen",{x:"580.55px",y:"831.33px"});
+  //   tween.to("#responsive .screen", {autoAlpha:1});
+  //   tween.to(".hide", {autoAlpha:0});
 
   // tween.to(".fd-friede-f", {morphSVG:"#desktop .morph"});
   // tween.set("#desktop",{autoAlpha:1});
@@ -152,31 +147,29 @@ function frieDevelopment(param) {
   // tween.to(".fd-de-e", {morphSVG:"#ipod .morph"});
   // tween.set("#ipod",{autoAlpha:1});
 
-
   // tween.to("#hero-cta-svg",
   // {duration:20, autoAlpha:1});
 
   // tween.add(logoFlip(),"+=10");
-//   tween.set("#hero-cta-svg",{position: "absolute"});
-//  tween.to("#hero-cta-svg",
-//    {
-//     position: "fixed",
-//     duration: 10,
-//      top:"13px",
-//      right:"20px",
-//      left:"unset",
-//      width:"10vh"
-//    });
-
+  //   tween.set("#hero-cta-svg",{position: "absolute"});
+  //  tween.to("#hero-cta-svg",
+  //    {
+  //     position: "fixed",
+  //     duration: 10,
+  //      top:"13px",
+  //      right:"20px",
+  //      left:"unset",
+  //      width:"10vh"
+  //    });
 }
 
-function friedevLogoAnim(selector, scrollTrigger){
+function friedevLogoAnim(selector, scrollTrigger) {
   const tween = gsap.timeline({
     scrollTrigger: scrollTrigger,
     defaults: { duration: 0.1 },
   });
 
- //  let de = gsap.utils.toArray("#fd path");
+  //  let de = gsap.utils.toArray("#fd path");
   let de = $("path", selector);
   // tween.set(paths,{autoAlpha:0});
   $.each(de, function (indexInArray, valueOfElement) {
@@ -195,7 +188,7 @@ function friedevLogoAnim(selector, scrollTrigger){
       //duration: 1,
       //display:"none",
       autoAlpha: 0,
-      ease: Linear.easeNone
+      ease: Linear.easeNone,
       //delay:10
     });
   });
@@ -218,25 +211,24 @@ function logoFlip() {
   transitionLogo && transitionLogo.kill();
   transitionCta && transitionCta.kill();
   // reset (put back in original container and remove any inline styles)
-  	originalContainerLogo.appendChild(logo);
-//    originalContainerCta.appendChild(cta);
+  originalContainerLogo.appendChild(logo);
+  //    originalContainerCta.appendChild(cta);
   logo.style.cssText = "";
   cta.style.cssText = "";
 
   // grab the original state
   const stateLogo = Flip.getState(logo);
   const stateCta = Flip.getState(cta);
-  gsap.to(".cta",
-  {autoAlpha:1});
+  gsap.to(".cta", { autoAlpha: 1 });
   // put into the new container
-   finalContainerLogo.appendChild(logo);
-   //finalontainerCta.appendChild(cta);
-	// //originalContainerLogo.appendChild(logo);
+  finalContainerLogo.appendChild(logo);
+  //finalontainerCta.appendChild(cta);
+  // //originalContainerLogo.appendChild(logo);
   // // FLIP!
   transitionLogo = Flip.from(stateLogo, {
     duration: 10,
-    ease: "none"
-  })
+    ease: "none",
+  });
   // transitionCta = Flip.from(stateCta, {
   //   duration: 10,
   //   ease: "none"
@@ -257,34 +249,34 @@ function heroAnim() {
   //     pin: true,
   //   },
   // });
-  friedevLogoAnim("#logo-use",{
+  friedevLogoAnim("#logo-use", {
     //  markers:true,
     trigger: ".triggerFd",
     start: "top bottom-=200",
-    end:"+=500",
-    scrub:true
+    end: "+=500",
+    scrub: true,
   });
   const tweenHeroAnim = gsap.timeline({
     scrollTrigger: {
       //  markers:true,
       trigger: ".responsive",
       start: "top bottom",
-      end:"+=1500",
-    scrub:1
+      end: "+=1500",
+      scrub: 1,
     },
   });
-  tweenHeroAnim.to(".heroContainer",
-  {
-    y:-600
+  tweenHeroAnim.to(".heroContainer", {
+    y: -600,
   });
-  tweenHeroAnim.to(".heroContainer i",
-  {
-    y:-1000
-  },0);
+  tweenHeroAnim.to(
+    ".heroContainer i",
+    {
+      y: -1000,
+    },
+    0
+  );
 }
 function heroText() {
-  
-
   const tweenpinhero = gsap.timeline({
     scrollTrigger: {
       //s:true,
@@ -393,15 +385,76 @@ function welcomeText(param) {
   //   },
   // });
 }
-function servicesMoreContentMorpth(){
+function servicesMoreContentMorph() {
   let container = document.getElementById("moreContent");
+  
+  MorphSVGPlugin.convertToPath(".icon line");
   const tweenServicesPin = gsap.timeline({
     scrollTrigger: {
       trigger: ".service",
       start: "top +=70vh",
-      end: "+=" + (container.offsetWidth + 100),
+      end: "+=5000",
       pin: true,
     },
+  });
+  //let tl1 = gsap.timeline();
+  let design = gsap.utils.shuffle(gsap.utils.toArray("#design path"));
+  let service = gsap.utils.shuffle(gsap.utils.toArray("#services path"));
+  let shop = gsap.utils.shuffle(gsap.utils.toArray("#shop path"));
+  console.log(design, service);
+  design.forEach((path, i) => {
+    if (service[i] == undefined){
+      gsap.set(path,{autoAlpha:1,
+        scrollTrigger: {
+          //trigger:"#v-spacer-1",
+          trigger: ".moreContent",
+          markers: true,
+          scrub: true,
+          //start: "top top",
+          start: "+=200",
+          end: "+=600",
+        }});
+    }
+    else{
+    gsap.to(
+      path,
+      {
+        morphSVG: service[i],
+        duration: 1,
+        scrollTrigger: {
+          //trigger:"#v-spacer-1",
+          trigger: ".moreContent",
+          markers: true,
+          scrub: true,
+          //start: "top top",
+          start: "+=200",
+          end: "+=600",
+        },
+      },
+      "+=1"
+    );
+    gsap.fromTo(
+      path,
+      {
+        morphSVG: service[i],
+      },
+      {
+        morphSVG: shop[i],
+        duration: 1,
+        immediateRender: false,
+        scrollTrigger: {
+          //trigger:"#v-spacer-2",
+          trigger: ".moreContent",
+          markers: true,
+          scrub: true,
+          //start: "top top",
+          start: "+=1200",
+          end: "+=2000",
+        },
+      },
+      "+=1"
+    );
+    }
   });
 }
 function servicesMoreContentScrollVertical() {
@@ -502,37 +555,38 @@ function wordpressParallax(param) {
   });
 }
 
-function morphIcon(element){
- // MorphSVGPlugin.convertToPath("#responsive circle, #responsive rect");
- // MorphSVGPlugin.convertToPath("#fd circle, #fd rect");
- gsap.set("#Cog path",{visibility:"hidden"});
+function morphIcon(element) {
+  // MorphSVGPlugin.convertToPath("#responsive circle, #responsive rect");
+  // MorphSVGPlugin.convertToPath("#fd circle, #fd rect");
+  gsap.set("#Cog path", { visibility: "hidden" });
   let squarePaths = gsap.utils.toArray(".square path");
   let iconPaths = gsap.utils.toArray("#Cog path");
   //MorphSVGPlugin.convertToPath(".square rect");
-console.log(iconPaths);
-console.log(squarePaths);
-let tl1 = gsap.timeline();
-tl1.to(
-  ".morphcog",{x:0,y:0}
-)
+  console.log(iconPaths);
+  console.log(squarePaths);
+  let tl1 = gsap.timeline();
+  tl1.to(".morphcog", { x: 0, y: 0 });
   $.each(iconPaths, function (indexInArray, valueOfElement) {
     let currentElem = squarePaths[indexInArray];
-      console.log(currentElem);
-      $(valueOfElement).addClass("pujnm");
-      tl1.to(".morphcog", {  
+    console.log(currentElem);
+    $(valueOfElement).addClass("pujnm");
+    tl1.to(
+      ".morphcog",
+      {
         //morphSVG:responsivePaths[indexInArray],
         morphSVG: {
           shape: valueOfElement,
           type: "rotational",
-          origin: "20% 60%" //or "20% 60%,35% 90%" if there are different values for the start and end shapes.
-      },
-        duration:20,
+          origin: "20% 60%", //or "20% 60%,35% 90%" if there are different values for the start and end shapes.
+        },
+        duration: 20,
         // scrollTrigger: {
         //   trigger: ".service-background",
         //   scrub: true,
         //   //pin: true
         // }
-      },">");
-      
-});
+      },
+      ">"
+    );
+  });
 }

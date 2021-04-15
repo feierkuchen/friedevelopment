@@ -86,6 +86,18 @@ div {
   height: 100%;
 }
 
+.background {
+  width: 100vw;
+  height: 100vh;
+  background: #3E1E68;
+}
+
+.square {
+  position: absolute;
+  top: 200px;
+  left: 20px;
+}
+
 header .cta {
   top: 0;
 }
@@ -324,8 +336,7 @@ body {
   font-weight: 400;
 }
 
-.service-container .service-card .service-title,
-.service-container .service-card i {
+.service-container .service-card .service-title {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -336,14 +347,17 @@ body {
 }
 
 .service-container .icon {
-  width: 30vw;
-  padding-right: 6vw;
+  height: 20vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.service-container .icon #services-svg {
+  visibility: hidden;
 }
 
 .service-container .moreContentOver .overlay {
@@ -409,6 +423,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   min-height: 70vh;
   width: 80vw;
   margin-right: 10vw;
@@ -528,6 +545,11 @@ body {
   padding: 2vh 2vw;
 }
 
+.responsive svg {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
 .responsive .cls-1 {
   fill: #383838;
 }
@@ -558,6 +580,7 @@ body {
 }
 
 .responsive #ipod {
+  display: none;
   width: 5vw;
   font-size: 0vh;
 }
@@ -570,6 +593,7 @@ body {
 }
 
 .responsive #phone {
+  display: none;
   width: 10vw;
   right: 15vw;
   font-size: 13px;
@@ -577,7 +601,8 @@ body {
 
 .responsive #tablet {
   width: 14vw;
-  right: 0;
+  right: 20;
+  bottom: 0;
   font-size: 20px;
 }
 
@@ -719,5 +744,16 @@ body {
   width: 50vw;
   position: relative;
   right: 180px;
+}
+
+#services path, #shop path {
+  visibility: hidden;
+}
+
+.v-spacer {
+  border: 1px solid green;
+  height: 90vh;
+  width: 100%;
+  scroll-snap-align: center;
 }
 /*# sourceMappingURL=styles.css.map */

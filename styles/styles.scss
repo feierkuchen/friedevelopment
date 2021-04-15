@@ -1,7 +1,7 @@
 $gray: #2c2c2c;
 //$gray:white;
 $red: rgba(148, 0, 0, 1);
-$dark-blue: rgba(0, 100, 148, 1);
+$dark-blue: #006494;
 $middle-blue: #1d71b8;
 $light-blue: #36a9e1;
 $highlight: rgba(26, 188, 156, 1);
@@ -14,6 +14,7 @@ $highlight: rgba(26, 188, 156, 1);
   box-sizing: border-box;
 }
 body {
+  //overflow: hidden;
   background: $gray;
   //padding: 2vh 6vw;
   position: relative;
@@ -136,7 +137,56 @@ div {
   //   visibility: hidden;
   // }
 }
+.background {
+  width: 100vw;
+  height: 100vh;
+  background: #3E1E68;
+}
 
+// $particleSize: 20vmin;
+// $animationDuration: 6s;
+// $amount: 20;
+// .background span {
+//   width: $particleSize;
+//   height: $particleSize;
+//   border-radius: $particleSize;
+//   backface-visibility: hidden;
+//   position: absolute;
+//   animation-name: move;
+//   animation-duration: $animationDuration;
+//   animation-timing-function: linear;
+//   animation-iteration-count: infinite;
+//   $colors: (
+//     #583C87,
+//     #E45A84,
+//     #FFACAC,
+//     $light-blue
+//   );
+//   @for $i from 1 through $amount {
+//     &:nth-child(#{$i}) {
+//       color: nth($colors, random(length($colors)));
+//       top: random(100) * 1%;
+//       left: random(100) * 1%;
+//       animation-duration: (random($animationDuration * 10) / 10) * 1s + 10s;
+//       animation-delay: random(($animationDuration + 10s) * 10) / 10 * -1s;
+//       transform-origin: (random(50) - 25) * 1vw (random(50) - 25) * 1vh;
+//       $blurRadius: (random() + 0.5) * $particleSize * 0.5;
+//       $x: if(random() > 0.5, -1, 1);
+//       box-shadow: ($particleSize * 2 * $x) 0 $blurRadius currentColor;
+//     }
+//   }
+// }
+
+// @keyframes move {
+//   100% {
+//     transform: translate3d(0, 0, 1px) rotate(360deg);
+//   }
+// }
+.square{
+  position: absolute;
+  top:200px;
+  left:20px;
+}
 header {
   .cta {
     top: 0;
@@ -373,8 +423,7 @@ body {
       font-size: clamp(16px, 3vw, 20px);
       font-weight: 400;
     }
-    .service-title,
-    i {
+    .service-title {
       align-self: center;
     }
   }
@@ -385,10 +434,11 @@ body {
   }
 
   .icon {
-    width: 30vw;
-    padding-right: 6vw;
+    height: 20vh;
+   // padding-right: 6vw;
     display: flex;
     justify-content: center;
+    #services-svg{visibility: hidden;}
   }
   .moreContentOver .overlay {
     height: 100%;
@@ -434,6 +484,7 @@ body {
         padding: 6vh 3vw;
         display: flex;
         flex-direction: column;
+        align-items: center;
         min-height: 70vh;
         width: 80vw;
         margin-right: 10vw;
@@ -546,6 +597,9 @@ body {
   background-image: radial-gradient(circle, #ffffff, #c5c5c5, #8e8e8e, #5b5b5b, #2c2c2c);
 }
 .responsive {
+  svg{
+    transform:scale(.8);
+  }
   position: relative;
   //width: 80%;
   height: 60vh;
@@ -576,6 +630,7 @@ body {
   }
 
   #ipod {
+    display: none;
     width: 5vw;
     //top:20vh;
     font-size: 0vh;
@@ -588,6 +643,7 @@ body {
   }
 
   #phone {
+    display: none;
     width: 10vw;
     right: 15vw;
     //bottom: 0px;
@@ -595,7 +651,8 @@ body {
   }
   #tablet {
     width: 14vw;
-    right:0;
+    right:20;
+    bottom: 0;
     font-size:20px;
   }
   #laptop {
@@ -733,4 +790,16 @@ body {
     // }
     // border: 1px solid red;
   }
+}
+
+ #services, #shop{
+  path{
+    visibility: hidden;
+  }
+}
+.v-spacer{
+  border:1px solid green;
+  height:90vh;
+  width:100%;
+    scroll-snap-align: center;
 }
