@@ -1,50 +1,39 @@
-//gsap.registerPlugin(DrawSVGPlugin);
-gsap.registerPlugin(Flip, MorphSVGPlugin, DrawSVGPlugin);
+gsap.registerPlugin(ScrollTrigger, MorphSVGPlugin);
 
 if (true) {
-   frieDevelopment();
+  frieDevelopment();
   //morphIcon();
   logoFlip();
   //heroText();
   heroAnim();
   //wordpressParallax();
   servicesMoreContentMorph();
+  //servicesMoreContentScrollVertical();
   // // services();
-  // welcomeText();
+  welcomeText();
 }
 
-// gsap.registerPlugin(ScrollTrigger);
-// gsap.registerPlugin(MotionPathPlugin);
 function frieDevelopment(param) {
-  // gsap.set(".fdContainer",
-  // {y:50%});
   const tweenpin = gsap.timeline({
     scrollTrigger: {
-      //s:true,
       trigger: ".frieDevelopment",
       start: "top top",
       end: "+=2000",
-      //scrub:true,
       pin: true,
     },
   });
-  //timelinge fürs logo erscheinen und in den header laufen
+  //timelinge fürs logo erscheinen
   const tween = gsap.timeline({
     scrollTrigger: {
-      //  markers:true,
       trigger: ".triggerLogo",
       start: "top top",
       end: "+=1000",
       scrub: 1,
-      //pin: true
     },
     defaults: { duration: 0.1 },
   });
 
-  //let de = $("path", "#fd");
   let de = gsap.utils.toArray("#fd path");
-  //tween.to(de, { autoAlpha: 1});
-  //tween.to(".cta", { autoAlpha: 1});
 
   gsap.set("#hero-cta-svg", { position: "fixed" });
   gsap.set("#hero-cta-svg", { y: 0 });
@@ -63,104 +52,10 @@ function frieDevelopment(param) {
       tween.set(".fd .fd-dev-e", { display: "none" });
 
     tween.from(valueOfElement, {
-      //duration: 60,
-      //duration: 1,
-      //display:"none",
       autoAlpha: 0,
       ease: Linear.easeNone,
-      //delay:10
     });
   });
-
-  //   //MorphSVGPlugin.convertToPath("#responsive circle, #responsive rect");
-  //  // MorphSVGPlugin.convertToPath("#fd circle, #fd rect");
-  //   let logoPaths = gsap.utils.toArray("#fd path");
-  //   let responsivePaths = gsap.utils.toArray("#responsive path");
-  // console.log(logoPaths);
-  // console.log(responsivePaths);
-  //   // tween.set(".fd",{attr: {viewBox: "0 0 2000 200"}});
-  //   // tween.set(".fd path",{autoAlpha:1});
-  // console.log("responsivePaths.length ", responsivePaths.length);
-  //   $.each(logoPaths, function (indexInArray, valueOfElement) {
-  //     let currentElem = $(valueOfElement);
-  //     let currentTarget = $(responsivePaths[indexInArray]);
-  //     // console.log(indexInArray);
-  //     // console.log(currentElem.is(":visible"));
-  //     // console.log(currentElem);
-  //     // console.log(currentElem.attr("class"));
-  //     // console.log(currentTarget);
-
-  //     //   console.log(currentTarget.attr("class"));
-
-  //     // if (currentTarget.hasClass("screen"))
-  //     // {
-  //     //  console.log("hasscreen--------------------------------YYYYYYYYY");
-  //     // // currentElem.parent().append('<foreignObject class="screen" transform="translate(-55.98 -97.41)" width="718.25" height="412.39"><div class="heroContainer"><div class="hrT-wp light">Wordpress</div><div class="hrT-ws middle">Webseiten</div><div class="hrT-sa dark">mit Spaß und Anspruch</div> <i class="fab fa-wordpress-simple wordpress parallax"></i> </div></foreignObject> ');
-  //     //   //console.log("currentTarget.parent()",currentTarget.parent());
-  //     //   return;
-  //     // }
-  //     if (responsivePaths[indexInArray] &&
-  //       (indexInArray <= responsivePaths.length)
-  //      // && $(responsivePaths[indexInArray]).prop("tagName") != "foreignObject"
-  //       // && $(responsivePaths[indexInArray]).prop("tagName") != "circle"
-  //       // && currentElem.is(":visible")
-  //       //(currentElem.is(":visible") || currentElem.hasClass("ph") )
-
-  //     )
-  //     {
-  //       tween.to(currentElem, {
-  //         //morphSVG:responsivePaths[indexInArray],
-  //         morphSVG: {
-  //           shape: responsivePaths[indexInArray],
-  //           type: "rotational",
-  //           origin: "20% 60%" //or "20% 60%,35% 90%" if there are different values for the start and end shapes.
-  //       },
-  //         onComplete:function(el, target){
-  //           console.log("el", el);
-  //           console.log("d,",target);
-  //           el.addClass(target.attr("class"));
-  //         },
-  //         onCompleteParams:[currentElem,currentTarget],
-  //         duration:0.2
-  //       });
-
-  //     }
-
-  //     console.log("--------------........................-");
-
-  //   });
-  //   // tween.set(".phone-screen foreignObject",{width:"143.41", height:"206.31"});
-  //   // tween.set(".phone-screen",{x:"580.55px",y:"831.33px"});
-  //   tween.to("#responsive .screen", {autoAlpha:1});
-  //   tween.to(".hide", {autoAlpha:0});
-
-  // tween.to(".fd-friede-f", {morphSVG:"#desktop .morph"});
-  // tween.set("#desktop",{autoAlpha:1});
-  // tween.to(".fd-friede-r", {morphSVG:"#phone .morph"});
-  // tween.set("#phone",{autoAlpha:1});
-  // tween.to(".fd-friede-i", {morphSVG:"#tablet .morph"});
-  // tween.set("#tablet",{autoAlpha:1});
-  // tween.to(".fd-friede-e", {morphSVG:"#laptop .morph"});
-  // tween.set("#laptop",{autoAlpha:1});
-  // tween.to(".fd-de-d", {morphSVG:"#watch .morph"});
-  // tween.set("#watch",{autoAlpha:1});
-  // tween.to(".fd-de-e", {morphSVG:"#ipod .morph"});
-  // tween.set("#ipod",{autoAlpha:1});
-
-  // tween.to("#hero-cta-svg",
-  // {duration:20, autoAlpha:1});
-
-  // tween.add(logoFlip(),"+=10");
-  //   tween.set("#hero-cta-svg",{position: "absolute"});
-  //  tween.to("#hero-cta-svg",
-  //    {
-  //     position: "fixed",
-  //     duration: 10,
-  //      top:"13px",
-  //      right:"20px",
-  //      left:"unset",
-  //      width:"10vh"
-  //    });
 }
 
 function friedevLogoAnim(selector, scrollTrigger) {
@@ -195,92 +90,37 @@ function friedevLogoAnim(selector, scrollTrigger) {
 }
 
 function logoFlip() {
-  // let states = [ toInitState, toFirstState, toLastState, toInvertState, toPlayState, toEndState ],
-  let stateIndex = 0,
-    //stateIndexWrap = gsap.utils.wrap(0, states.length),
-    logo = document.querySelector(".fdContainer"),
-    cta = document.querySelector(".cta"),
-    originalContainerLogo = document.querySelector(".frieDevelopment"),
-    originalContainerCta = document.querySelector(".btn-container"),
-    finalContainerLogo = document.querySelector(".logo-header");
-  finalontainerCta = document.querySelector(".header-cta");
 
-  //gsap.defaults({ duration: 0.4, overwrite: 'auto' });
+  gsap.set("#fd", {
+    position: "fixed",
+    top: "0",
+    left: "0",
+    right: 0,
+    bottom: 0,
+    margin: "auto auto",
+  });
+  gsap.to("#fd", {
+    // duration: 10,
+    top: "2vh",
+    left: "2vw",
+    right: "unset",
+    height: "5vh",
+    margin: "0",
+    width: "unset",
+    scrollTrigger: {
+      trigger: ".triggerCta",
+      start: "top top-=2500",
+      scrub: 1,
+      ease: "none",
+    },
+  });
 
-  let transitionLogo, transitionCta;
-  transitionLogo && transitionLogo.kill();
-  transitionCta && transitionCta.kill();
-  // reset (put back in original container and remove any inline styles)
-  //originalContainerLogo.appendChild(logo);
-  //    originalContainerCta.appendChild(cta);
-  logo.style.cssText = "";
-  cta.style.cssText = "";
-//gsap.set(".frieDevelopment",{position: "absolute", top:0, left:"20vw"});
-gsap.set("#fd",{position:"fixed",top:"0", left:"0", right:0, bottom:0, margin:"auto auto"});
-gsap.to("#fd",{
-
-   // duration: 10,
-     top:"2vh",
-     left:"2vw",
-     right:"unset",
-     height:"5vh",
-     margin:"0",
-     width:"unset",
-  scrollTrigger:{
-    trigger:".triggerCta",
-    start:"top top-=2500",
-    scrub:1,
-    ease:"none"
-  }
-});
-
-
-
-//  tween.to("#hero-cta-svg",
-//    {
-//     position: "fixed",
-//     duration: 10,
-//      top:"13px",
-//      right:"20px",
-//      left:"unset",
-//      width:"10vh"
-//    });
-
-  // grab the original state
-  const stateLogo = Flip.getState(logo);
-  const stateCta = Flip.getState(cta);
   gsap.to(".cta", { autoAlpha: 1 });
-  // put into the new container
-  //finalContainerLogo.appendChild(logo);
-  //finalontainerCta.appendChild(cta);
-  // //originalContainerLogo.appendChild(logo);
-  // // FLIP!
-  // transitionLogo = Flip.from(stateLogo, {
-  //   duration: 10,
-  //   ease: "none",
-  
-  // transitionCta = Flip.from(stateCta, {
-  //   duration: 10,
-  //   ease: "none"
-  // })
-  //transitionLogo.add(transitionCta);
-  return transitionLogo;
-  return transitionCta;
 }
 
 function heroAnim() {
-  // const tweenpinhero = gsap.timeline({
-  //   scrollTrigger: {
-  //     //s:true,
-  //     trigger: ".hero",
-  //     start: "top top+=100",
-  //     end: "+=3500",
-  //     //scrub:true,
-  //     pin: true,
-  //   },
-  // });
+
   friedevLogoAnim("#logo-use", {
-    //  markers:true,
     trigger: ".triggerFd",
     start: "top bottom-=200",
     end: "+=500",
@@ -347,33 +187,7 @@ function heroText() {
 }
 
 function welcomeText(param) {
-  // scrollTweenObject = gsap.from(".welcomeText .imgMove", {
 
-  //     scrollTrigger:{
-  //      markers:true,
-  //     trigger:".welcomeText",
-  //     start:"top bottom",
-  //     end:"bottom center",
-  //     scrub:true,
-  // 	},
-  //   	// motionPath: {
-  // 	  //   path: "#scrollPath",
-  // 	  //   align: "#scrollPath",
-  // 	  //   autoRotate: true,
-  // 	  //   start: 1,
-  // 	  //   end: 0
-  //   	// },
-  //     motionPath:[{left:100, top:250}, {left:300, top:0}, {left:500, top:400}],
-  //   	ease: "linear",
-  // });
-  // const tweenWlecomeTextPin = gsap.timeline({
-  //   scrollTrigger: {
-  //     trigger: ".welcomeText",
-  //     start: "top top",
-  //     end: "+=2500",
-  //     pin: true,
-  //   },
-  // });
   const tweenWlecomeText = gsap.timeline({
     scrollTrigger: {
       //markers: true,
@@ -400,25 +214,25 @@ function welcomeText(param) {
     //duration: 0.1,
     scale: 1,
   });
-  // gsap.from(".welcomeContainer .imgMove", {
-  //   duration: 0.2,
-  //   y: "-=100vh",
-  //   //opacity:0,
-  //   ease: Linear.easeNone,
-  //   scrollTrigger: {
-  //     //  markers:true,
-  //     trigger: ".welcomeContainer",
-  //     start: "top bottom",
-  //     end: "bottom center",
-  //     scrub: true,
-  //     // pin: true
-  //   },
-  // });
+
 }
 function servicesMoreContentMorph() {
   let container = document.getElementById("moreContent");
-  const colors = ["#1d71b8", "#36a9e1", "rgba(26, 188, 156, 1)","rgba(0, 100, 148, 1)", "#EA7D00", "#F4B66E", "#F49F3D"];
-  const blues = ["#1d71b8", "#36a9e1", "rgba(26, 188, 156, 1)","rgba(0, 100, 148, 1)"];
+  const colors = [
+    "#1d71b8",
+    "#36a9e1",
+    "rgba(26, 188, 156, 1)",
+    "rgba(0, 100, 148, 1)",
+    "#EA7D00",
+    "#F4B66E",
+    "#F49F3D",
+  ];
+  const blues = [
+    "#1d71b8",
+    "#36a9e1",
+    "rgba(26, 188, 156, 1)",
+    "rgba(0, 100, 148, 1)",
+  ];
   MorphSVGPlugin.convertToPath(".icon line");
   MorphSVGPlugin.convertToPath(".icon rect");
   const tweenServicesPin = gsap.timeline({
@@ -426,158 +240,152 @@ function servicesMoreContentMorph() {
       trigger: ".service",
       start: "top top+=80vh",
       end: "+=5000",
-      pin: true
+      pin: true,
     },
   });
   let tl1 = gsap.timeline({
     scrollTrigger: {
-    //trigger:"#v-spacer-1",
-    trigger: ".moreContent",
-    
-    scrub: 1,
-    //start: "top top",
-    start: "+=200",
-    end: "+=2000",
-  }});
+      //trigger:"#v-spacer-1",
+      trigger: ".moreContent",
+
+      scrub: 1,
+      //start: "top top",
+      start: "+=200",
+      end: "+=2000",
+    },
+  });
   let design = gsap.utils.shuffle(gsap.utils.toArray("#design path"));
   let service = gsap.utils.shuffle(gsap.utils.toArray("#services path"));
   let shop = gsap.utils.shuffle(gsap.utils.toArray("#shop path"));
   let seo = gsap.utils.shuffle(gsap.utils.toArray("#seo path"));
   console.log(design, service);
-    //tl1.from(".icon #design path", {duration:200,stagger: 0.1, drawSVG: 0},"+=50");
-      tl1.to(
-        ".service-d",
-        {
-          autoAlpha:0,
-          duration:200,
-        },
-        "+=50"
-      );
-      tl1.to(
-        ".service-background",
-        {
-          "background-image": "linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%)",
-          duration:200,
-        },
-        "+=50"
-      );
-      tl1.to(
-        ".service-fs",
-        {
-          autoAlpha:1,
-          duration:200,
-        },
-        "+=50"
-      );
-      
-      tl1.to(
-        ".service-fs",
-        {
-          autoAlpha:0,
-          duration:200,
-        },
-        "+=50"
-      );
-      tl1.to(
-        ".service-background",
-        {
-          "background-image": "linear-gradient(90deg, #FAD961 0%, #F76B1C 100%)",
-          
-          //background:"red",
-          duration:200,
-     
-        },
-        "+=50"
-      );
-      tl1.to(
-        ".service-os",
-        {
-          autoAlpha:1,
-          duration:200,
-        },
-        "+=50"
-      );
-      tl1.to(
-        ".service-os",
-        {
-          autoAlpha:0,
-          duration:200,
-        },
-        "+=50"
-      );
-      tl1.to(
-        ".service-background",
-        {
+  //tl1.from(".icon #design path", {duration:200,stagger: 0.1, drawSVG: 0},"+=50");
+  tl1.to(
+    ".service-d",
+    {
+      autoAlpha: 0,
+      duration: 200,
+    },
+    "+=50"
+  );
+  tl1.to(
+    ".service-background",
+    {
+      "background-image": "linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%)",
+      duration: 200,
+    },
+    "+=50"
+  );
+  tl1.to(
+    ".service-fs",
+    {
+      autoAlpha: 1,
+      duration: 200,
+    },
+    "+=50"
+  );
 
-          "background-image": "linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%)",
-          
-          //background:"red",
-          duration:200,
-     
-        },
-        "+=50"
-      );
-      tl1.to(
-        ".service-seo",
-        {
-          autoAlpha:1,
-          duration:200,
-        },
-        "+=50"
-      );
-      
+  tl1.to(
+    ".service-fs",
+    {
+      autoAlpha: 0,
+      duration: 200,
+    },
+    "+=50"
+  );
+  tl1.to(
+    ".service-background",
+    {
+      "background-image": "linear-gradient(90deg, #FAD961 0%, #F76B1C 100%)",
+
+      //background:"red",
+      duration: 200,
+    },
+    "+=50"
+  );
+  tl1.to(
+    ".service-os",
+    {
+      autoAlpha: 1,
+      duration: 200,
+    },
+    "+=50"
+  );
+  tl1.to(
+    ".service-os",
+    {
+      autoAlpha: 0,
+      duration: 200,
+    },
+    "+=50"
+  );
+  tl1.to(
+    ".service-background",
+    {
+      "background-image":
+        "linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%)",
+
+      //background:"red",
+      duration: 200,
+    },
+    "+=50"
+  );
+  tl1.to(
+    ".service-seo",
+    {
+      autoAlpha: 1,
+      duration: 200,
+    },
+    "+=50"
+  );
+
   design.forEach((path, i) => {
-    if ($(service[i]).hasClass("transp"))
-    return
-    if (service[i] == undefined){
+    if ($(service[i]).hasClass("transp")) return;
+    if (service[i] == undefined) {
       console.log("und");
-      tl1.set(path,{autoAlpha:0},"1");
-    }
-
-    else{
+      tl1.set(path, { autoAlpha: 0 }, "1");
+    } else {
       tl1.to(
-      path,
-      {
-        morphSVG: service[i],
-        duration:600,
-        fill:gsap.utils.random(blues)
-      },
-      "1"
-    );
+        path,
+        {
+          morphSVG: service[i],
+          duration: 600,
+          fill: gsap.utils.random(blues),
+        },
+        "1"
+      );
 
-    tl1.fromTo(
-      path,
-      {
-        morphSVG: service[i],
-        duration:600,
-        fill:gsap.utils.random(colors)
-      },
-      {
-        morphSVG: shop[i],
-        immediateRender: false,
-        duration:600,
-        fill:gsap.utils.random(colors)
-      },
-      "900"
-    );
+      tl1.fromTo(
+        path,
+        {
+          morphSVG: service[i],
+          duration: 600,
+          fill: gsap.utils.random(colors),
+        },
+        {
+          morphSVG: shop[i],
+          immediateRender: false,
+          duration: 600,
+          fill: gsap.utils.random(colors),
+        },
+        "900"
+      );
 
-    tl1.fromTo(
-      path,
-      {
-        morphSVG: service[i],
-        duration:600,
-        fill:gsap.utils.random(colors)
-      },
-      {
-        morphSVG: seo[i],
-        immediateRender: false,
-        duration:600,
-        fill:gsap.utils.random(colors)
-      },
-      "900"
-    );
-
-    
+      tl1.fromTo(
+        path,
+        {
+          morphSVG: service[i],
+          duration: 600,
+          fill: gsap.utils.random(colors),
+        },
+        {
+          morphSVG: seo[i],
+          immediateRender: false,
+          duration: 600,
+          fill: gsap.utils.random(colors),
+        },
+        "900"
+      );
     }
   });
 }
@@ -659,14 +467,7 @@ $(".more").click(function (e) {
 });
 
 function wordpressParallax(param) {
-  // const tweenWordpress = gsap.timeline({
-  //   scrollTrigger: {
-  //     trigger: ".heroText",
-  //     start: "top top",
-  //     scrub: true
-  //     //pin: true
-  //   }
-  // });
+
   gsap.to(".wordpress", {
     duration: 0.2,
     yPercent: -80,
