@@ -61,13 +61,6 @@ header {
   z-index: 999;
   width: 100%;
   padding: 2vh 2vw;
-  background: #be0014;
-  background: -webkit-gradient(linear, left top, left bottom, from(#be0014), to(rgba(224, 17, 17, 0)));
-  background: linear-gradient(180deg, #be0014 0%, rgba(224, 17, 17, 0) 100%);
-  background: #2c2c2c;
-  background: -webkit-gradient(linear, left top, left bottom, from(#2c2c2c), to(rgba(44, 44, 44, 0)));
-  background: linear-gradient(180deg, #2c2c2c 0%, rgba(44, 44, 44, 0) 100%);
-  background: #2c2c2c;
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(44, 44, 44, 0)), color-stop(20%, rgba(44, 44, 44, 0.625088)), color-stop(37%, rgba(44, 44, 44, 0.742735)), color-stop(64%, #2c2c2c), to(#2c2c2c));
   background: linear-gradient(0deg, rgba(44, 44, 44, 0) 0%, rgba(44, 44, 44, 0.625088) 20%, rgba(44, 44, 44, 0.742735) 37%, #2c2c2c 64%, #2c2c2c 100%);
 }
@@ -197,11 +190,6 @@ body {
   left: 80vw;
 }
 
-.frieDevelopment {
-  /*END BASE BUTTON*/
-  /*ROTATE*/
-}
-
 .frieDevelopment .btn-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -230,139 +218,13 @@ body {
   display: none;
 }
 
-.frieDevelopment .simple-btn {
-  font-size: 2em;
-  font-weight: bold;
-  color: #940000;
-  background: none;
-  -webkit-text-fill-color: initial !important;
-}
-
-.frieDevelopment .btn-red {
-  background: linear-gradient(45deg, #940000 0%, #1abc9c 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#940000', endColorstr='#1abc9c', GradientType=1 );
-}
-
-.frieDevelopment .btn-myblue {
-  background: linear-gradient(45deg, #36a9e1 0%, #006494 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006494', endColorstr='#1abc9c', GradientType=1 );
-}
-
-.frieDevelopment .btn-exp,
-.frieDevelopment .btn-exp::before {
-  font-weight: 400 !important;
-  background: linear-gradient(45deg, #36a9e1 0%, #006494 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#36A9E1', endColorstr='#1abc9c', GradientType=1 );
-}
-
-.frieDevelopment .btn,
-.frieDevelopment .btn::before {
-  background: linear-gradient(45deg, #499bea 0%, #1abc9c 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#1abc9c', GradientType=1 );
-  font-weight: 400 !important;
-}
-
-.frieDevelopment .button:after {
-  background: #2c2c2c;
-  background: white;
-}
-
-.frieDevelopment .button {
-  display: inline-block;
-  position: relative;
-  border-radius: 3px;
-  text-decoration: none;
-  padding: 0.5em;
-  margin: 0.5em;
-  font-size: 2em;
-  font-weight: bold;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.frieDevelopment .button:hover {
-  text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.75);
-}
-
-.frieDevelopment .button:hover:after {
-  left: 100%;
-  top: 100%;
-  bottom: 100%;
-  right: 100%;
-}
-
-.frieDevelopment .button:before {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
-  border-radius: 5px;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-.frieDevelopment .button:after {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 2px;
-  top: 2px;
-  bottom: 2px;
-  right: 2px;
-  z-index: -1;
-  border-radius: 5px;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-.frieDevelopment .button2 {
-  display: inline-block;
-  font-size: 2em;
-  margin: 0.5em;
-  padding: 0.5em;
-  border-radius: 5px;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  -webkit-filter: hue-rotate(0deg);
-          filter: hue-rotate(0deg);
-  color: #fff;
-  text-decoration: none;
-}
-
-.frieDevelopment .rot-360-noscoop:hover {
-  -webkit-filter: hue-rotate(360deg);
-          filter: hue-rotate(360deg);
-  -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
-}
-
-.frieDevelopment .rot-135:hover {
-  -webkit-filter: hue-rotate(135deg);
-          filter: hue-rotate(135deg);
-}
-
-.frieDevelopment .rot-90:hover {
-  -webkit-filter: hue-rotate(90deg);
-          filter: hue-rotate(90deg);
-}
-
-.galleryWrapper {
-  background-color: rebeccapurple;
-}
-
-#gallery3d {
-  width: 50%;
-  margin: auto;
+.triggerCta {
+  border: 1px solid green;
 }
 
 .heroText,
-.service {
+.service,
+.hero {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -370,6 +232,12 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.hero {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .service-container {
@@ -620,14 +488,39 @@ body {
   width: 100vw;
 }
 
-.hero {
-  background-color: #FFDEE9;
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#FFDEE9), to(#B5FFFC));
-  background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+@-webkit-keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
 }
 
 .responsive {
   position: relative;
+  background-color: #FFDEE9;
+  background-image: linear-gradient(45deg, #FFDEE9 0%, #B5FFFC 100%);
+  background-image: linear-gradient(45deg, #36a9e1 0%, #1d71b8 50%, #006494 100%);
+  background-position: left;
+  background-size: 200%;
+  -webkit-animation: bg-animation 15s infinite;
+          animation: bg-animation 15s infinite;
   height: 60vh;
   padding: 2vh 2vw;
 }
@@ -673,7 +566,7 @@ body {
 }
 
 .responsive #desktop {
-  width: 50vw;
+  width: clamp(20px, 95vw, 1000px);
   left: 10vw;
   bottom: 0;
   font-size: 60px;
@@ -688,6 +581,7 @@ body {
 
 .responsive #tablet {
   width: 14vw;
+  width: clamp(20px, 20vw, 270px);
   right: 20;
   bottom: 0;
   font-size: 20px;
@@ -695,6 +589,7 @@ body {
 
 .responsive #laptop {
   width: 40vw;
+  width: clamp(20px, 90vw, 800px);
   bottom: 0;
   right: 20vw;
   font-size: 35px;
@@ -717,25 +612,6 @@ body {
 .responsive .heroContainer svg {
   margin-bottom: 130px;
   position: relative;
-}
-
-.heroText {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.hrT-wp,
-.hrT-ws {
-  font-weight: 900;
 }
 
 .welcomeText {

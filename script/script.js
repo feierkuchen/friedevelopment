@@ -18,7 +18,7 @@ function frieDevelopment(param) {
     scrollTrigger: {
       trigger: ".frieDevelopment",
       start: "top top",
-      end: "+=2000",
+      end: "+=2000vh",
       pin: true,
     },
   });
@@ -27,7 +27,7 @@ function frieDevelopment(param) {
     scrollTrigger: {
       trigger: ".triggerLogo",
       start: "top top",
-      end: "+=1000",
+      end: "+=1000vh",
       scrub: 1,
     },
     defaults: { duration: 0.1 },
@@ -104,13 +104,14 @@ function logoFlip() {
     top: "2vh",
     left: "2vw",
     right: "unset",
-    height: "5vh",
+    height: "3vh",
     margin: "0",
     width: "unset",
     scrollTrigger: {
       trigger: ".triggerCta",
-      start: "top top-=2500",
-      scrub: 1,
+      start: "+=2700vh",
+      end:"+=50vh",
+      scrub: 3,
       ease: "none",
     },
   });

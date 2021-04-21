@@ -208,12 +208,19 @@ body {
     // }
   }
 
-  
-
+} 
+.triggerCta{
+  border: 1px solid green;
+}
 .heroText,
-.service {
+.service, 
+.hero {
   display: flex;
   flex-direction: column;
+}
+.hero{
+  justify-content: flex-end;
+  
 }
 
 .service-container {
@@ -418,18 +425,27 @@ background-image: linear-gradient(132deg, #F4D03F 0%, #16A085 100%);
   height: 100vh;
   width: 100vw;
 }
-
-.hero{
-  //background-image: radial-gradient(circle, #ffffff, #c5c5c5, #8e8e8e, #5b5b5b, #2c2c2c);
-  background-color: #FFDEE9;
-background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
-
+@keyframes bg-animation {
+  0% {background-position: left}
+  50% {background-position: right}
+  100% {background-position: left}
 }
+
 .responsive {
   svg{
     transform:scale(.8);
   }
   position: relative;
+  background-color: #FFDEE9;
+  background-image: linear-gradient(45deg, #FFDEE9 0%, #B5FFFC 100%);
+  //background-image: linear-gradient(45deg, $light-blue 0%, $gray 100%);
+  background-image: linear-gradient(45deg, $light-blue 0%, $middle-blue 50%, $dark-blue 100%);
+  background-position: left;
+  background-size: 200%;
+  animation: bg-animation 15s infinite;
+
+
+
   //width: 80%;
   height: 60vh;
   padding: 2vh 2vw;
@@ -465,7 +481,8 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
     font-size: 0vh;
   }
   #desktop {
-    width: 50vw;
+    width: clamp(20px, 95vw, 1000px);
+    //width:50vw;
     left: 10vw;
     bottom: 0;
     font-size: 60px;
@@ -480,6 +497,7 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
   }
   #tablet {
     width: 14vw;
+    width: clamp(20px, 20vw, 270px);
     right:20;
     bottom: 0;
     font-size:20px;
@@ -487,6 +505,7 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
   #laptop {
     
     width: 40vw;
+    width: clamp(20px, 90vw, 800px);
   bottom: 0;
     right: 20vw;
     font-size: 35px;
