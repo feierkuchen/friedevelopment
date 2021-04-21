@@ -65,87 +65,28 @@ header {
   background: linear-gradient(0deg, rgba(44, 44, 44, 0) 0%, rgba(44, 44, 44, 0.625088) 20%, rgba(44, 44, 44, 0.742735) 37%, #2c2c2c 64%, #2c2c2c 100%);
 }
 
+header .logo-header,
+header .header-cta {
+  height: 3vh;
+}
+
+header .logo-header svg,
+header .header-cta svg {
+  height: 100%;
+}
+
+header .cta {
+  top: 0;
+}
+
+header .cta svg {
+  width: 10px;
+}
+
 section,
 div {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-}
-
-.logo-header, .header-cta {
-  height: 3vh;
-}
-
-.logo-header svg, .header-cta svg {
-  height: 100%;
-}
-
-.scroll-down {
-  padding: auto;
-}
-
-.scroll-down span {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 46px;
-  height: 46px;
-  margin-left: -23px;
-  border: 1px solid #fff;
-  border-radius: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.scroll-down span::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  content: '';
-  width: 44px;
-  height: 44px;
-  -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1);
-          box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1);
-  border-radius: 100%;
-  opacity: 0;
-  -webkit-animation: sdb03 3s infinite;
-  animation: sdb03 3s infinite;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-@-webkit-keyframes sdb03 {
-  0% {
-    opacity: 0;
-  }
-  30% {
-    opacity: 1;
-  }
-  60% {
-    -webkit-box-shadow: 0 0 0 60px rgba(255, 255, 255, 0.1);
-            box-shadow: 0 0 0 60px rgba(255, 255, 255, 0.1);
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes sdb03 {
-  0% {
-    opacity: 0;
-  }
-  30% {
-    opacity: 1;
-  }
-  60% {
-    -webkit-box-shadow: 0 0 0 60px rgba(255, 255, 255, 0.1);
-            box-shadow: 0 0 0 60px rgba(255, 255, 255, 0.1);
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
 }
 
 #fd {
@@ -157,69 +98,6 @@ div {
   right: 0;
   top: 0;
   bottom: 0;
-}
-
-.background {
-  width: 100vw;
-  height: 100vh;
-  background: #3E1E68;
-}
-
-.square {
-  position: absolute;
-  top: 200px;
-  left: 20px;
-}
-
-header .cta {
-  top: 0;
-}
-
-header .cta svg {
-  width: 10px;
-}
-
-body {
-  position: relative;
-}
-
-#hero-cta-svg {
-  visibility: hidden;
-  z-index: 6666;
-  top: 70vh;
-  left: 80vw;
-}
-
-.frieDevelopment .btn-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.frieDevelopment .fdContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  min-height: 100vh;
-}
-
-.frieDevelopment #cta-contact {
-  width: 20%;
-  display: none;
-}
-
-.triggerCta {
-  border: 1px solid green;
 }
 
 .heroText,
@@ -238,6 +116,132 @@ body {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+}
+
+@-webkit-keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
+}
+
+.hero .responsive {
+  position: relative;
+  background-color: #ffdee9;
+  background-image: linear-gradient(45deg, #ffdee9 0%, #b5fffc 100%);
+  background-image: linear-gradient(45deg, #36a9e1 0%, #1d71b8 50%, #006494 100%);
+  background-position: left;
+  background-size: 200%;
+  -webkit-animation: bg-animation 15s infinite;
+          animation: bg-animation 15s infinite;
+  height: 60vh;
+  padding: 2vh 2vw;
+}
+
+.hero .responsive svg {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+.hero .responsive .cls-1 {
+  fill: #383838;
+}
+
+.hero .responsive .cls-2 {
+  fill: #fff;
+}
+
+.hero .responsive .cls-3 {
+  fill: none;
+  stroke: #383838;
+  stroke-miterlimit: 10;
+  stroke-width: 2px;
+}
+
+.hero .responsive svg {
+  position: absolute;
+}
+
+.hero .responsive h3 {
+  font-size: 1em;
+  margin: 3em 0;
+}
+
+.hero .responsive .portrait h3 {
+  font-size: 1em;
+  margin: 10em 0;
+}
+
+.hero .responsive #ipod {
+  display: none;
+  width: 5vw;
+  font-size: 0vh;
+}
+
+.hero .responsive #desktop {
+  width: clamp(20px, 95vw, 1000px);
+  left: 10vw;
+  bottom: 0;
+  font-size: 60px;
+}
+
+.hero .responsive #phone {
+  display: none;
+  width: 10vw;
+  right: 15vw;
+  font-size: 13px;
+}
+
+.hero .responsive #tablet {
+  width: 14vw;
+  width: clamp(20px, 20vw, 270px);
+  right: 20;
+  bottom: 0;
+  font-size: 20px;
+}
+
+.hero .responsive #laptop {
+  width: 40vw;
+  width: clamp(20px, 90vw, 800px);
+  bottom: 0;
+  right: 20vw;
+  font-size: 35px;
+}
+
+.hero .responsive #watch {
+  font-size: 20px;
+}
+
+.hero .responsive .heroContainer {
+  position: relative;
+  padding: 2rem;
+  padding-top: 200px;
+  width: 100%;
+  background: #2c2c2c;
+  background: white;
+  background: #2c2c2c;
+}
+
+.hero .responsive .heroContainer svg {
+  margin-bottom: 130px;
+  position: relative;
 }
 
 .service-container {
@@ -263,6 +267,8 @@ body {
 .service-container .service-card {
   border: 2px, solid, #2c2c2c;
   border-radius: 50px;
+  -webkit-box-shadow: 10px 10px 29px -5px rgba(0, 0, 0, 0.15), 10px 10px 29px -5px rgba(235, 226, 226, 0.38);
+          box-shadow: 10px 10px 29px -5px rgba(0, 0, 0, 0.15), 10px 10px 29px -5px rgba(235, 226, 226, 0.38);
   margin: 1vh 1vw;
   padding: 1vh 1vw;
   display: -webkit-box;
@@ -277,9 +283,14 @@ body {
   width: clamp(100px, 80vw, 600px);
   width: 80vw;
   max-height: 80vh;
+  -webkit-box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.15), -2px -2px 12px rgba(255, 255, 255, 0.08);
+          box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.15), -2px -2px 12px rgba(255, 255, 255, 0.08);
+  -webkit-box-shadow: -2px -2px 12px #1abc9c;
+          box-shadow: -2px -2px 12px #1abc9c;
 }
 
-.service-container .service-card .content p, .service-container .service-card .content .service-title {
+.service-container .service-card .content p,
+.service-container .service-card .content .service-title {
   color: #2c2c2c;
 }
 
@@ -339,7 +350,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 1.2em;
+  font-size: clamp(13px, 2vw, 23px);
 }
 
 .service-container .services.moreContent {
@@ -378,7 +389,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: 70vh;
+  max-height: 60vh;
   width: 80vw;
   margin-right: 10vw;
 }
@@ -466,14 +477,26 @@ body {
   display: none;
 }
 
-.service-background {
+.service-background_out {
   opacity: 0.5;
   position: absolute;
   height: 150%;
   width: 100%;
   top: -6vh;
-  background-color: #F4D03F;
-  background-image: linear-gradient(132deg, #F4D03F 0%, #16A085 100%);
+  background-color: #f4d03f;
+  background-image: linear-gradient(132deg, #f4d03f 0%, #16a085 100%);
+}
+
+.dynamic {
+  position: relative;
+  width: 100%;
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 .wordpress {
@@ -481,137 +504,6 @@ body {
   color: #006494;
   opacity: 0.1;
   position: absolute;
-}
-
-.logo-anim {
-  height: 100vh;
-  width: 100vw;
-}
-
-@-webkit-keyframes bg-animation {
-  0% {
-    background-position: left;
-  }
-  50% {
-    background-position: right;
-  }
-  100% {
-    background-position: left;
-  }
-}
-
-@keyframes bg-animation {
-  0% {
-    background-position: left;
-  }
-  50% {
-    background-position: right;
-  }
-  100% {
-    background-position: left;
-  }
-}
-
-.responsive {
-  position: relative;
-  background-color: #FFDEE9;
-  background-image: linear-gradient(45deg, #FFDEE9 0%, #B5FFFC 100%);
-  background-image: linear-gradient(45deg, #36a9e1 0%, #1d71b8 50%, #006494 100%);
-  background-position: left;
-  background-size: 200%;
-  -webkit-animation: bg-animation 15s infinite;
-          animation: bg-animation 15s infinite;
-  height: 60vh;
-  padding: 2vh 2vw;
-}
-
-.responsive svg {
-  -webkit-transform: scale(0.8);
-          transform: scale(0.8);
-}
-
-.responsive .cls-1 {
-  fill: #383838;
-}
-
-.responsive .cls-2 {
-  fill: #fff;
-}
-
-.responsive .cls-3 {
-  fill: none;
-  stroke: #383838;
-  stroke-miterlimit: 10;
-  stroke-width: 2px;
-}
-
-.responsive svg {
-  position: absolute;
-}
-
-.responsive h3 {
-  font-size: 1em;
-  margin: 3em 0;
-}
-
-.responsive .portrait h3 {
-  font-size: 1em;
-  margin: 10em 0;
-}
-
-.responsive #ipod {
-  display: none;
-  width: 5vw;
-  font-size: 0vh;
-}
-
-.responsive #desktop {
-  width: clamp(20px, 95vw, 1000px);
-  left: 10vw;
-  bottom: 0;
-  font-size: 60px;
-}
-
-.responsive #phone {
-  display: none;
-  width: 10vw;
-  right: 15vw;
-  font-size: 13px;
-}
-
-.responsive #tablet {
-  width: 14vw;
-  width: clamp(20px, 20vw, 270px);
-  right: 20;
-  bottom: 0;
-  font-size: 20px;
-}
-
-.responsive #laptop {
-  width: 40vw;
-  width: clamp(20px, 90vw, 800px);
-  bottom: 0;
-  right: 20vw;
-  font-size: 35px;
-}
-
-.responsive #watch {
-  font-size: 20px;
-}
-
-.responsive .heroContainer {
-  position: relative;
-  padding: 2rem;
-  padding-top: 200px;
-  width: 100%;
-  background: #2c2c2c;
-  background: white;
-  background: #2c2c2c;
-}
-
-.responsive .heroContainer svg {
-  margin-bottom: 130px;
-  position: relative;
 }
 
 .welcomeText {
@@ -709,27 +601,10 @@ body {
   right: 180px;
 }
 
-#services path, #shop path, #seo path {
+#services path,
+#shop path,
+#seo path {
   visibility: hidden;
-}
-
-.v-spacer {
-  border: 1px solid green;
-  height: 90vh;
-  width: 100%;
-  scroll-snap-align: center;
-}
-
-.dynamic {
-  position: relative;
-  width: 100%;
-}
-
-.content {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
 }
 
 .hide {

@@ -7,8 +7,8 @@ if (true) {
   //heroText();
   heroAnim();
   //wordpressParallax();
-  servicesMoreContentMorph();
-  //servicesMoreContentScrollVertical();
+  //servicesMoreContentMorph();
+  servicesMoreContentScrollVertical();
   // // services();
   welcomeText();
 }
@@ -395,7 +395,7 @@ function servicesMoreContentScrollVertical() {
   const tweenServicesPin = gsap.timeline({
     scrollTrigger: {
       trigger: ".service",
-      start: "top +=70vh",
+      start: "top top+=100vh",
       end: "+=" + (container.offsetWidth + 100),
       pin: true,
     },
@@ -406,8 +406,9 @@ function servicesMoreContentScrollVertical() {
       x: () => -container.scrollWidth + "px",
       ease: "none",
       scrollTrigger: {
-        trigger: ".service",
-        start: "top +=100vh",
+        markers:true,
+        trigger: ".service-container",
+        start: "top top-=600vh",
         invalidateOnRefresh: true,
         //pin: true,
         scrub: 1,
