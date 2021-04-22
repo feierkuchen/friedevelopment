@@ -253,17 +253,11 @@ main();
               cloudName: "friede",
               carouselStyle:"none",
               mediaAssets: [
-                {publicId: "originial_wfafcj", mediaType:"3d"}
+                {publicId: "PMlglb_qp0y5q", mediaType:"3d"}
                 //{publicId: "sample"}
                 //{tag: "audi", mediaType:"spin"}
               ]
             });
             
             gallery3d.render();
-            setTimeout(() => {
-              //$("canvas").appendTo(".galleryWrapper");
-              //$("#gallery3d").remove();
-              //$(".galleryWrapper").css("display", "flex");
-              //$("#gallery3d").css("width", "100%");
-            }, 2000);
             }

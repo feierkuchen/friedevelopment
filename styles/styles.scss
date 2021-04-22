@@ -5,12 +5,15 @@ $dark-blue: #006494;
 $middle-blue: #1d71b8;
 $light-blue: #36a9e1;
 $highlight: rgba(26, 188, 156, 1);
+//$font:#E1BAA9;
+$font:white;
 
 * {
   margin: 0;
   padding: 0;
   font-family: "Raleway";
   color: rgba($light-blue, 0.6);
+  color:$font;
   box-sizing: border-box;
 }
 body {
@@ -27,12 +30,14 @@ body {
 }
 
 p {
-  color: rgba($light-blue, 0.6);
+  //color: rgba($light-blue, 0.6);
+  color:$font;
   line-height: 2em;
 }
 h2,
 h3 {
   color: rgba($dark-blue, 0.6);
+  columns: $font;
   line-height: 1em;
   text-align: center;
 }
@@ -113,19 +118,20 @@ div {
   display: flex;
   flex-direction: column;
 }
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
+}
 .hero {
   justify-content: flex-end;
-  @keyframes bg-animation {
-    0% {
-      background-position: left;
-    }
-    50% {
-      background-position: right;
-    }
-    100% {
-      background-position: left;
-    }
-  }
+  
   
   .responsive {
     svg {
@@ -137,13 +143,16 @@ div {
     //background-image: linear-gradient(45deg, $light-blue 0%, $gray 100%);
     background-image: linear-gradient(
       45deg,
-      $light-blue 0%,
-      $middle-blue 50%,
-      $dark-blue 100%
+      $dark-blue 0%,
+      $light-blue 20%,
+      $middle-blue 40%,
+      $light-blue 60%,
+      $dark-blue 80%,
+      $light-blue 100%
     );
     background-position: left;
-    background-size: 200%;
-    animation: bg-animation 15s infinite;
+    background-size: 800%;
+    animation: bg-animation 70s infinite;
   
     //width: 80%;
     height: 60vh;
@@ -243,8 +252,8 @@ div {
   .service-card {
     border: 2px, solid, #2c2c2c;
     border-radius: 50px;
-    box-shadow: 10px 10px 29px -5px rgba(0,0,0,0.15),
-    10px 10px 29px -5px rgba(235, 226, 226, 0.38);
+    // box-shadow: 10px 10px 29px -5px rgba(0,0,0,0.15),
+    // 10px 10px 29px -5px rgba(235, 226, 226, 0.38);
     margin: 1vh 1vw;
     padding: 1vh 1vw;
     display: flex;
@@ -252,18 +261,19 @@ div {
     overflow: hidden;
     flex-direction: column;
     width: clamp(100px, 80vw, 600px);
-    width: 80vw;
-    max-height: 80vh;
-    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.15),
-      -2px -2px 12px rgba(255, 255, 255, 0.08);
-    box-shadow: //2px 4px 6px rgba(0, 0, 0, 0.15),
-      -2px -2px 12px $highlight;
+    width: 95vw;
+    //min-height: 75vh;
+    // box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.15),
+    //   -2px -2px 12px rgba(255, 255, 255, 0.08);
+    // box-shadow: //2px 4px 6px rgba(0, 0, 0, 0.15),
+    //   -2px -2px 12px $light-blue;
 
     //height: 70%;
     .content {
       p,
       .service-title {
         color: $gray;
+        color:$light-blue
       }
     }
     .service-title {
@@ -283,6 +293,10 @@ div {
     // padding-right: 6vw;
     display: flex;
     justify-content: center;
+    
+    i{
+      color:$middle-blue;
+    }
     #services-svg {
       visibility: hidden;
     }
@@ -317,7 +331,7 @@ div {
       width: max-content;
       //    border: #be0014 1px solid;
       //halber viewport-breite card-margin-margin-card
-      margin-left: calc(50vw - 40vw - 3vw - 3vw);
+      margin-left: calc(50vw - 45vw - 3vw - 3vw);
       @media screen and (min-width: 1200px) {
         margin-left: calc(50vw - 400px - 10vw - 3vw);
       }
@@ -336,8 +350,9 @@ div {
         flex-direction: column;
         align-items: center;
         max-height: 60vh;
-        width: 80vw;
+        width: 90vw;
         margin-right: 10vw;
+        min-height: 75vh;
         @media screen and (min-width: 1200px) {
           width: 800px;
           //width: calc(min(800px,80vw));
@@ -375,10 +390,27 @@ div {
       flex-direction: column;
     }
     .service-title {
+      color:white;
+      //visibility: hidden;
+      .darkBl{
+        color: $dark-blue;
+        visibility: visible !important;
+      }
+      .lightBl{
+        color: $light-blue;
+        visibility: visible !important;
+      }
+      .middleBl{
+        color: $middle-blue;
+        visibility: visible !important;
+      }
       display: flex;
       flex-direction: row;
       align-items: end;
+      
+      font-style: italic;
     }
+    
   }
   i {
     font-size: 3em;
@@ -406,16 +438,47 @@ div {
     display: none;
   }
 }
-.service-background_out {
-  opacity: 0.5;
+.service-background {
   position: absolute;
   height: 150%;
   width: 100%;
   top: -6vh;
   background-color: #f4d03f;
   background-image: linear-gradient(132deg, #f4d03f 0%, #16a085 100%);
-
+  background-color: #FF9A8B;
+  background-image: linear-gradient(45deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+  opacity: 0.5;
   //background-image: url("/images/code.PNG");
+  //background-image: linear-gradient(45deg, $gray 0%, $light-blue 100%);
+  background-size: 900%;
+  background-position: left;
+  animation: bg-animation 30s infinite;
+  z-index: -444;
+}
+.service-d{
+  .service-background{
+    background-image: linear-gradient(132deg, $gray 0%, $light-blue 100%);
+  }
+}
+.service-fs{
+  .service-background{
+    background-image: linear-gradient(45deg, $gray 0%, $dark-blue 100%);
+  }
+}
+.service-os{
+  .service-background{
+    background-image: linear-gradient(45deg, $gray 0%, $middle-blue 100%);
+  }
+}
+.service-seo{
+  .service-background{
+    background-image: linear-gradient(125deg, $gray 0%, $light-blue 100%);
+  }
+}
+.service-dev{
+  .service-background{
+    background-image: linear-gradient(184deg, $gray 0%, $dark-blue 100%);
+  }
 }
 
 

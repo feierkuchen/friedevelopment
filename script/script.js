@@ -1,4 +1,4 @@
-gsap.registerPlugin(ScrollTrigger, MorphSVGPlugin);
+gsap.registerPlugin(ScrollTrigger, MorphSVGPlugin, SplitText);
 
 if (true) {
   frieDevelopment();
@@ -9,8 +9,49 @@ if (true) {
   //wordpressParallax();
   //servicesMoreContentMorph();
   servicesMoreContentScrollVertical();
+  titleLikeLogo();
+
   // // services();
   welcomeText();
+}
+
+function titleLikeLogo(param) {
+  $(".frieDevelopment, .hero").hide();
+  let allTitles = gsap.utils.toArray(".service-title");
+  var tl = gsap.timeline(), 
+    mySplitText = new SplitText(".service-title", {type:"words,chars"}), 
+    chars = mySplitText.chars; //an array of all the divs that wrap each character
+    //let shortchars[]
+
+gsap.set(".service-title", {perspective: 400});
+
+tl.from(chars, {duration: 0.8, className:"darkBl", opacity:0, scale:0, y:80, rotationX:180, transformOrigin:"0% 50% -50",  ease:"back", stagger: 0.1}, "+=0");
+tl.from(chars, {duration: 0.8, className:"darkBl", opacity:0, scale:0, y:80, rotationX:180, transformOrigin:"0% 50% -50",  ease:"back", stagger: 0.1}, "+=0");
+
+
+
+  // allTitles.forEach((element) => {
+  //   let val = element.textContent;
+  //   let length = val.length;
+  //   console.log(length);
+  //   let letters = gsap.utils.toArray(val);
+  //   console.log(val);
+  //   console.log(letters);
+  //   val.forEach((letter, i) => {
+  //     let newClass = val.length * 0.25 <= i ? "darkBlue" : "lightBlue";
+  //     newClass = val.length * 0.75 <= i ? newClass : "middleBlue";
+  //     console.log(newClass);
+  //     gsap.to(letter, {
+  //       duration: 10,
+  //       text: {
+  //         //value: (element)=>{element.textContent},
+  //         value: val,
+  //         newClass: newClass,
+  //         delimiter: "",
+  //       },
+  //     });
+  //   });
+  // });
 }
 
 function frieDevelopment(param) {
@@ -90,7 +131,6 @@ function friedevLogoAnim(selector, scrollTrigger) {
 }
 
 function logoFlip() {
-
   gsap.set("#fd", {
     position: "fixed",
     top: "0",
@@ -110,7 +150,7 @@ function logoFlip() {
     scrollTrigger: {
       trigger: ".triggerCta",
       start: "+=2700vh",
-      end:"+=50vh",
+      end: "+=50vh",
       scrub: 3,
       ease: "none",
     },
@@ -120,7 +160,6 @@ function logoFlip() {
 }
 
 function heroAnim() {
-
   friedevLogoAnim("#logo-use", {
     trigger: ".triggerFd",
     start: "top bottom-=200",
@@ -188,7 +227,6 @@ function heroText() {
 }
 
 function welcomeText(param) {
-
   const tweenWlecomeText = gsap.timeline({
     scrollTrigger: {
       //markers: true,
@@ -215,7 +253,6 @@ function welcomeText(param) {
     //duration: 0.1,
     scale: 1,
   });
-
 }
 function servicesMoreContentMorph() {
   let container = document.getElementById("moreContent");
@@ -395,8 +432,8 @@ function servicesMoreContentScrollVertical() {
   const tweenServicesPin = gsap.timeline({
     scrollTrigger: {
       trigger: ".service",
-      start: "top top+=100vh",
-      end: "+=" + (container.offsetWidth + 100),
+      start: "top top+=50vh",
+      end: "+=" + (container.offsetWidth + 1200  +"vh"),
       pin: true,
     },
   });
@@ -406,14 +443,14 @@ function servicesMoreContentScrollVertical() {
       x: () => -container.scrollWidth + "px",
       ease: "none",
       scrollTrigger: {
-        markers:true,
+        markers: true,
         trigger: ".service-container",
         start: "top top-=600vh",
         invalidateOnRefresh: true,
         //pin: true,
         scrub: 1,
         snap: 0.2,
-        end: () => "+=" + container.offsetWidth,
+        end: () => "+=" + container.offsetWidth + "vh",
       },
     });
   }
@@ -469,7 +506,6 @@ $(".more").click(function (e) {
 });
 
 function wordpressParallax(param) {
-
   gsap.to(".wordpress", {
     duration: 0.2,
     yPercent: -80,
