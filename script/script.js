@@ -16,42 +16,35 @@ if (true) {
 }
 
 function titleLikeLogo(param) {
-  $(".frieDevelopment, .hero").hide();
+  //$(".frieDevelopment, .hero").hide();
+
+  //tl.from(chars, {duration: 0.8, className:"darkBl", opacity:0, scale:0, y:80, rotationX:180, transformOrigin:"0% 50% -50",  ease:"back", stagger: 0.1}, "+=0");
+  //tl.from(chars, {duration: 0.8, className:"darkBl", opacity:0, scale:0, y:80, rotationX:180, transformOrigin:"0% 50% -50",  ease:"back", stagger: 0.1}, "+=0");
   let allTitles = gsap.utils.toArray(".service-title");
-  var tl = gsap.timeline(), 
-    mySplitText = new SplitText(".service-title", {type:"words,chars"}), 
-    chars = mySplitText.chars; //an array of all the divs that wrap each character
+  allTitles.forEach((servicetitle) => {
+    
+    var tl = gsap.timeline(),
+      mySplitText = new SplitText(servicetitle, { type: "words,chars" }),
+      chars = mySplitText.chars; //an array of all the divs that wrap each character
     //let shortchars[]
-
-gsap.set(".service-title", {perspective: 400});
-
-tl.from(chars, {duration: 0.8, className:"darkBl", opacity:0, scale:0, y:80, rotationX:180, transformOrigin:"0% 50% -50",  ease:"back", stagger: 0.1}, "+=0");
-tl.from(chars, {duration: 0.8, className:"darkBl", opacity:0, scale:0, y:80, rotationX:180, transformOrigin:"0% 50% -50",  ease:"back", stagger: 0.1}, "+=0");
-
-
-
-  // allTitles.forEach((element) => {
-  //   let val = element.textContent;
-  //   let length = val.length;
-  //   console.log(length);
-  //   let letters = gsap.utils.toArray(val);
-  //   console.log(val);
-  //   console.log(letters);
-  //   val.forEach((letter, i) => {
-  //     let newClass = val.length * 0.25 <= i ? "darkBlue" : "lightBlue";
-  //     newClass = val.length * 0.75 <= i ? newClass : "middleBlue";
-  //     console.log(newClass);
-  //     gsap.to(letter, {
-  //       duration: 10,
-  //       text: {
-  //         //value: (element)=>{element.textContent},
-  //         value: val,
-  //         newClass: newClass,
-  //         delimiter: "",
-  //       },
-  //     });
-  //   });
-  // });
+    let length = chars.length;
+    let firstBreak = length * 0.25;
+    let secondBreak = length * 0.75;
+    let firstLetters = chars.slice(0, firstBreak);
+    let secondLetters = chars.slice(firstBreak, secondBreak);
+    let thirdLetters = chars.slice(secondBreak, length);
+    console.log(chars, firstBreak, firstLetters);
+    gsap.set(".service-title", { perspective: 400 });
+    firstLetters.forEach((letter) => {
+      tl.from(letter, { duration: 0.8, className: "darkBl" });
+    });
+    secondLetters.forEach((letter) => {
+      tl.from(letter, { duration: 0.8, className: "lightBl" });
+    });
+    thirdLetters.forEach((letter) => {
+      tl.from(letter, { duration: 0.8, className: "middleBl" });
+    });
+  });
 }
 
 function frieDevelopment(param) {
@@ -433,7 +426,7 @@ function servicesMoreContentScrollVertical() {
     scrollTrigger: {
       trigger: ".service",
       start: "top top+=50vh",
-      end: "+=" + (container.offsetWidth + 1200  +"vh"),
+      end: "+=" + (container.offsetWidth + 1200 + "vh"),
       pin: true,
     },
   });
