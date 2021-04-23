@@ -1,4 +1,10 @@
-* {
+body {
+  background: #2c2c2c;
+  position: relative;
+  height: 100vh;
+}
+
+main * {
   margin: 0;
   padding: 0;
   font-family: "Raleway";
@@ -8,24 +14,18 @@
           box-sizing: border-box;
 }
 
-body {
-  background: #2c2c2c;
-  position: relative;
-  height: 100vh;
-}
-
-.middle {
+main .middle {
   color: #1d71b8;
   fill: #1d71b8;
 }
 
-p {
+main p {
   color: white;
   line-height: 2em;
 }
 
-h2,
-h3 {
+main h2,
+main h3 {
   color: rgba(0, 100, 148, 0.6);
   -webkit-columns: white;
           columns: white;
@@ -33,12 +33,12 @@ h3 {
   text-align: center;
 }
 
-h3 {
+main h3 {
   font-size: calc(min(8vw, 60px));
   font-weight: 200;
 }
 
-section {
+main section {
   min-height: 100vh;
   margin-bottom: 30vh;
 }

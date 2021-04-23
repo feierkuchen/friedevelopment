@@ -7,46 +7,48 @@ $light-blue: #36a9e1;
 $highlight: rgba(26, 188, 156, 1);
 //$font:#E1BAA9;
 $font: white;
-
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Raleway";
-  color: rgba($light-blue, 0.6);
-  color: $font;
-  box-sizing: border-box;
-}
 body {
   background: $gray;
   //padding: 2vh 6vw;
   position: relative;
   height: 100vh;
 }
+main {
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: "Raleway";
+    color: rgba($light-blue, 0.6);
+    color: $font;
+    box-sizing: border-box;
+  }
 
-.middle {
-  color: #1d71b8;
-  fill: #1d71b8;
-}
 
-p {
-  //color: rgba($light-blue, 0.6);
-  color: $font;
-  line-height: 2em;
-}
-h2,
-h3 {
-  color: rgba($dark-blue, 0.6);
-  columns: $font;
-  line-height: 1em;
-  text-align: center;
-}
-h3 {
-  font-size: calc(min(8vw, 60px));
-  font-weight: 200;
-}
-section {
-  min-height: 100vh;
-  margin-bottom: 30vh;
+  .middle {
+    color: #1d71b8;
+    fill: #1d71b8;
+  }
+
+  p {
+    //color: rgba($light-blue, 0.6);
+    color: $font;
+    line-height: 2em;
+  }
+  h2,
+  h3 {
+    color: rgba($dark-blue, 0.6);
+    columns: $font;
+    line-height: 1em;
+    text-align: center;
+  }
+  h3 {
+    font-size: calc(min(8vw, 60px));
+    font-weight: 200;
+  }
+  section {
+    min-height: 100vh;
+    margin-bottom: 30vh;
+  }
 }
 footer {
   background-color: white;
