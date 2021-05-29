@@ -8,23 +8,23 @@
   --highlight: #FF9FD3;
 }
 
-body {
+body#friedevelopment {
   background: #2c2c2c;
   position: relative;
   height: 100vh;
   margin: 0;
 }
 
-footer {
+body#friedevelopment footer {
   background-color: white;
   min-height: 20vh;
 }
 
-main {
+body#friedevelopment main {
   z-index: 1;
 }
 
-header {
+body#friedevelopment header {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
@@ -43,22 +43,22 @@ header {
   background: linear-gradient(0deg, rgba(44, 44, 44, 0) 0%, #2c2c2c 100%);
 }
 
-header .logo-header,
-header .header-cta {
+body#friedevelopment header .logo-header,
+body#friedevelopment header .header-cta {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
   margin-right: 4vw;
 }
 
-*,
-*::before,
-*::after {
+body#friedevelopment *,
+body#friedevelopment *::before,
+body#friedevelopment *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-.neon-button {
+body#friedevelopment .neon-button {
   margin-right: 40vw !important;
   font-size: 2rem;
   display: inline-block;
@@ -74,7 +74,7 @@ header .header-cta {
   position: relative;
 }
 
-.sneon-button::before {
+body#friedevelopment .sneon-button::before {
   pointer-events: none;
   content: "asdf";
   color: orangered;
@@ -91,7 +91,7 @@ header .header-cta {
   opacity: 0.7;
 }
 
-.funnytext {
+body#friedevelopment .funnytext {
   pointer-events: none;
   content: "asdf";
   color: orangered;
@@ -106,7 +106,7 @@ header .header-cta {
   opacity: 0.5;
 }
 
-.lightanim {
+body#friedevelopment .lightanim {
   pointer-events: none;
   color: orangered;
   position: absolute;
@@ -119,15 +119,15 @@ header .header-cta {
   font-size: 20px;
 }
 
-.testfriede {
+body#friedevelopment .testfriede {
   padding-top: 20%;
 }
 
-.testfreude {
+body#friedevelopment .testfreude {
   padding-top: 20%;
 }
 
-.neon-button::after {
+body#friedevelopment .neon-button::after {
   content: "";
   position: absolute;
   top: 0;
@@ -143,55 +143,55 @@ header .header-cta {
   transition: opacity 100ms linear;
 }
 
-.neon-button:hover,
-.neon-button:focus {
+body#friedevelopment .neon-button:hover,
+body#friedevelopment .neon-button:focus {
   color: var(--clr-bg);
   text-shadow: none;
 }
 
-.neon-button:hover::before,
-.neon-button:focus::before {
+body#friedevelopment .neon-button:hover::before,
+body#friedevelopment .neon-button:focus::before {
   opacity: 1;
 }
 
-.neon-button:hover::after,
-.neon-button:focus::after {
+body#friedevelopment .neon-button:hover::after,
+body#friedevelopment .neon-button:focus::after {
   opacity: 1;
 }
 
-* {
+body#friedevelopment * {
   font-family: "Raleway";
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-main * {
+body#friedevelopment main * {
   margin: 0;
   padding: 0;
 }
 
-main h3 {
+body#friedevelopment main h3 {
   font-family: "Raleway";
 }
 
-main .middle {
+body#friedevelopment main .middle {
   color: #1d71b8;
   fill: #1d71b8;
 }
 
-main p {
+body#friedevelopment main p {
   color: white;
   line-height: 2em;
   color: rgba(54, 169, 225, 0.6);
   color: white;
 }
 
-main h2 {
+body#friedevelopment main h2 {
   text-align: center;
 }
 
-main h2,
-main h3 {
+body#friedevelopment main h2,
+body#friedevelopment main h3 {
   color: rgba(0, 100, 148, 0.6);
   -webkit-columns: white;
           columns: white;
@@ -199,23 +199,23 @@ main h3 {
   text-align: center;
 }
 
-main h3 {
+body#friedevelopment main h3 {
   font-size: calc(min(8vw, 60px));
   font-weight: 200;
 }
 
-main section {
+body#friedevelopment main section {
   min-height: 100vh;
   margin-bottom: 30vh;
 }
 
-section,
-div {
+body#friedevelopment section,
+body#friedevelopment div {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-.fd {
+body#friedevelopment .fd {
   z-index: 100;
   position: fixed;
   margin: auto auto;
@@ -226,12 +226,12 @@ div {
   bottom: 0;
 }
 
-.hero-text-container {
+body#friedevelopment .hero-text-container {
   position: relative;
   height: 100vh;
 }
 
-.hero-text {
+body#friedevelopment .hero-text {
   font-family: 'Kaushan Script', cursive;
   color: var(--highlightrosa);
   font-size: clamp(20px, 15vw, 100px);
@@ -240,18 +240,18 @@ div {
   position: fixed;
 }
 
-.hero-lass {
+body#friedevelopment .hero-lass {
   top: 20vh;
   margin-right: 4vw;
   left: 5vw;
 }
 
-.hero-deine {
+body#friedevelopment .hero-deine {
   top: 60vh;
   right: 2vw;
 }
 
-.hero-kontakt {
+body#friedevelopment .hero-kontakt {
   bottom: 0;
   right: 2vw;
   z-index: 100;
@@ -259,9 +259,9 @@ div {
   font-size: 2em;
 }
 
-.heroText,
-.service,
-.hero {
+body#friedevelopment .heroText,
+body#friedevelopment .service,
+body#friedevelopment .hero {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -295,13 +295,13 @@ div {
   }
 }
 
-.hero {
+body#friedevelopment .hero {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
 }
 
-.hero .responsive {
+body#friedevelopment .hero .responsive {
   position: relative;
   background-color: #ffdee9;
   background-image: linear-gradient(45deg, #ffdee9 0%, #b5fffc 100%);
@@ -315,61 +315,61 @@ div {
   z-index: -2;
 }
 
-.hero .responsive svg {
+body#friedevelopment .hero .responsive svg {
   -webkit-transform: scale(0.8);
           transform: scale(0.8);
 }
 
-.hero .responsive .cls-1 {
+body#friedevelopment .hero .responsive .cls-1 {
   fill: #383838;
 }
 
-.hero .responsive .cls-2 {
+body#friedevelopment .hero .responsive .cls-2 {
   fill: #fff;
 }
 
-.hero .responsive .cls-3 {
+body#friedevelopment .hero .responsive .cls-3 {
   fill: none;
   stroke: #383838;
   stroke-miterlimit: 10;
   stroke-width: 2px;
 }
 
-.hero .responsive svg {
+body#friedevelopment .hero .responsive svg {
   position: absolute;
 }
 
-.hero .responsive h3 {
+body#friedevelopment .hero .responsive h3 {
   font-size: 1em;
   margin: 3em 0;
 }
 
-.hero .responsive .portrait h3 {
+body#friedevelopment .hero .responsive .portrait h3 {
   font-size: 1em;
   margin: 10em 0;
 }
 
-.hero .responsive #ipod {
+body#friedevelopment .hero .responsive #ipod {
   display: none;
   width: 5vw;
   font-size: 0vh;
 }
 
-.hero .responsive #desktop {
+body#friedevelopment .hero .responsive #desktop {
   width: clamp(20px, 95vw, 1000px);
   left: 10vw;
   bottom: 0;
   font-size: 60px;
 }
 
-.hero .responsive #phone {
+body#friedevelopment .hero .responsive #phone {
   display: none;
   width: 10vw;
   right: 15vw;
   font-size: 13px;
 }
 
-.hero .responsive #tablet {
+body#friedevelopment .hero .responsive #tablet {
   width: 14vw;
   width: clamp(20px, 20vw, 270px);
   right: 20;
@@ -377,7 +377,7 @@ div {
   font-size: 20px;
 }
 
-.hero .responsive #laptop {
+body#friedevelopment .hero .responsive #laptop {
   width: 40vw;
   width: clamp(20px, 90vw, 800px);
   bottom: 0;
@@ -385,11 +385,11 @@ div {
   font-size: 35px;
 }
 
-.hero .responsive #watch {
+body#friedevelopment .hero .responsive #watch {
   font-size: 20px;
 }
 
-.hero .responsive .heroContainer {
+body#friedevelopment .hero .responsive .heroContainer {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -408,11 +408,11 @@ div {
   color: #36a9e1;
 }
 
-.hero .responsive .heroContainer svg {
+body#friedevelopment .hero .responsive .heroContainer svg {
   position: relative;
 }
 
-.service-container {
+body#friedevelopment .service-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -427,18 +427,18 @@ div {
 }
 
 @media screen and (min-width: 1200px) {
-  .service-container {
+  body#friedevelopment .service-container {
     padding: 3vh 10vw;
   }
 }
 
-.service-container .vertical-scroll-container {
+body#friedevelopment .service-container .vertical-scroll-container {
   overflow: hidden;
   width: 100%;
   position: relative;
 }
 
-.service-container .card .title-container::before {
+body#friedevelopment .service-container .card .title-container::before {
   content: " ";
   display: block;
   position: absolute;
@@ -454,7 +454,7 @@ div {
   background: linear-gradient(90deg, rgba(44, 44, 44, 0) 0%, #2c2c2c 20%, #2c2c2c 80%, rgba(44, 44, 44, 0) 100%);
 }
 
-.service-container .card .title-container {
+body#friedevelopment .service-container .card .title-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -472,7 +472,7 @@ div {
   justify-items: flex-start;
 }
 
-.service-container .card .title-container .title {
+body#friedevelopment .service-container .card .title-container .title {
   color: white;
   padding: 0 2vh;
   font-weight: 600;
@@ -492,22 +492,22 @@ div {
   font-style: italic;
 }
 
-.service-container .card .title-container .title .darkBl {
+body#friedevelopment .service-container .card .title-container .title .darkBl {
   color: #006494;
   visibility: visible !important;
 }
 
-.service-container .card .title-container .title .lightBl {
+body#friedevelopment .service-container .card .title-container .title .lightBl {
   color: #36a9e1;
   visibility: visible !important;
 }
 
-.service-container .card .title-container .title .middleBl {
+body#friedevelopment .service-container .card .title-container .title .middleBl {
   color: #1d71b8;
   visibility: visible !important;
 }
 
-.service-container .card .icon {
+body#friedevelopment .service-container .card .icon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -516,19 +516,19 @@ div {
           justify-content: center;
 }
 
-.service-container .card .icon #services-svg {
+body#friedevelopment .service-container .card .icon #services-svg {
   visibility: hidden;
 }
 
-.service-container .card .icon svg {
+body#friedevelopment .service-container .card .icon svg {
   height: 20vh;
 }
 
-.service-container .card .extended-content {
+body#friedevelopment .service-container .card .extended-content {
   height: 70%;
 }
 
-.service-container .details-close {
+body#friedevelopment .service-container .details-close {
   position: absolute;
   right: 1vw;
   top: 1vh;
@@ -536,7 +536,7 @@ div {
   display: block;
 }
 
-.service-container .services {
+body#friedevelopment .service-container .services {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -551,7 +551,7 @@ div {
   font-size: clamp(16px, 2vw, 20px);
 }
 
-.service-container .services.moreContent {
+body#friedevelopment .service-container .services.moreContent {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -568,12 +568,12 @@ div {
 }
 
 @media screen and (min-width: 1200px) {
-  .service-container .services.moreContent {
+  body#friedevelopment .service-container .services.moreContent {
     margin-left: calc(50vw - 400px - 10vw - 3vw);
   }
 }
 
-.service-container .services .icon i {
+body#friedevelopment .service-container .services .icon i {
   color: #1d71b8;
   -webkit-background-clip: text;
   font-weight: 900;
@@ -583,11 +583,11 @@ div {
   -webkit-text-fill-color: transparent;
 }
 
-.service-container .services .more {
+body#friedevelopment .service-container .services .more {
   display: none;
 }
 
-.service-container .clickable {
+body#friedevelopment .service-container .clickable {
   color: var(--highlight) !important;
   background-image: none;
   font-size: 35px;
@@ -597,7 +597,7 @@ div {
   z-index: 999999;
 }
 
-.service-container .more {
+body#friedevelopment .service-container .more {
   z-index: 800000;
   cursor: pointer;
   position: absolute;
@@ -606,7 +606,7 @@ div {
   font-size: 0.8em;
 }
 
-.moving-background {
+body#friedevelopment .moving-background {
   position: absolute;
   height: 150%;
   width: 100%;
@@ -622,42 +622,42 @@ div {
   z-index: -444;
 }
 
-.service-d .moving-background {
+body#friedevelopment .service-d .moving-background {
   background-image: linear-gradient(132deg, #2c2c2c 0%, #36a9e1 100%);
   background-position: right;
 }
 
-.service-fs .moving-background {
+body#friedevelopment .service-fs .moving-background {
   background-image: linear-gradient(45deg, #2c2c2c 0%, #006494 100%);
 }
 
-.service-os .moving-background {
+body#friedevelopment .service-os .moving-background {
   background-image: linear-gradient(45deg, #2c2c2c 0%, #1d71b8 100%);
 }
 
-.service-seo .moving-background {
+body#friedevelopment .service-seo .moving-background {
   background-image: linear-gradient(125deg, #2c2c2c 0%, #36a9e1 100%);
 }
 
-.service-dev .moving-background {
+body#friedevelopment .service-dev .moving-background {
   background-image: linear-gradient(184deg, #2c2c2c 0%, #006494 100%);
 }
 
-.wordpress {
+body#friedevelopment .wordpress {
   font-size: 30em;
   color: #006494;
   opacity: 0.1;
   position: absolute;
 }
 
-.welcomeText {
+body#friedevelopment .welcomeText {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   justify-items: center;
 }
 
-.welcomeText .welcomeContainer {
+body#friedevelopment .welcomeText .welcomeContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -671,12 +671,12 @@ div {
   gap: 10vh;
 }
 
-.welcomeText .welcomeContainer .text {
+body#friedevelopment .welcomeText .welcomeContainer .text {
   z-index: 3;
   padding: 2vh 2vw;
 }
 
-.welcomeText .welcomeContainer .image {
+body#friedevelopment .welcomeText .welcomeContainer .image {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -687,7 +687,7 @@ div {
           justify-content: flex-end;
 }
 
-.welcomeText .welcomeContainer .image .imgOverlay {
+body#friedevelopment .welcomeText .welcomeContainer .image .imgOverlay {
   background-color: #2c2c2c;
   position: absolute;
   top: 0;
@@ -700,7 +700,7 @@ div {
 }
 
 @media screen and (min-width: 740px) {
-  .welcomeText .welcomeContainer {
+  body#friedevelopment .welcomeText .welcomeContainer {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -713,13 +713,13 @@ div {
             align-items: center;
     padding: 0 10vw;
   }
-  .welcomeText .welcomeContainer .text {
+  body#friedevelopment .welcomeText .welcomeContainer .text {
     width: 60%;
     padding: 2vh 2vw;
   }
 }
 
-.welcomeText .welcomeContainer .image {
+body#friedevelopment .welcomeText .welcomeContainer .image {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -730,7 +730,7 @@ div {
           justify-content: flex-end;
 }
 
-.welcomeText .welcomeContainer .image .imgMove {
+body#friedevelopment .welcomeText .welcomeContainer .image .imgMove {
   overflow: hidden;
   position: relative;
   width: 28vw;
@@ -739,23 +739,23 @@ div {
   border: 15px solid #006494;
 }
 
-.welcomeText .welcomeContainer .image img {
+body#friedevelopment .welcomeText .welcomeContainer .image img {
   width: 50vw;
   position: relative;
   right: 180px;
 }
 
-#services path,
-#shop path,
-#seo path {
+body#friedevelopment #services path,
+body#friedevelopment #shop path,
+body#friedevelopment #seo path {
   visibility: hidden;
 }
 
-.hide {
+body#friedevelopment .hide {
   visibility: hidden;
 }
 
-.mask {
+body#friedevelopment .mask {
   -webkit-mask-image: url(/images/blobfriede2.svg);
   -webkit-mask-position: center center;
   -webkit-mask-repeat: no-repeat;
@@ -766,7 +766,7 @@ div {
   mask-size: cover;
 }
 
-.contact {
+body#friedevelopment .contact {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -775,7 +775,7 @@ div {
           justify-content: center;
 }
 
-.logo-use {
+body#friedevelopment .logo-use {
   display: none;
 }
 /*# sourceMappingURL=styles.css.map */
