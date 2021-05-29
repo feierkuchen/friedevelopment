@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://s3.deovr.com/version/1/css/styles.css" />
     <link rel="stylesheet" href="styles/bennett.css">
+
 </head>
+
 <body>
     <section class="section">
-        <div class="col"><div id="gallery3d"></div></div>
+        <div class="col">
+            <div id="gallery3d"></div>
+        </div>
         <div class="col">
             <div>
-            <babylon model="https://res.cloudinary.com/friede/image/upload/v1616781438/scene_znproh.glb" height="200px"></babylon>
+                <babylon model="https://res.cloudinary.com/friede/image/upload/v1616781438/scene_znproh.glb"
+                    height="200px"></babylon>
+            </div>
         </div>
-        </div>
-    
-</section>
-<!-- <babylon templates.main.params.fill-screen="true">
+
+    </section>
+    <!-- <babylon templates.main.params.fill-screen="true">
     <scene glow="true">
         <main-color r="0.8" g="0.8" b="0.6"></main-color>
     </scene>
@@ -29,29 +36,50 @@
     </model>
     <camera beta="0.8" lowerRadiusLimit="1000" upperRadiusLimit="0" radius="10"></camera>
 </babylon> -->
-<babylon >
-    <scene >
-        <!-- Set the scene's main color (for both skybox and ground) -->
-        <main-color r="0.8" g="0.8" b="0.6"></main-color>
-        <!-- Enable and set the image processing configuration -->
-        
-    </scene>
-    <model url="https://res.cloudinary.com/friede/image/upload/v1616781438/scene_znproh.glb">
-        <animation auto-start="true"></animation>
-    </model>
-</babylon>
+    <babylon>
+        <scene>
+            <!-- Set the scene's main color (for both skybox and ground) -->
+            <main-color r="0.8" g="0.8" b="0.6"></main-color>
+            <!-- Enable and set the image processing configuration -->
 
-<!-- <script src="https://cdn.babylonjs.com/babylon.js"></script> -->
-<!-- <script src="https://cdn.babylonjs.com/babylon.max.js"></script> -->
-<!-- <script src="script/babylonjs.loaders.js"></script> -->
-<script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+        </scene>
+        <model url="https://res.cloudinary.com/friede/image/upload/v1616781438/scene_znproh.glb">
+            <animation auto-start="true"></animation>
+        </model>
+    </babylon>
+    <div class="section">
+        <div class="video-wrapper">
+            <deo-video  aspect="16:9">
+                <figure-style left="0%"  margin-block-end="0%" margin-block-start="0%"
+                    aspect="16:9" format="mono" angle="360" title="Wald Bach"
+                    cover-image="https://res.cloudinary.com/pmvfx1lsd/image/upload/v1619589520/360%20Panroamen%20PMsite/360%20VR%20Videos/360Wald_Poster_960_540_jpeg_nwmbef.jpg"
+                    loop>
+                    <source
+                        src="https://res.cloudinary.com/pmvfx1lsd/video/upload/v1619588316/360%20Panroamen%20PMsite/360%20VR%20Videos/360_Wald_Back_1920_960_25fps_yyuudp.mov"
+                        quality="960p" />
+            </deo-video>
+        </div>
+        <div class="text">
+            We no longer need to worry about padding-top for the video player chrome since modern video players now use
+            an overlay.
 
-<!-- <script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.js"></script> -->
-<!-- <script  src="script/babylon.glTFFileLoader.js"></script> -->
-<script src="https://cdn.babylonjs.com/viewer/babylon.viewer.js"></script>
-<!-- <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script> -->
-<script src="https://product-gallery.cloudinary.com/all.js" type="text/javascript">
-</script> 
-    <script type="module" src="script/bennett.js"></script>
-</body> 
+            Limitations
+            This approach is very clean and easy to implement if all of your videos are same aspect ratio. However, if
+            you are using videos with different aspect ratios, you will need a unique class for each. Thierry also
+            provided us with a good solution for this: break out the padding-bottom into a separate class based on the
+            aspect ratio.
+        </div>
+    </div>
+
+
+
+    <!-- <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+
+    <script src="https://cdn.babylonjs.com/viewer/babylon.viewer.js"></script> -->
+    <script src="https://product-gallery.cloudinary.com/all.js" type="text/javascript">
+    </script>
+    <script src="https://s3.deovr.com/version/1/js/bundle.js" async></script>
+    <!-- <script type="module" src="script/bennett.js"></script> -->
+</body>
+
 </html>

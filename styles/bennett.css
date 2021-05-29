@@ -4,18 +4,38 @@
   display: block;
 }
 
-.section {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.section .col {
-  width: 50%;
-}
-
 #gallery3d {
   width: 100%;
   height: 50%;
+}
+
+.videocontainer {
+  width: 50%;
+  height: 40vh;
+}
+
+div,
+deo-video {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.section {
+  gap: 10vw;
+}
+
+@media screen and (min-width: 800px) {
+  .section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .section > div {
+    width: 50%;
+  }
+}
+
+.section > div {
+  width: 100%;
 }
 /*# sourceMappingURL=bennett.css.map */

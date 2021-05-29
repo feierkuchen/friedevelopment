@@ -1,0 +1,113 @@
+$gray       : #2c2c2c;
+//$gray:white;
+$red        : rgba(148, 0, 0, 1);
+$dark-blue  : #006494;
+$middle-blue: #1d71b8;
+$light-blue : #36a9e1;
+$highlight  : #FE019A;
+//$font:#E1BAA9;
+$font       : white;
+
+:root {
+    --clr-neon: hsl(317 100% 54%);
+    --clr-neon: #36a9e1;
+    --clr-neon: #006494;
+    --clr-neon: #1d71b8;
+    --clr-bg  : hsl(323 21% 16%);
+
+    --highlightrosa  : #FE019A;
+    //--highlight    : #FF5733;
+}
+
+
+.button-background,
+.card-background {
+    position        : absolute;
+    height          : 100%;
+    width           : 100%;
+    top             : -6vh;
+    top             : 0;
+    background-image: linear-gradient(132deg, $gray 0%, $light-blue 100%);
+    opacity         : 0.5;
+    background-size : 200%;
+    animation       : bg-animation 30s infinite;
+    z-index         : -444;
+}
+
+.button {
+    font-size     : 40px;
+    border-radius : 0.25em;
+    padding       : 0.3em .3em;
+    margin        : 1em;
+    display       : flex;
+    flex-direction: column;
+    align-items   : center;
+    position      : relative;
+    overflow      : hidden;
+    cursor        : pointer;
+}
+
+.card {
+    border-radius   : 50px;
+    margin          : 6vh 3vw;
+    padding         : 6vh 3vw;
+    display         : flex;
+    flex-direction  : column;
+    align-items     : center;
+    max-height      : 60vh;
+    width           : clamp(100px, 90vw, 800px);
+    //min-height    : 75vh;
+    position        : relative;
+    overflow        : hidden;
+    margin-right    : 10vw;
+
+    @media screen and (min-width: 1200px) {
+        width : 800px;
+        margin: 6vh 3vw;
+    }
+
+    .service-title {
+        font-weight: 600;
+        font-size  : 1.2em;
+    }
+
+    .service-title,
+    i {
+        align-self: center;
+    }
+}
+
+#services .tiles {
+    //border  : 1px solid green;
+    //width : 50%;
+
+    .services {
+
+        //  border                  : 1px solid yellow;
+        width                   : 70%;
+        height                  : 70vh;
+        // display              : grid;
+        // grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+        // grid-template-rows   : masonry;
+        // margin               : 0;
+        flex-wrap               : wrap;
+        gap                     : 2vw;
+        align-items             : center;
+        justify-content         : center;
+
+        .card {
+            //flex      : 1;
+            width    : 25vh;
+            height   : 25vh;
+            margin   : 0;
+            padding  : 0;
+            // width : unset;
+            // width : unset;
+        }
+
+        .title,
+        .extended-content {
+            display: none;
+        }
+    }
+}

@@ -1,15 +1,51 @@
 #c {
-    width: 100%;
-    height: 100%;
-    display: block;
-  }
+  width: 100%;
+  height: 100%;
+  display: block;
+}
 
-  .section{
-      display: flex;
-      .col{
-          width: 50%;
-      }
+#gallery3d {
+  width: 100%;
+  height: 50%;
+}
+.videocontainer {
+  width: 50%;
+  height: 40vh;
+}
+div,
+deo-video {
+  box-sizing: border-box;
+}
+
+.section {
+  
+  @media screen and (min-width: 800px) {
+    display: flex;
+    > div {
+      width: 50%;
+    }
   }
-  #gallery3d{
-      width:100%; height: 50%;
+  > div {
+    width: 100%;
   }
+  gap: 10vw;
+}
+
+
+
+// .video-wrapper {
+//   position: relative;
+//   //height: auto;
+// }
+
+// .video-wrapper .deo--maximized {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: inherit !important;
+//   height: auto !important;
+// }
+// .video-wrapper canvas {
+//   //height: auto;
+//   width: auto;
+// }

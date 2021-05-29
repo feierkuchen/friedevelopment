@@ -1,18 +1,84 @@
 gsap.registerPlugin(ScrollTrigger, MorphSVGPlugin, SplitText);
+const colors = ["#36a9e1", "#1abc9c", "#006494"];
 
 if (true) {
   frieDevelopment();
   //morphIcon();
+
   logoFlip();
+
   //heroText();
+  //firstSkit();
   heroAnim();
   //wordpressParallax();
   //servicesMoreContentMorph();
+
   servicesMoreContentScrollVertical();
   titleLikeLogo();
 
   // // services();
   welcomeText();
+  cta();
+}
+
+function firstSkit() {
+  const tweenpin = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".skit",
+      start: "top top",
+      end: "+=2100vh",
+      pin: true,
+    },
+  });
+  //timelinge fürs logo erscheinen
+  const tween = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".skit.first",
+      start: "top top",
+      end: "+=3000vh",
+      scrub: 1,
+    },
+    defaults: { duration: 0.1 },
+  });
+  // tween.from(".skew", {
+  //   autoAlpha: 0,
+  //   duration: 0,
+  // });
+  tween.from(".skew", {
+    autoAlpha: 0,
+    visibility: 0,
+    skewX: "-60deg",
+    //skewY: "-60deg",
+    // scaleY: -1,
+    translate: "65px",
+  });
+}
+function cta(param) {
+  gsap.set(".funnytext", {
+    background: () => {
+      return gsap.utils.random(colors);
+    },
+  });
+  const cst = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".neon-button",
+      start: "top top",
+      end: "+=3000vh",
+      scrub: 3,
+    },
+  });
+  gsap.to(".dfunnytext, .dlightanim", {
+    duration: 4,
+    rotateX: 160,
+    // background: () => {
+    //   console.log("sdf");
+    //   return gsap.utils.random(colors);
+    // },
+    ease: "none",
+    repeatRefresh: true,
+    yoyo: true,
+    repeat: -1,
+  });
 }
 
 function titleLikeLogo(param) {
@@ -22,7 +88,6 @@ function titleLikeLogo(param) {
   //tl.from(chars, {duration: 0.8, className:"darkBl", opacity:0, scale:0, y:80, rotationX:180, transformOrigin:"0% 50% -50",  ease:"back", stagger: 0.1}, "+=0");
   let allTitles = gsap.utils.toArray(".service-title");
   allTitles.forEach((servicetitle) => {
-    
     var tl = gsap.timeline(),
       mySplitText = new SplitText(servicetitle, { type: "words,chars" }),
       chars = mySplitText.chars; //an array of all the divs that wrap each character
@@ -33,7 +98,7 @@ function titleLikeLogo(param) {
     let firstLetters = chars.slice(0, firstBreak);
     let secondLetters = chars.slice(firstBreak, secondBreak);
     let thirdLetters = chars.slice(secondBreak, length);
-    console.log(chars, firstBreak, firstLetters);
+    //console.log(chars, firstBreak, firstLetters);
     gsap.set(".service-title", { perspective: 400 });
     firstLetters.forEach((letter) => {
       tl.from(letter, { duration: 0.8, className: "darkBl" });
@@ -52,7 +117,7 @@ function frieDevelopment(param) {
     scrollTrigger: {
       trigger: ".frieDevelopment",
       start: "top top",
-      end: "+=2000vh",
+      end: "+=4000vh",
       pin: true,
     },
   });
@@ -74,6 +139,8 @@ function frieDevelopment(param) {
   gsap.set("#hero-cta-svg", { x: 0 });
   gsap.set("#hero-cta-svg", { width: "15vw" });
 
+  tween.to(".scroll", { autoAlpha: 0 });
+
   $.each(de, function (indexInArray, valueOfElement) {
     let currentElem = $(valueOfElement);
     if (currentElem.hasClass("fd-dev-d"))
@@ -90,6 +157,37 @@ function frieDevelopment(param) {
       ease: Linear.easeNone,
     });
   });
+
+  gsap.from(
+    ".hero-text, .hero-kontakt",
+    {
+      autoAlpha: 0,
+      ease: Linear.easeNone,
+      duration: 100,
+      scrollTrigger: {
+        trigger: ".triggerLogo",
+        start: "+=2000vh",
+        end: "+=1000vh",
+        scrub: 1,
+      },
+    },
+    "+=4"
+  );
+  gsap.to(
+    ".fd-dev",
+    {
+      duration: 2,
+      autoAlpha: 0,
+      ease: Linear.easeNone,
+      scrollTrigger: {
+        trigger: ".triggerLogo",
+        start: "+=2000vh",
+        end: "+=1000vh",
+        scrub: 1,
+      },
+    },
+    "<"
+  );
 }
 
 function friedevLogoAnim(selector, scrollTrigger) {
@@ -124,6 +222,19 @@ function friedevLogoAnim(selector, scrollTrigger) {
 }
 
 function logoFlip() {
+  let tl1 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".triggerCta",
+      start: "+=4000vh",
+      //end: "+=50vh",
+      end: "+=1200vh",
+      scrub: true,
+      ease: "none",
+    },
+  });
+  tl1.to(".hero-text, .hero-kontakt", {
+    autoAlpha: 0,
+  });
   gsap.set("#fd", {
     position: "fixed",
     top: "0",
@@ -132,22 +243,23 @@ function logoFlip() {
     bottom: 0,
     margin: "auto auto",
   });
-  gsap.to("#fd", {
+  tl1.to("#fd", {
     // duration: 10,
     top: "2vh",
     left: "2vw",
     right: "unset",
-    height: "3vh",
+    height: "4vh",
     margin: "0",
     width: "unset",
-    scrollTrigger: {
-      trigger: ".triggerCta",
-      start: "+=2700vh",
-      end: "+=50vh",
-      scrub: 3,
-      ease: "none",
-    },
   });
+
+  tl1.to(
+    ".js-navigation, .fd-dev",
+    {
+      autoAlpha: 1,
+    },
+    0
+  );
 
   gsap.to(".cta", { autoAlpha: 1 });
 }
@@ -155,22 +267,24 @@ function logoFlip() {
 function heroAnim() {
   friedevLogoAnim("#logo-use", {
     trigger: ".triggerFd",
-    start: "top bottom-=200",
-    end: "+=500",
+    start: "top bottom",
+    end: "+=400",
     scrub: true,
   });
   const tweenHeroAnim = gsap.timeline({
     scrollTrigger: {
       //  markers:true,
       trigger: ".responsive",
-      start: "top bottom",
+      start: "top bottom-=100",
       end: "+=1500",
       scrub: 1,
     },
   });
   tweenHeroAnim.to(".heroContainer", {
-    y: -600,
+    //y: -600,
+    y: "-50%",
   });
+  //wordpress
   tweenHeroAnim.to(
     ".heroContainer i",
     {
@@ -248,7 +362,7 @@ function welcomeText(param) {
   });
 }
 function servicesMoreContentMorph() {
-  let container = document.getElementById("moreContent");
+  let container = document.getElementById("all-services-conainer");
   const colors = [
     "#1d71b8",
     "#36a9e1",
@@ -289,7 +403,7 @@ function servicesMoreContentMorph() {
   let service = gsap.utils.shuffle(gsap.utils.toArray("#services path"));
   let shop = gsap.utils.shuffle(gsap.utils.toArray("#shop path"));
   let seo = gsap.utils.shuffle(gsap.utils.toArray("#seo path"));
-  console.log(design, service);
+  //console.log(design, service);
   //tl1.from(".icon #design path", {duration:200,stagger: 0.1, drawSVG: 0},"+=50");
   tl1.to(
     ".service-d",
@@ -373,7 +487,7 @@ function servicesMoreContentMorph() {
   design.forEach((path, i) => {
     if ($(service[i]).hasClass("transp")) return;
     if (service[i] == undefined) {
-      console.log("und");
+      // console.log("und");
       tl1.set(path, { autoAlpha: 0 }, "1");
     } else {
       tl1.to(
@@ -421,32 +535,48 @@ function servicesMoreContentMorph() {
   });
 }
 function servicesMoreContentScrollVertical() {
-  let container = document.getElementById("moreContent");
-  const tweenServicesPin = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".service",
-      start: "top top+=50vh",
-      end: "+=" + (container.offsetWidth + 1200 + "vh"),
-      pin: true,
-    },
-  });
-
-  if (container) {
-    const tweenServices = gsap.to(".moreContent", {
-      x: () => -container.scrollWidth + "px",
-      ease: "none",
+  let anim = function () {
+    let container = document.getElementById("all-services-conainer");
+    const tweenServicesPin = gsap.timeline({
+      // paused: true,
       scrollTrigger: {
-        markers: true,
-        trigger: ".service-container",
-        start: "top top-=600vh",
-        invalidateOnRefresh: true,
-        //pin: true,
-        scrub: 1,
-        snap: 0.2,
-        end: () => "+=" + container.offsetWidth + "vh",
+        trigger: ".service",
+        start: "top top+=50vh",
+        id: "scrollServicesPin",
+        //end: "+=" + (container.offsetWidth + 1200 + "vh"),
+        end: "+=" + container.offsetWidth,
+        pin: true,
       },
     });
-  }
+
+    if (container) {
+      const tweenServices = gsap.to(".moreContent", {
+        x: () => -container.scrollWidth + "px",
+        ease: "none",
+        //paused: true,
+        scrollTrigger: {
+          trigger: ".service-container",
+          start: "top top-=600vh",
+          invalidateOnRefresh: true,
+          id: "scrollServices",
+          //pin: true,
+          scrub: 1,
+          snap: 0.2,
+          //end: () => "+=" + container.offsetWidth + "vh",
+          end: () => "+=" + container.offsetWidth + "vh",
+        },
+      });
+    }
+  };
+  // ScrollTrigger.getById("scrollServices").disable();
+  // ScrollTrigger.getById("scrollServicesPin").disable();
+  $(".card").click(function (e) {
+    $(".vertical-scroll-container").removeClass("tiles");
+    anim();
+    // tweenServices.start();
+    // ScrollTrigger.getById("scrollServices").enable();
+    // ScrollTrigger.getById("scrollServicesPin").enable();
+  });
 }
 function services() {
   const tweenServicesPin = gsap.timeline({
@@ -458,17 +588,20 @@ function services() {
     },
   });
   const tweenServices = gsap.timeline({
+    paused: true,
     scrollTrigger: {
       // markers:true,
       id: "scrollServices",
       trigger: ".service-container",
       start: "top top",
+
       //end:"+=2000",
       //scrub:true
     },
   });
+  //ScrollTrigger.getById("scrollServices").disable();
 
-  let services = $("i, .service-title", ".services");
+  let services = $("i, .title", ".services");
 
   $.each(services, function (indexInArray, valueOfElement) {
     let currentElem = $(valueOfElement);
@@ -480,22 +613,13 @@ function services() {
       // CustomEase.create("custom", "M0,0 C0.378,0.003 0.609,0.612 0.824,0.948 0.936,0.898 0.973,0.961 1,1 ")
     });
   });
-
-  // gsap.to(".service-background", {
-  //   backgroundPosition: `50% ${innerHeight / 2}px`,
-  //   ease: "none",
-  //   scrollTrigger: {
-  //     trigger: ".service",
-  //     scrub: true,
-  //   },
-  // });
 }
 $(".more").click(function (e) {
   $(".extended-content").show();
   $(".services").addClass("moreContent");
   ScrollTrigger.getById("scrollServices").kill();
   //$(".service").css("height", "auto");
-  $("i, .service-title", ".service").css("transform", "unset");
+  $("i, .title", ".service").css("transform", "unset");
 });
 
 function wordpressParallax(param) {
@@ -518,13 +642,13 @@ function morphIcon(element) {
   let squarePaths = gsap.utils.toArray(".square path");
   let iconPaths = gsap.utils.toArray("#Cog path");
   //MorphSVGPlugin.convertToPath(".square rect");
-  console.log(iconPaths);
-  console.log(squarePaths);
+  // console.log(iconPaths);
+  // console.log(squarePaths);
   let tl1 = gsap.timeline();
   tl1.to(".morphcog", { x: 0, y: 0 });
   $.each(iconPaths, function (indexInArray, valueOfElement) {
     let currentElem = squarePaths[indexInArray];
-    console.log(currentElem);
+    //console.log(currentElem);
     $(valueOfElement).addClass("pujnm");
     tl1.to(
       ".morphcog",

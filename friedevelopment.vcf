@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:4.0
+N;CHARSET=UTF-8:Kröger;Friederike;;;friede
+FN;CHARSET=UTF-8: Friederike Kröger
+ORG;CHARSET=UTF-8:friedevelopment
+TITLE;CHARSET=UTF-8:Webentwicklerin
+URL;WORK:friedevelopment.de
+EMAIL;type=WORK;type=PREF:friede@friedevelopment.de
+TEL;type=CELL;MOBILE:015154418697
+REV:2021-05-26T22:41:24+02:00
+END:VCARD

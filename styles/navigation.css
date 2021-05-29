@@ -1,0 +1,330 @@
+:root {
+  --clr-neon: hsl(317 100% 54%);
+  --clr-neon: #36a9e1;
+  --clr-neon: #006494;
+  --clr-neon: #1d71b8;
+  --clr-bg: hsl(323 21% 16%);
+  --highlightrosa: #FE019A;
+  --highlight: #FF9F9F;
+  --newhighlight: #FF9FD3;
+}
+
+a {
+  color: var(--highlight);
+  text-decoration: none;
+}
+
+#navigation ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: "Raleway";
+  font-size: 30px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  list-style-type: none;
+  gap: 50px;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  margin-right: 5vw;
+  margin-top: 20vh;
+}
+
+.go-up-container {
+  position: fixed;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  bottom: 10vh;
+  z-index: 9999;
+  right: 2vw;
+  font-size: 35px;
+}
+
+.go-up-container .link {
+  position: relative;
+}
+
+.link::after {
+  content: "wieder hoch";
+  color: var(--highlight);
+  font-size: 98%;
+  position: absolute;
+  width: 200px;
+  height: 100%;
+  top: 0;
+  -webkit-transform: rotate(180deg) scale(-1, 1) skew(560deg, 0deg);
+          transform: rotate(180deg) scale(-1, 1) skew(560deg, 0deg);
+  -webkit-filter: blur(0.03em);
+          filter: blur(0.03em);
+  height: 100%;
+  top: 110%;
+  opacity: 0;
+  right: 0;
+  margin-right: 4px;
+}
+
+.cta-container {
+  position: fixed;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  top: 2vh;
+  z-index: 9999;
+  right: 2vw;
+}
+
+.cta-container .cta-button {
+  color: var(--highlight);
+  font-weight: bold;
+  font-size: 30px;
+  position: relative;
+}
+
+.menu-item {
+  position: relative;
+  cursor: pointer;
+  z-index: 66666;
+}
+
+.menu-item.menu-item::before {
+  color: var(--highlight);
+  font-size: 98%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  -webkit-transform: rotate(180deg) scale(-1, 1) skew(560deg, 0deg);
+          transform: rotate(180deg) scale(-1, 1) skew(560deg, 0deg);
+  -webkit-filter: blur(0.03em);
+          filter: blur(0.03em);
+  height: 100%;
+  top: 110%;
+  opacity: 0;
+  right: 0;
+  margin-right: 4px;
+}
+
+.menu-item.leistungen:before {
+  content: "Leistungen";
+}
+
+.menu-item.erfahrungen {
+  margin-right: 10px;
+}
+
+.menu-item.erfahrungen:before {
+  content: "Erfahrungen";
+}
+
+.menu-item.hintergruende {
+  margin-right: 20px;
+}
+
+.menu-item.hintergruende:before {
+  content: "Hintergruende";
+}
+
+.menu-item.technologien {
+  margin-right: 10px;
+}
+
+.menu-item.technologien:before {
+  content: "Technologien";
+}
+
+.menu-item.friede {
+  margin-right: 0px;
+}
+
+.menu-item.friede:before {
+  content: "Freude Eierkuchen";
+  width: 300%;
+}
+
+.burger {
+  position: relative;
+  margin-top: 40px;
+  cursor: pointer;
+  color: var(--clr-neon);
+  color: var(--highlightrosa);
+  color: var(--highlight);
+  font-size: 30px;
+}
+
+.burger .burger-close {
+  color: var(--highlight);
+  font-size: 35px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0;
+}
+
+.burger .burger-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0;
+}
+
+.burger .burger-menu::after {
+  content: "Menu";
+}
+
+.burger .burger-close::after {
+  content: "Close";
+}
+
+.burger .burger-menu::after,
+.burger .burger-close::after {
+  color: inherit;
+  font-weight: bold;
+  font-size: 30px;
+  position: absolute;
+  width: 300%;
+  height: 100%;
+  top: 0;
+  -webkit-transform: rotate(180deg) scale(-1, 1) skew(560deg, 0deg);
+          transform: rotate(180deg) scale(-1, 1) skew(560deg, 0deg);
+  font-family: "Raleway";
+  -webkit-filter: blur(0.03em);
+          filter: blur(0.03em);
+  height: 100%;
+  top: 110%;
+  opacity: 0;
+  right: 0;
+}
+
+.cta-button::after {
+  content: "kontakt";
+  content: "Projektanfrage stellen";
+  color: var(--highlight);
+  font-weight: bold;
+  font-size: 30px;
+  position: absolute;
+  width: 300%;
+  height: 100%;
+  top: 0;
+  -webkit-transform: rotate(180deg) scale(-1, 1) skew(560deg, 0deg);
+          transform: rotate(180deg) scale(-1, 1) skew(560deg, 0deg);
+  -webkit-filter: blur(0.03em);
+          filter: blur(0.03em);
+  height: 100%;
+  top: 110%;
+  opacity: 0;
+  right: 0;
+}
+
+.cta-button:hover::after,
+.cta-button:focus::after {
+  opacity: 0.5;
+}
+
+.burger-menu:hover::after,
+.burger-menu:focus::after,
+.burger-close:hover::after,
+.burger-close:focus::after {
+  opacity: 0.5;
+}
+
+.menu-item:hover::before,
+.menu-item:focus::before,
+.link:hover::after,
+.link:focus::after {
+  opacity: 0.5;
+}
+
+.cta-button::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 5px;
+  border-bottom: 2px solid var(--highlightrosa);
+  border-bottom: 2px solid var(--clr-neon);
+}
+
+footer {
+  background-color: var(--clr-neon);
+}
+
+.scroll {
+  color: var(--highlight);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  z-index: 0;
+}
+
+.skit {
+  height: 100vh;
+  width: 100%;
+  font-size: 5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: var(--clr-neon);
+  gap: 2vh;
+}
+
+.skit a {
+  font-size: 0.7em;
+  margin-left: 20vw;
+  opacity: .7;
+}
+
+.highlight-underline {
+  text-decoration: underline;
+}
+
+.js-navigation {
+  visibility: hidden;
+}
+/*# sourceMappingURL=navigation.css.map */
