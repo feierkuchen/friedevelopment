@@ -158,25 +158,31 @@ a {
     }
 }
 
+.details-close.clickable {
+    position: absolute;
+
+
+    color       : var(--highlight) !important;
+    font-size   : 35px;
+    //margin-top: -40px;
+
+
+}
+
 .burger {
     position  : relative;
     margin-top: 40px;
     cursor    : pointer;
-    color     : var(--clr-neon);
-    color     : var(--highlightrosa);
     color     : var(--highlight);
     font-size : 30px;
 
     .burger-close {
         // visibility   : hidden;
         // opacity      : 0;
-        color       : var(--highlight);
-        font-size   : 35px;
-        //margin-top: -40px;
-        position    : absolute;
-        top         : 0;
-        right       : 0;
-        z-index     : 0;
+
+        top    : 0;
+        right  : 0;
+        z-index: 0;
     }
 
     .burger-menu {
@@ -198,23 +204,24 @@ a {
 
     .burger-menu::after,
     .burger-close::after {
+        pointer-events: none;
+        color         : inherit;
+        font-weight   : bold;
+        font-size     : 30px;
+        position      : absolute;
+        width         : 300%;
+        height        : 100%;
+        top           : 0;
+        transform     : rotate(180deg) scale(-1, 1) skew(560deg, 0deg);
+        font-family   : "Raleway";
 
-        color      : inherit;
-        font-weight: bold;
-        font-size  : 30px;
-        position   : absolute;
-        width      : 300%;
-        height     : 100%;
-        top        : 0;
-        transform  : rotate(180deg) scale(-1, 1) skew(560deg, 0deg);
-        font-family: "Raleway";
-
-        filter   : blur(.03em);
-        height   : 100%;
-        top      : 110%;
-        opacity  : 0;
+        filter        : blur(.03em);
+        height        : 100%;
+        top           : 110%;
+        opacity       : 0;
         //left   : -3px;
-        right    : 0;
+        right         : 0;
+        pointer-events: none;
 
     }
 }

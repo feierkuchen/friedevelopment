@@ -167,20 +167,21 @@ a {
   width: 300%;
 }
 
+.details-close.clickable {
+  position: absolute;
+  color: var(--highlight) !important;
+  font-size: 35px;
+}
+
 .burger {
   position: relative;
   margin-top: 40px;
   cursor: pointer;
-  color: var(--clr-neon);
-  color: var(--highlightrosa);
   color: var(--highlight);
   font-size: 30px;
 }
 
 .burger .burger-close {
-  color: var(--highlight);
-  font-size: 35px;
-  position: absolute;
   top: 0;
   right: 0;
   z-index: 0;
@@ -203,6 +204,7 @@ a {
 
 .burger .burger-menu::after,
 .burger .burger-close::after {
+  pointer-events: none;
   color: inherit;
   font-weight: bold;
   font-size: 30px;
@@ -219,6 +221,7 @@ a {
   top: 110%;
   opacity: 0;
   right: 0;
+  pointer-events: none;
 }
 
 .cta-button::after {

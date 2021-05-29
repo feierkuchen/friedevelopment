@@ -232,9 +232,17 @@ function logoFlip() {
       ease: "none",
     },
   });
+
   tl1.to(".hero-text, .hero-kontakt", {
     autoAlpha: 0,
   });
+  tl1.set(
+    "header",
+    {
+      opacity: 1,
+    },
+    ">"
+  );
   gsap.set("#fd", {
     position: "fixed",
     top: "0",
@@ -260,8 +268,6 @@ function logoFlip() {
     },
     0
   );
-
-  gsap.to(".cta", { autoAlpha: 1 });
 }
 
 function heroAnim() {
@@ -534,10 +540,12 @@ function servicesMoreContentMorph() {
     }
   });
 }
+var tweenVertical;
+var tweenServicesPin;
 function servicesMoreContentScrollVertical() {
   let anim = function () {
     let container = document.getElementById("all-services-conainer");
-    const tweenServicesPin = gsap.timeline({
+    tweenServicesPin = gsap.timeline({
       // paused: true,
       scrollTrigger: {
         trigger: ".service",
@@ -549,33 +557,51 @@ function servicesMoreContentScrollVertical() {
       },
     });
 
-    if (container) {
-      const tweenServices = gsap.to(".moreContent", {
-        x: () => -container.scrollWidth + "px",
-        ease: "none",
-        //paused: true,
-        scrollTrigger: {
-          trigger: ".service-container",
-          start: "top top-=600vh",
-          invalidateOnRefresh: true,
-          id: "scrollServices",
-          //pin: true,
-          scrub: 1,
-          snap: 0.2,
-          //end: () => "+=" + container.offsetWidth + "vh",
-          end: () => "+=" + container.offsetWidth + "vh",
-        },
-      });
-    }
+    //if (container) {
+    let tweenServices = gsap.to(".moreContent", {
+      x: () => -container.scrollWidth + "px",
+      ease: "none",
+      //paused: true,
+      scrollTrigger: {
+        trigger: ".service-container",
+        start: "top top-=600vh",
+        invalidateOnRefresh: true,
+        id: "scrollServices",
+        //pin: true,
+        scrub: 1,
+        snap: 0.2,
+        //end: () => "+=" + container.offsetWidth + "vh",
+        end: () => "+=" + container.offsetWidth + "vh",
+      },
+    });
+
+    return tweenServices;
   };
-  // ScrollTrigger.getById("scrollServices").disable();
-  // ScrollTrigger.getById("scrollServicesPin").disable();
+  //};
   $(".card").click(function (e) {
     $(".vertical-scroll-container").removeClass("tiles");
-    anim();
-    // tweenServices.start();
-    // ScrollTrigger.getById("scrollServices").enable();
-    // ScrollTrigger.getById("scrollServicesPin").enable();
+    // if (!tweenVertical)
+    tweenVertical = anim();
+  });
+  $(".details-close").click(function (e) {
+    console.log(this);
+    ScrollTrigger.getById("scrollServicesPin").kill(true);
+    ScrollTrigger.getById("scrollServices").kill(true);
+    window.location.href = "#services";
+    tweenVertical.pause(0).kill(true);
+    tweenServicesPin.pause(0).kill(true);
+    $(".vertical-scroll-container").addClass("tiles");
+
+    // gsap.set(".moreContent", {
+    //   x: 0,
+    // });
+
+    // if (tweenVertical) {
+    //   console.log("kill", tweenVertical);
+    //   tweenVertical.pause();
+    //   console.log("kill", tweenVertical.isActive());
+    //   ScrollTrigger.refresh();
+    // }
   });
 }
 function services() {
@@ -588,7 +614,6 @@ function services() {
     },
   });
   const tweenServices = gsap.timeline({
-    paused: true,
     scrollTrigger: {
       // markers:true,
       id: "scrollServices",
@@ -614,13 +639,6 @@ function services() {
     });
   });
 }
-$(".more").click(function (e) {
-  $(".extended-content").show();
-  $(".services").addClass("moreContent");
-  ScrollTrigger.getById("scrollServices").kill();
-  //$(".service").css("height", "auto");
-  $("i, .title", ".service").css("transform", "unset");
-});
 
 function wordpressParallax(param) {
   gsap.to(".wordpress", {

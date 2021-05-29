@@ -31,19 +31,20 @@ let postitionBurger = burger.getBoundingClientRect();
 // });
 tlburger = gsap.to(".burger-menu", { autoAlpha: 0, paused: true });
 tlburgerClose = gsap.to(".burger-close", { autoAlpha: 1, paused: true });
+
 tl1 = gsap.from(".menu-item", {
   duration: 0.3,
   autoAlpha: 0,
   x: (index, target, targets) => {
     var rect = target.getBoundingClientRect();
-    console.log(rect.top, rect.right, rect.bottom, rect.left);
+    //(rect.top, rect.right, rect.bottom, rect.left);
 
     let offset = rect.right - postitionBurger.right;
     return -offset;
   },
   y: (index, target, targets) => {
     var rect = target.getBoundingClientRect();
-    console.log(rect.top, rect.right, rect.bottom, rect.left);
+    // console.log(rect.top, rect.right, rect.bottom, rect.left);
 
     let offset = rect.top - postitionBurger.top;
     return -offset;
@@ -58,9 +59,13 @@ let startNavigationAnimation = function (param) {
     tl1.play();
     tlburger.play();
     tlburgerClose.play();
+    gsap.set("header", { zIndex: 2 });
+    gsap.set("main", { opacity: 0.3 });
   } else {
     tl1.reverse();
     tlburger.reverse();
     tlburgerClose.reverse();
+    gsap.set("header", { zIndex: 0 });
+    gsap.set("main", { opacity: 1 });
   }
 };
