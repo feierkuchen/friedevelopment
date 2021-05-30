@@ -117,7 +117,7 @@ function frieDevelopment(param) {
     scrollTrigger: {
       trigger: ".frieDevelopment",
       start: "top top",
-      end: "+=4000vh",
+      end: "+=5000vh",
       pin: true,
     },
   });
@@ -250,13 +250,16 @@ function logoFlip() {
   var offset = -500;
   allParallaxed.forEach((item) => {
     const depth = item.dataset.depth;
+    const vdepth = item.dataset.vdepth;
     const movement = -(item.offsetHeight * depth);
-    const scale = 1 - depth / 10;
+    const scale = 1 - depth / 2;
+    const xmovement = movement * vdepth;
     tl1.to(
       item,
       {
         y: movement,
-        scale: scale,
+        // x: xmovement,
+        //scale: scale,
         autoAlpha: 0,
         ease: "none",
       },
@@ -282,7 +285,7 @@ function logoFlip() {
   tl1.to(
     "#fd",
     {
-      // duration: 10,
+      duration: 0.9,
       top: "2vh",
       left: "2vw",
       right: "unset",
