@@ -250,6 +250,7 @@ function logoFlip() {
   var offset = -500;
   allParallaxed.forEach((item) => {
     const depth = item.dataset.depth;
+    console.log(depth);
     const vdepth = item.dataset.vdepth;
     const movement = -(item.offsetHeight * depth);
     const scale = 1 - depth / 2;
