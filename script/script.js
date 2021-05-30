@@ -222,6 +222,20 @@ function friedevLogoAnim(selector, scrollTrigger) {
 }
 
 function logoFlip() {
+  // const tl = gsap.timeline({
+  //   scrollTrigger: {
+  //     trigger: "#hero",
+  //     start: "top top",
+  //     end: "bottom top",
+  //     scrub: true,
+  //   },
+  // });
+
+  // gsap.utils.toArray(".parallax").forEach((layer) => {
+  //   const depth = layer.dataset.depth;
+  //   const movement = -(layer.offsetHeight * depth);
+  //   tl.to(layer, { y: movement, ease: "none" }, 0);
+  // });
   let tl1 = gsap.timeline({
     scrollTrigger: {
       trigger: ".triggerCta",
@@ -232,10 +246,24 @@ function logoFlip() {
       ease: "none",
     },
   });
-
-  tl1.to(".hero-text, .hero-kontakt", {
-    autoAlpha: 0,
+  let allParallaxed = gsap.utils.toArray(".hero-text, .hero-kontakt");
+  var offset = -500;
+  allParallaxed.forEach((item) => {
+    const depth = item.dataset.depth;
+    const movement = -(item.offsetHeight * depth);
+    const scale = 1 - depth / 10;
+    tl1.to(
+      item,
+      {
+        y: movement,
+        scale: scale,
+        autoAlpha: 0,
+        ease: "none",
+      },
+      0
+    );
   });
+
   tl1.set(
     "header",
     {
@@ -251,15 +279,19 @@ function logoFlip() {
     bottom: 0,
     margin: "auto auto",
   });
-  tl1.to("#fd", {
-    // duration: 10,
-    top: "2vh",
-    left: "2vw",
-    right: "unset",
-    height: "4vh",
-    margin: "0",
-    width: "unset",
-  });
+  tl1.to(
+    "#fd",
+    {
+      // duration: 10,
+      top: "2vh",
+      left: "2vw",
+      right: "unset",
+      height: "4vh",
+      margin: "0",
+      width: "unset",
+    },
+    0
+  );
 
   tl1.to(
     ".js-navigation, .fd-dev",

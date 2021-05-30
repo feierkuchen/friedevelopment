@@ -8,23 +8,23 @@
   --highlight: #FF9FD3;
 }
 
-body#friedevelopment {
+body {
   background: #2c2c2c;
   position: relative;
   height: 100vh;
   margin: 0;
 }
 
-body#friedevelopment footer {
+footer {
   background-color: white;
   min-height: 20vh;
 }
 
-body#friedevelopment main {
+main {
   z-index: 1;
 }
 
-body#friedevelopment header {
+header {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
@@ -43,22 +43,22 @@ body#friedevelopment header {
   background: linear-gradient(0deg, rgba(44, 44, 44, 0) 0%, #2c2c2c 100%);
 }
 
-body#friedevelopment header .logo-header,
-body#friedevelopment header .header-cta {
+header .logo-header,
+header .header-cta {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
   margin-right: 4vw;
 }
 
-body#friedevelopment *,
-body#friedevelopment *::before,
-body#friedevelopment *::after {
+*,
+*::before,
+*::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-body#friedevelopment .neon-button {
+.neon-button {
   margin-right: 40vw !important;
   font-size: 2rem;
   display: inline-block;
@@ -74,7 +74,7 @@ body#friedevelopment .neon-button {
   position: relative;
 }
 
-body#friedevelopment .sneon-button::before {
+.sneon-button::before {
   pointer-events: none;
   content: "asdf";
   color: orangered;
@@ -91,7 +91,7 @@ body#friedevelopment .sneon-button::before {
   opacity: 0.7;
 }
 
-body#friedevelopment .funnytext {
+.funnytext {
   pointer-events: none;
   content: "asdf";
   color: orangered;
@@ -106,7 +106,7 @@ body#friedevelopment .funnytext {
   opacity: 0.5;
 }
 
-body#friedevelopment .lightanim {
+.lightanim {
   pointer-events: none;
   color: orangered;
   position: absolute;
@@ -119,15 +119,15 @@ body#friedevelopment .lightanim {
   font-size: 20px;
 }
 
-body#friedevelopment .testfriede {
+.testfriede {
   padding-top: 20%;
 }
 
-body#friedevelopment .testfreude {
+.testfreude {
   padding-top: 20%;
 }
 
-body#friedevelopment .neon-button::after {
+.neon-button::after {
   content: "";
   position: absolute;
   top: 0;
@@ -143,55 +143,55 @@ body#friedevelopment .neon-button::after {
   transition: opacity 100ms linear;
 }
 
-body#friedevelopment .neon-button:hover,
-body#friedevelopment .neon-button:focus {
+.neon-button:hover,
+.neon-button:focus {
   color: var(--clr-bg);
   text-shadow: none;
 }
 
-body#friedevelopment .neon-button:hover::before,
-body#friedevelopment .neon-button:focus::before {
+.neon-button:hover::before,
+.neon-button:focus::before {
   opacity: 1;
 }
 
-body#friedevelopment .neon-button:hover::after,
-body#friedevelopment .neon-button:focus::after {
+.neon-button:hover::after,
+.neon-button:focus::after {
   opacity: 1;
 }
 
-body#friedevelopment * {
+* {
   font-family: "Raleway";
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-body#friedevelopment main * {
+main * {
   margin: 0;
   padding: 0;
 }
 
-body#friedevelopment main h3 {
+main h3 {
   font-family: "Raleway";
 }
 
-body#friedevelopment main .middle {
+main .middle {
   color: #1d71b8;
   fill: #1d71b8;
 }
 
-body#friedevelopment main p {
+main p {
   color: white;
   line-height: 2em;
   color: rgba(54, 169, 225, 0.6);
   color: white;
 }
 
-body#friedevelopment main h2 {
+main h2 {
   text-align: center;
 }
 
-body#friedevelopment main h2,
-body#friedevelopment main h3 {
+main h2,
+main h3 {
   color: rgba(0, 100, 148, 0.6);
   -webkit-columns: white;
           columns: white;
@@ -199,23 +199,23 @@ body#friedevelopment main h3 {
   text-align: center;
 }
 
-body#friedevelopment main h3 {
+main h3 {
   font-size: calc(min(8vw, 60px));
   font-weight: 200;
 }
 
-body#friedevelopment main section {
+main section {
   min-height: 100vh;
   margin-bottom: 30vh;
 }
 
-body#friedevelopment section,
-body#friedevelopment div {
+section,
+div {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-body#friedevelopment .fd {
+.fd {
   z-index: 100;
   position: fixed;
   margin: auto auto;
@@ -226,12 +226,12 @@ body#friedevelopment .fd {
   bottom: 0;
 }
 
-body#friedevelopment .hero-text-container {
+.hero-text-container {
   position: relative;
   height: 100vh;
 }
 
-body#friedevelopment .hero-text {
+.hero-text {
   font-family: 'Kaushan Script', cursive;
   color: var(--highlightrosa);
   font-size: clamp(20px, 15vw, 100px);
@@ -240,18 +240,18 @@ body#friedevelopment .hero-text {
   position: fixed;
 }
 
-body#friedevelopment .hero-lass {
+.hero-lass {
   top: 20vh;
   margin-right: 4vw;
   left: 5vw;
 }
 
-body#friedevelopment .hero-deine {
+.hero-deine {
   top: 60vh;
   right: 2vw;
 }
 
-body#friedevelopment .hero-kontakt {
+.hero-kontakt {
   bottom: 0;
   right: 2vw;
   z-index: 100;
@@ -259,9 +259,9 @@ body#friedevelopment .hero-kontakt {
   font-size: 2em;
 }
 
-body#friedevelopment .heroText,
-body#friedevelopment .service,
-body#friedevelopment .hero {
+.heroText,
+.service,
+.hero {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -295,13 +295,13 @@ body#friedevelopment .hero {
   }
 }
 
-body#friedevelopment .hero {
+.hero {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
 }
 
-body#friedevelopment .hero .responsive {
+.hero .responsive {
   position: relative;
   background-color: #ffdee9;
   background-image: linear-gradient(45deg, #ffdee9 0%, #b5fffc 100%);
@@ -315,61 +315,61 @@ body#friedevelopment .hero .responsive {
   z-index: -2;
 }
 
-body#friedevelopment .hero .responsive svg {
+.hero .responsive svg {
   -webkit-transform: scale(0.8);
           transform: scale(0.8);
 }
 
-body#friedevelopment .hero .responsive .cls-1 {
+.hero .responsive .cls-1 {
   fill: #383838;
 }
 
-body#friedevelopment .hero .responsive .cls-2 {
+.hero .responsive .cls-2 {
   fill: #fff;
 }
 
-body#friedevelopment .hero .responsive .cls-3 {
+.hero .responsive .cls-3 {
   fill: none;
   stroke: #383838;
   stroke-miterlimit: 10;
   stroke-width: 2px;
 }
 
-body#friedevelopment .hero .responsive svg {
+.hero .responsive svg {
   position: absolute;
 }
 
-body#friedevelopment .hero .responsive h3 {
+.hero .responsive h3 {
   font-size: 1em;
   margin: 3em 0;
 }
 
-body#friedevelopment .hero .responsive .portrait h3 {
+.hero .responsive .portrait h3 {
   font-size: 1em;
   margin: 10em 0;
 }
 
-body#friedevelopment .hero .responsive #ipod {
+.hero .responsive #ipod {
   display: none;
   width: 5vw;
   font-size: 0vh;
 }
 
-body#friedevelopment .hero .responsive #desktop {
+.hero .responsive #desktop {
   width: clamp(20px, 95vw, 1000px);
   left: 10vw;
   bottom: 0;
   font-size: 60px;
 }
 
-body#friedevelopment .hero .responsive #phone {
+.hero .responsive #phone {
   display: none;
   width: 10vw;
   right: 15vw;
   font-size: 13px;
 }
 
-body#friedevelopment .hero .responsive #tablet {
+.hero .responsive #tablet {
   width: 14vw;
   width: clamp(20px, 20vw, 270px);
   right: 20;
@@ -377,7 +377,7 @@ body#friedevelopment .hero .responsive #tablet {
   font-size: 20px;
 }
 
-body#friedevelopment .hero .responsive #laptop {
+.hero .responsive #laptop {
   width: 40vw;
   width: clamp(20px, 90vw, 800px);
   bottom: 0;
@@ -385,11 +385,11 @@ body#friedevelopment .hero .responsive #laptop {
   font-size: 35px;
 }
 
-body#friedevelopment .hero .responsive #watch {
+.hero .responsive #watch {
   font-size: 20px;
 }
 
-body#friedevelopment .hero .responsive .heroContainer {
+.hero .responsive .heroContainer {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -408,11 +408,11 @@ body#friedevelopment .hero .responsive .heroContainer {
   color: #36a9e1;
 }
 
-body#friedevelopment .hero .responsive .heroContainer svg {
+.hero .responsive .heroContainer svg {
   position: relative;
 }
 
-body#friedevelopment .service-container {
+.service-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -427,18 +427,18 @@ body#friedevelopment .service-container {
 }
 
 @media screen and (min-width: 1200px) {
-  body#friedevelopment .service-container {
+  .service-container {
     padding: 3vh 10vw;
   }
 }
 
-body#friedevelopment .service-container .vertical-scroll-container {
+.service-container .vertical-scroll-container {
   overflow: hidden;
   width: 100%;
   position: relative;
 }
 
-body#friedevelopment .service-container .card .title-container::before {
+.service-container .card .title-container::before {
   content: " ";
   display: block;
   position: absolute;
@@ -454,7 +454,7 @@ body#friedevelopment .service-container .card .title-container::before {
   background: linear-gradient(90deg, rgba(44, 44, 44, 0) 0%, #2c2c2c 20%, #2c2c2c 80%, rgba(44, 44, 44, 0) 100%);
 }
 
-body#friedevelopment .service-container .card .title-container {
+.service-container .card .title-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -472,7 +472,7 @@ body#friedevelopment .service-container .card .title-container {
   justify-items: flex-start;
 }
 
-body#friedevelopment .service-container .card .title-container .title {
+.service-container .card .title-container .title {
   color: white;
   padding: 0 2vh;
   font-weight: 600;
@@ -492,22 +492,22 @@ body#friedevelopment .service-container .card .title-container .title {
   font-style: italic;
 }
 
-body#friedevelopment .service-container .card .title-container .title .darkBl {
+.service-container .card .title-container .title .darkBl {
   color: #006494;
   visibility: visible !important;
 }
 
-body#friedevelopment .service-container .card .title-container .title .lightBl {
+.service-container .card .title-container .title .lightBl {
   color: #36a9e1;
   visibility: visible !important;
 }
 
-body#friedevelopment .service-container .card .title-container .title .middleBl {
+.service-container .card .title-container .title .middleBl {
   color: #1d71b8;
   visibility: visible !important;
 }
 
-body#friedevelopment .service-container .card .icon {
+.service-container .card .icon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -516,19 +516,19 @@ body#friedevelopment .service-container .card .icon {
           justify-content: center;
 }
 
-body#friedevelopment .service-container .card .icon #services-svg {
+.service-container .card .icon #services-svg {
   visibility: hidden;
 }
 
-body#friedevelopment .service-container .card .icon svg {
+.service-container .card .icon svg {
   height: 20vh;
 }
 
-body#friedevelopment .service-container .card .extended-content {
+.service-container .card .extended-content {
   height: 70%;
 }
 
-body#friedevelopment .service-container .details-close {
+.service-container .details-close {
   position: absolute;
   right: 1vw;
   top: 1vh;
@@ -536,7 +536,7 @@ body#friedevelopment .service-container .details-close {
   display: block;
 }
 
-body#friedevelopment .service-container .services {
+.service-container .services {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -551,7 +551,7 @@ body#friedevelopment .service-container .services {
   font-size: clamp(16px, 2vw, 20px);
 }
 
-body#friedevelopment .service-container .services.moreContent {
+.service-container .services.moreContent {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -568,12 +568,12 @@ body#friedevelopment .service-container .services.moreContent {
 }
 
 @media screen and (min-width: 1200px) {
-  body#friedevelopment .service-container .services.moreContent {
+  .service-container .services.moreContent {
     margin-left: calc(50vw - 400px - 10vw - 3vw);
   }
 }
 
-body#friedevelopment .service-container .services .icon i {
+.service-container .services .icon i {
   color: #1d71b8;
   -webkit-background-clip: text;
   font-weight: 900;
@@ -583,11 +583,11 @@ body#friedevelopment .service-container .services .icon i {
   -webkit-text-fill-color: transparent;
 }
 
-body#friedevelopment .service-container .services .more {
+.service-container .services .more {
   display: none;
 }
 
-body#friedevelopment .service-container .clickable {
+.service-container .clickable {
   color: var(--highlight) !important;
   background-image: none;
   font-size: 35px;
@@ -597,7 +597,7 @@ body#friedevelopment .service-container .clickable {
   z-index: 999999;
 }
 
-body#friedevelopment .service-container .more {
+.service-container .more {
   z-index: 800000;
   cursor: pointer;
   position: absolute;
@@ -606,7 +606,7 @@ body#friedevelopment .service-container .more {
   font-size: 0.8em;
 }
 
-body#friedevelopment .moving-background {
+.moving-background {
   position: absolute;
   height: 150%;
   width: 100%;
@@ -622,42 +622,42 @@ body#friedevelopment .moving-background {
   z-index: -444;
 }
 
-body#friedevelopment .service-d .moving-background {
+.service-d .moving-background {
   background-image: linear-gradient(132deg, #2c2c2c 0%, #36a9e1 100%);
   background-position: right;
 }
 
-body#friedevelopment .service-fs .moving-background {
+.service-fs .moving-background {
   background-image: linear-gradient(45deg, #2c2c2c 0%, #006494 100%);
 }
 
-body#friedevelopment .service-os .moving-background {
+.service-os .moving-background {
   background-image: linear-gradient(45deg, #2c2c2c 0%, #1d71b8 100%);
 }
 
-body#friedevelopment .service-seo .moving-background {
+.service-seo .moving-background {
   background-image: linear-gradient(125deg, #2c2c2c 0%, #36a9e1 100%);
 }
 
-body#friedevelopment .service-dev .moving-background {
+.service-dev .moving-background {
   background-image: linear-gradient(184deg, #2c2c2c 0%, #006494 100%);
 }
 
-body#friedevelopment .wordpress {
+.wordpress {
   font-size: 30em;
   color: #006494;
   opacity: 0.1;
   position: absolute;
 }
 
-body#friedevelopment .welcomeText {
+.welcomeText {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   justify-items: center;
 }
 
-body#friedevelopment .welcomeText .welcomeContainer {
+.welcomeText .welcomeContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -671,12 +671,12 @@ body#friedevelopment .welcomeText .welcomeContainer {
   gap: 10vh;
 }
 
-body#friedevelopment .welcomeText .welcomeContainer .text {
+.welcomeText .welcomeContainer .text {
   z-index: 3;
   padding: 2vh 2vw;
 }
 
-body#friedevelopment .welcomeText .welcomeContainer .image {
+.welcomeText .welcomeContainer .image {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -687,7 +687,7 @@ body#friedevelopment .welcomeText .welcomeContainer .image {
           justify-content: flex-end;
 }
 
-body#friedevelopment .welcomeText .welcomeContainer .image .imgOverlay {
+.welcomeText .welcomeContainer .image .imgOverlay {
   background-color: #2c2c2c;
   position: absolute;
   top: 0;
@@ -700,7 +700,7 @@ body#friedevelopment .welcomeText .welcomeContainer .image .imgOverlay {
 }
 
 @media screen and (min-width: 740px) {
-  body#friedevelopment .welcomeText .welcomeContainer {
+  .welcomeText .welcomeContainer {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -713,13 +713,13 @@ body#friedevelopment .welcomeText .welcomeContainer .image .imgOverlay {
             align-items: center;
     padding: 0 10vw;
   }
-  body#friedevelopment .welcomeText .welcomeContainer .text {
+  .welcomeText .welcomeContainer .text {
     width: 60%;
     padding: 2vh 2vw;
   }
 }
 
-body#friedevelopment .welcomeText .welcomeContainer .image {
+.welcomeText .welcomeContainer .image {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -730,7 +730,7 @@ body#friedevelopment .welcomeText .welcomeContainer .image {
           justify-content: flex-end;
 }
 
-body#friedevelopment .welcomeText .welcomeContainer .image .imgMove {
+.welcomeText .welcomeContainer .image .imgMove {
   overflow: hidden;
   position: relative;
   width: 28vw;
@@ -739,23 +739,23 @@ body#friedevelopment .welcomeText .welcomeContainer .image .imgMove {
   border: 15px solid #006494;
 }
 
-body#friedevelopment .welcomeText .welcomeContainer .image img {
+.welcomeText .welcomeContainer .image img {
   width: 50vw;
   position: relative;
   right: 180px;
 }
 
-body#friedevelopment #services path,
-body#friedevelopment #shop path,
-body#friedevelopment #seo path {
+#services path,
+#shop path,
+#seo path {
   visibility: hidden;
 }
 
-body#friedevelopment .hide {
+.hide {
   visibility: hidden;
 }
 
-body#friedevelopment .mask {
+.mask {
   -webkit-mask-image: url(/images/blobfriede2.svg);
   -webkit-mask-position: center center;
   -webkit-mask-repeat: no-repeat;
@@ -766,7 +766,7 @@ body#friedevelopment .mask {
   mask-size: cover;
 }
 
-body#friedevelopment .contact {
+.contact {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -775,7 +775,7 @@ body#friedevelopment .contact {
           justify-content: center;
 }
 
-body#friedevelopment .logo-use {
+.logo-use {
   display: none;
 }
 /*# sourceMappingURL=styles.css.map */
