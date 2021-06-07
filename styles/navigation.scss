@@ -5,10 +5,9 @@
     --clr-neon: #1d71b8;
     --clr-bg  : hsl(323 21% 16%);
 
-    --highlightrosa   : #FE019A;
-    // --highlight    : #FF5733;
-    --highlight       : #FF9F9F;
-    --newhighlight    : #FF9FD3;
+
+    --highlight   : #FF9F9F;
+    --newhighlight: #FF9FD3;
 }
 
 a {
@@ -18,6 +17,7 @@ a {
 
 #navigation {
 
+    display: none;
 
     ul {
         display        : flex;

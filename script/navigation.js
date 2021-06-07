@@ -52,10 +52,20 @@ tl1 = gsap.from(".menu-item", {
   stagger: 0.02,
   scale: 0,
   paused: true,
+  // onComplete: () => {
+  //   gsap.set("nav", { display: "unset" });
+  // },
+  onReverseComplete: () => {
+    gsap.set("nav", { display: "none" });
+
+    gsap.set("header", { zIndex: 0 });
+    gsap.set("main", { opacity: 1 });
+  },
 });
 
 let startNavigationAnimation = function (param) {
   if (tl1.paused() || tl1.reversed()) {
+    gsap.set("nav", { display: "unset" });
     tl1.play();
     tlburger.play();
     tlburgerClose.play();
@@ -65,7 +75,6 @@ let startNavigationAnimation = function (param) {
     tl1.reverse();
     tlburger.reverse();
     tlburgerClose.reverse();
-    gsap.set("header", { zIndex: 0 });
-    gsap.set("main", { opacity: 1 });
+    // gsap.set("nav", { display: "none" });
   }
 };

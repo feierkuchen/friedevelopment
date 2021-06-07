@@ -4,7 +4,6 @@ $red        : rgba(148, 0, 0, 1);
 $dark-blue  : #006494;
 $middle-blue: #1d71b8;
 $light-blue : #36a9e1;
-$highlight  : #FE019A;
 //$font:#E1BAA9;
 $font       : white;
 
@@ -55,7 +54,7 @@ $font       : white;
     display            : flex;
     flex-direction     : column;
     align-items        : center;
-    max-height         : 60vh;
+    height             : 60vh;
     width              : clamp(100px, 90vw, 800px);
     //min-height    : 75vh;
     position           : relative;

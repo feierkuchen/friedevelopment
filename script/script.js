@@ -643,6 +643,7 @@ function servicesMoreContentScrollVertical() {
   $(".card").click(function (e) {
     $(".vertical-scroll-container").removeClass("tiles");
     // if (!tweenVertical)
+
     tweenVertical = anim();
   });
   $(".details-close").click(function (e) {

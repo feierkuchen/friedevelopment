@@ -4,7 +4,6 @@
   --clr-neon: #006494;
   --clr-neon: #1d71b8;
   --clr-bg: hsl(323 21% 16%);
-  --highlightrosa: #FE019A;
   --highlight: #FF9F9F;
   --newhighlight: #FF9FD3;
 }
@@ -12,6 +11,10 @@
 a {
   color: var(--highlight);
   text-decoration: none;
+}
+
+#navigation {
+  display: none;
 }
 
 #navigation ul {

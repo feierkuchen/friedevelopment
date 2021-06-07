@@ -3,9 +3,12 @@
   --clr-neon: #36a9e1;
   --clr-neon: #006494;
   --clr-neon: #1d71b8;
+  --dark-blue: #006494;
+  --middle-blue: #1d71b8;
+  --light-blue: #36a9e1;
   --clr-bg: hsl(323 21% 16%);
-  --highlightrosa: #FE019A;
-  --highlight: #FF9FD3;
+  --highlight: #FF9F9F;
+  --newhighlight: #FF9FD3;
 }
 
 body {
@@ -36,8 +39,6 @@ header {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
-  background: -webkit-gradient(linear, left bottom, left top, from(rgba(44, 44, 44, 0)), to(#2c2c2c));
-  background: linear-gradient(0deg, rgba(44, 44, 44, 0) 0%, #2c2c2c 100%);
 }
 
 header .cta-container {
@@ -164,13 +165,25 @@ main * {
   padding: 0;
 }
 
-main h3 {
-  font-family: "Raleway";
+main h2 {
+  font-size: clamp(13px, 10vw, 80px);
+  text-align: center;
+  font-family: 'Kaushan Script', cursive;
+  color: var(--newhighlight);
 }
 
-main .middle {
-  color: #1d71b8;
-  fill: #1d71b8;
+main .portrait h2 {
+  font-size: 1em;
+  margin: 10em 0;
+}
+
+main h3 {
+  color: white;
+  padding: 0 2vh;
+  font-weight: 600;
+  font-size: clamp(13px, 3vw, 20px);
+  font-family: "Raleway";
+  font-weight: 500;
 }
 
 main p {
@@ -178,24 +191,6 @@ main p {
   line-height: 2em;
   color: rgba(54, 169, 225, 0.6);
   color: white;
-}
-
-main h2 {
-  text-align: center;
-}
-
-main h2,
-main h3 {
-  color: rgba(0, 100, 148, 0.6);
-  -webkit-columns: white;
-          columns: white;
-  line-height: 1em;
-  text-align: center;
-}
-
-main h3 {
-  font-size: calc(min(8vw, 60px));
-  font-weight: 200;
 }
 
 main section {
@@ -264,11 +259,6 @@ div {
   z-index: -2;
 }
 
-.hero .responsive svg {
-  -webkit-transform: scale(0.8);
-          transform: scale(0.8);
-}
-
 .hero .responsive .cls-1 {
   fill: #383838;
 }
@@ -288,14 +278,34 @@ div {
   position: absolute;
 }
 
-.hero .responsive h3 {
+.hero .responsive h2 {
   font-size: 1em;
   margin: 3em 0;
 }
 
-.hero .responsive .portrait h3 {
+.hero .responsive .portrait h2 {
   font-size: 1em;
   margin: 10em 0;
+}
+
+.hero .responsive h3 {
+  color: white;
+  padding: 0 2vh;
+  font-weight: 600;
+  font-size: clamp(13px, 3vw, 20px);
+  -ms-flex-item-align: center;
+      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  font-style: italic;
 }
 
 .hero .responsive #ipod {
@@ -306,32 +316,37 @@ div {
 
 .hero .responsive #desktop {
   width: clamp(20px, 95vw, 1400px);
-  left: 10vw;
-  bottom: 0;
+  margin: auto;
+  width: 70%;
+  left: 0;
+  right: 0;
+  bottom: 10vh;
   font-size: 60px;
+  max-height: 70vh;
 }
 
 .hero .responsive #phone {
   display: none;
-  width: 10vw;
-  right: 15vw;
-  font-size: 13px;
 }
 
 .hero .responsive #tablet {
   width: 14vw;
   width: clamp(20px, 20vw, 270px);
-  right: 20;
-  bottom: 0;
+  width: 18%;
+  left: 10vw;
+  bottom: 3vw;
   font-size: 20px;
+  max-height: 30vh;
 }
 
 .hero .responsive #laptop {
   width: 40vw;
   width: clamp(20px, 90vw, 800px);
-  bottom: 0;
-  right: 20vw;
+  width: 50%;
+  right: 0vw;
   font-size: 35px;
+  bottom: 0;
+  max-height: 40vh;
 }
 
 .hero .responsive #watch {
@@ -389,13 +404,12 @@ div {
 
 .service-container .card .title-container::before {
   content: " ";
+  z-index: -2;
   display: block;
   position: absolute;
-  left: 10%;
-  top: 20%;
+  height: 120%;
   width: calc(100%+2vw);
   width: 100%;
-  height: 50%;
   opacity: 0.5;
   background-color: #2c2c2c;
   background: #2c2c2c;
@@ -419,9 +433,13 @@ div {
       -ms-flex-pack: center;
           justify-content: center;
   justify-items: flex-start;
+  padding: 0 3em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.service-container .card .title-container .title {
+.service-container .card .title-container .titleOut {
   color: white;
   padding: 0 2vh;
   font-weight: 600;
@@ -441,17 +459,17 @@ div {
   font-style: italic;
 }
 
-.service-container .card .title-container .title .darkBl {
+.service-container .card .title-container .titleOut .darkBl {
   color: #006494;
   visibility: visible !important;
 }
 
-.service-container .card .title-container .title .lightBl {
+.service-container .card .title-container .titleOut .lightBl {
   color: #36a9e1;
   visibility: visible !important;
 }
 
-.service-container .card .title-container .title .middleBl {
+.service-container .card .title-container .titleOut .middleBl {
   color: #1d71b8;
   visibility: visible !important;
 }
@@ -736,6 +754,8 @@ div {
   left: 0;
   right: 0;
   top: 30%;
+  background-color: rgba(44, 44, 44, 0.5);
+  padding: 5px;
 }
 
 #fd {
