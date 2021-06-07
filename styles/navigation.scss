@@ -42,7 +42,6 @@ a {
     bottom         : 10vh;
     z-index        : 9999;
     right          : 2vw;
-    font-size      : 35px;
 
     .link {
         position: relative;
@@ -70,26 +69,31 @@ a {
 }
 
 .cta-container {
-    position       : fixed;
-    width          : 100%;
-    display        : flex;
-    flex-direction : column;
-    justify-content: right;
-    align-items    : flex-end;
-    top            : 2vh;
-    z-index        : 9999;
-    right          : 2vw;
+    //position       : fixed;
+    width             : 100%;
+    display           : flex;
+    flex-direction    : column;
+    justify-content   : right;
+    align-items       : flex-end;
+    // top            : 2vh;
+    // z-index        : 9999;
+    // right          : 2vw;
 
-    .cta-button {
-        color      : var(--highlight);
-        font-weight: bold;
-        font-size  : 30px;
-
+    .cta-button,
+    .burger {
         position: relative;
     }
 }
 
+.cta-button,
+.burger,
+.go-up-container {
+    color      : var(--highlight);
+    font-weight: bold;
+    font-size  : clamp(20px, 2vw, 30px);
 
+
+}
 
 .menu-item {
     // visibility: hidden;
@@ -173,8 +177,6 @@ a {
     position  : relative;
     margin-top: 40px;
     cursor    : pointer;
-    color     : var(--highlight);
-    font-size : 30px;
 
     .burger-close {
         // visibility   : hidden;
@@ -329,5 +331,5 @@ footer {
 }
 
 .js-navigation {
-    visibility: hidden;
+    opacity: 0;
 }

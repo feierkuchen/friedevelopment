@@ -24,6 +24,7 @@
 
 .button {
   font-size: 40px;
+  font-size: clamp(30px, 5vw, 40px);
   border-radius: 0.25em;
   padding: 0.3em .3em;
   margin: 1em;
@@ -100,7 +101,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 0 10vw;
+  padding: 0 clamp(0, 10vw, 200px);
   margin-top: 4vh;
 }
 

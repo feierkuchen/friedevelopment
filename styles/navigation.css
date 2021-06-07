@@ -52,7 +52,6 @@ a {
   bottom: 10vh;
   z-index: 9999;
   right: 2vw;
-  font-size: 35px;
 }
 
 .go-up-container .link {
@@ -79,7 +78,6 @@ a {
 }
 
 .cta-container {
-  position: fixed;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -94,16 +92,19 @@ a {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  top: 2vh;
-  z-index: 9999;
-  right: 2vw;
 }
 
-.cta-container .cta-button {
+.cta-container .cta-button,
+.cta-container .burger {
+  position: relative;
+}
+
+.cta-button,
+.burger,
+.go-up-container {
   color: var(--highlight);
   font-weight: bold;
-  font-size: 30px;
-  position: relative;
+  font-size: clamp(20px, 2vw, 30px);
 }
 
 .menu-item {
@@ -177,8 +178,6 @@ a {
   position: relative;
   margin-top: 40px;
   cursor: pointer;
-  color: var(--highlight);
-  font-size: 30px;
 }
 
 .burger .burger-close {
@@ -328,6 +327,6 @@ footer {
 }
 
 .js-navigation {
-  visibility: hidden;
+  opacity: 0;
 }
 /*# sourceMappingURL=navigation.css.map */

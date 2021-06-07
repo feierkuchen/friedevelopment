@@ -34,31 +34,40 @@ footer {
   min-height      : 20vh;
 }
 
+// .triggerCta {
+//   color: yellow;
+// }
+
 main {
   z-index: 1
 }
 
 header {
-  display            : flex !important;
+  //display : flex !important;
+  z-index: 2;
+
   //visibility       : hidden;
-  opacity            : 0;
-  flex-direction     : row;
-  height             : 10vh;
-  position           : fixed;
-  justify-content    : space-between;
+  //opacity          : 0;
+  flex-direction   : row;
+  height           : 10vh;
+  position         : fixed;
+  justify-content  : space-between;
   //z-index        : 20;
-  width              : 100%;
-  background         : linear-gradient(0deg,
+  width            : 100%;
+  background       : linear-gradient(0deg,
       rgba($gray, 0) 0%,
-      // rgba($gray, 0.6250875350140056) 20%,
-      // rgba($gray, 0.742734593837535) 37%,
-      // rgba($gray, 1) 64%,
       rgba($gray, 1) 100%);
+
+
+  .cta-container {
+    padding-right: 2vw;
+    padding-top  : 2vh
+  }
 
   .logo-header,
   .header-cta {
-    align-self  : center;
-    margin-right: 4vw;
+    // align-self  : center;
+
 
     // margin:10vh;
     // position: relative;
@@ -254,55 +263,7 @@ div {
 }
 
 
-.fd {
-  //width: 80%;
-  z-index : 100;
-  position: fixed;
-  margin  : auto auto;
-  width   : 80%;
-  left    : 0;
-  right   : 0;
-  top     : 0;
-  bottom  : 0;
-}
 
-.hero-text-container {
-  position: relative;
-  height  : 100vh;
-}
-
-.hero-text {
-
-  font-family: 'Kaushan Script',
-    cursive;
-  color    : var(--highlightrosa);
-  font-size: clamp(20px, 15vw, 100px);
-  color    : #FF9FD3;
-
-  z-index : 100;
-  position: fixed;
-}
-
-.hero-lass {
-  top         : 20vh;
-  margin-right: 4vw;
-  left        : 5vw;
-}
-
-.hero-deine {
-  top  : 60vh;
-  right: 2vw
-}
-
-.hero-kontakt {
-  bottom   : 0;
-  right    : 2vw;
-  z-index  : 100;
-  position : fixed;
-  font-size: 2em;
-}
-
-.frieDevelopment {}
 
 // .triggerCta {
 //   border: 1px solid green;
@@ -822,4 +783,95 @@ div {
 
 .logo-use {
   display: none;
+}
+
+
+
+.fd {
+  //width: 80%;
+  z-index : 100;
+  position: fixed;
+  margin  : auto auto;
+  width   : 80%;
+  left    : 0;
+  right   : 0;
+  top     : 30%;
+}
+
+#fd {
+  /*! margin: auto; */
+  /*! inset: 0px; */
+  /*! position: fixed; */
+}
+
+.start {
+  display        : flex;
+  flex-direction : column;
+  justify-content: space-around;
+
+
+
+  // .hero-text-container {
+  //   position: relative;
+  //   height  : 100vh;
+  // }
+
+  .hero-text {
+    span {
+      font-family: 'Kaushan Script',
+        cursive;
+      //display: contents;
+    }
+
+    height: 25%;
+    font-family: 'Kaushan Script',
+    cursive;
+    color     : var(--highlightrosa);
+    font-size : clamp(20px, 15vw, 100px);
+    color     : #FF9FD3;
+    opacity   : 1;
+
+    z-index   : 100;
+    font-size : clamp(15px, 10vw, 100px);
+    font-size : clamp(50px, 7vw, 90px);
+    //position: fixed;
+
+  }
+
+  .hero-lass {
+    // top         : 20vh;
+    // margin-right: 4vw;
+    // left        : 5vw;
+    display    : flex;
+    align-items: flex-end;
+    margin-left: 3vw;
+  }
+
+  .hero-deine {
+    //align-self  : end;
+    display        : flex;
+    // align-items : flex-start;
+    margin-right   : 4vw;
+    flex-wrap      : wrap;
+    justify-content: end;
+    align-content  : flex-start;
+  }
+
+  .hero-kontakt {
+    align-self : flex-end;
+    z-index    : 100;
+    //position : fixed;
+    height     : 25%;
+  }
+
+  .fd-container {
+    height     : 25%;
+    display    : flex;
+    align-items: center;
+    padding    : 0 10vw;
+  }
+
+
+
+  .frieDevelopment {}
 }
