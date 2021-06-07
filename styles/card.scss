@@ -67,20 +67,15 @@ $font       : white;
         margin: 6vh 3vw;
     }
 
-    .service-title {
-        font-weight: 600;
-        font-size  : 1.2em;
-    }
 
-    .service-title,
-    i {
-        align-self: center;
-    }
 }
 
 #services .tiles {
 
-
+    h3 {
+        font-size: clamp(13px, 3vw, 16px);
+        ;
+    }
 
     //border  : 1px solid green;
     //width : 50%;

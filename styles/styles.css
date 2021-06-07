@@ -16,6 +16,7 @@ body {
   position: relative;
   height: 100vh;
   margin: 0;
+  line-height: 1;
 }
 
 footer {
@@ -181,7 +182,7 @@ main h3 {
   color: white;
   padding: 0 2vh;
   font-weight: 600;
-  font-size: clamp(13px, 3vw, 20px);
+  font-size: clamp(13px, 3vw, 25px);
   font-family: "Raleway";
   font-weight: 500;
 }
@@ -515,7 +516,7 @@ div {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: clamp(16px, 2vw, 20px);
+  font-size: clamp(16px, 2vw, 18px);
 }
 
 .service-container .services.moreContent {

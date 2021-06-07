@@ -23,11 +23,12 @@ $font       : white;
 
 //body
 body {
-  background: $gray;
+  background : $gray;
   //padding: 2vh 6vw;
-  position  : relative;
-  height    : 100vh;
-  margin    : 0;
+  position   : relative;
+  height     : 100vh;
+  margin     : 0;
+  line-height: 1;
 }
 
 
@@ -239,7 +240,7 @@ main {
     color      : white;
     padding    : 0 2vh;
     font-weight: 600;
-    font-size  : clamp(13px, 3vw, 20px);
+    font-size  : clamp(13px, 3vw, 25px);
 
     //font-style : italic;
     font-family  : "Raleway";
@@ -580,7 +581,7 @@ div {
     display       : flex;
     flex-direction: column;
     align-items   : center;
-    font-size     : clamp(16px, 2vw, 20px);
+    font-size     : clamp(16px, 2vw, 18px);
 
     .icon {
       i {

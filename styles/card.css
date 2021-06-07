@@ -71,16 +71,8 @@
   }
 }
 
-.card .service-title {
-  font-weight: 600;
-  font-size: 1.2em;
-}
-
-.card .service-title,
-.card i {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+#services .tiles h3 {
+  font-size: clamp(13px, 3vw, 16px);
 }
 
 #services .tiles .details-close {
