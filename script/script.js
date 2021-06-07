@@ -325,6 +325,41 @@ function heroAnim() {
     },
     0
   );
+
+  // const tweenHeroAnim2 = gsap.timeline({
+  //   scrollTrigger: {
+  //     //  markers:true,
+  //     trigger: ".responsive",
+  //     start: "top bottom-=100",
+  //     end: "+=1500",
+  //     scrub: 1,
+  //   },
+  // });
+
+  // tweenHeroAnim2.to(
+  //   "#desktop",
+  //   {
+  //     y: -600,
+  //     ease: "none",
+  //   },
+  //   0
+  // );
+  // tweenHeroAnim2.to(
+  //   "#laptop",
+  //   {
+  //     y: -400,
+  //     ease: "none",
+  //   },
+  //   0
+  // );
+  // tweenHeroAnim2.to(
+  //   "#tablet",
+  //   {
+  //     y: -200,
+  //     ease: "none",
+  //   },
+  //   0
+  // );
 }
 function heroText() {
   const tweenpinhero = gsap.timeline({

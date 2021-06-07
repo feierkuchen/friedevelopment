@@ -260,8 +260,7 @@ div {
   background-size: 800%;
   -webkit-animation: bg-animation 70s infinite;
           animation: bg-animation 70s infinite;
-  height: 60vh;
-  padding: 2vh 2vw;
+  height: 100vh;
   z-index: -2;
 }
 
@@ -306,7 +305,7 @@ div {
 }
 
 .hero .responsive #desktop {
-  width: clamp(20px, 95vw, 1000px);
+  width: clamp(20px, 95vw, 1400px);
   left: 10vw;
   bottom: 0;
   font-size: 60px;

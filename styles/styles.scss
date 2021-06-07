@@ -313,9 +313,9 @@ div {
     animation          : bg-animation 70s infinite;
 
     //width: 80%;
-    height : 60vh;
-    padding: 2vh 2vw;
-    z-index: -2;
+    height    : 100vh;
+    // padding: 2vh 2vw;
+    z-index   : -2;
 
     .cls-1 {
       fill: #383838;
@@ -354,7 +354,7 @@ div {
     }
 
     #desktop {
-      width    : clamp(20px, 95vw, 1000px);
+      width    : clamp(20px, 95vw, 1400px);
       //width:50vw;
       left     : 10vw;
       bottom   : 0;
