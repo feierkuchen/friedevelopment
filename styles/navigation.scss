@@ -6,8 +6,9 @@
     --clr-bg  : hsl(323 21% 16%);
 
 
-    --highlight   : #FF9F9F;
-    --newhighlight: #FF9FD3;
+    // --highlight     : #FF9F9F;
+    //: #FF9FD3;
+    //--newhighlight: #9FFFEE;
 }
 
 a {
@@ -174,9 +175,9 @@ a {
 }
 
 .burger {
-    position  : relative;
-    margin-top: 40px;
-    cursor    : pointer;
+    position    : relative;
+    //margin-top: 40px;
+    cursor      : pointer;
 
     .burger-close {
         // visibility   : hidden;
@@ -252,25 +253,25 @@ a {
 }
 
 
-.cta-button:hover::after,
-.cta-button:focus::after {
-    opacity: 0.5;
-}
+// .cta-button:hover::after,
+// .cta-button:focus::after {
+//     opacity: 0.5;
+// }
 
-.burger-menu:hover::after,
-.burger-menu:focus::after,
-.burger-close:hover::after,
-.burger-close:focus::after {
-    opacity: 0.5;
-}
+// .burger-menu:hover::after,
+// .burger-menu:focus::after,
+// .burger-close:hover::after,
+// .burger-close:focus::after {
+//     opacity: 0.5;
+// }
 
 
-.menu-item:hover::before,
-.menu-item:focus::before,
-.link:hover::after,
-.link:focus::after {
-    opacity: 0.5;
-}
+// .menu-item:hover::before,
+// .menu-item:focus::before,
+// .link:hover::after,
+// .link:focus::after {
+//     opacity: 0.5;
+// }
 
 .cta-button::before {
     content : "";
@@ -332,4 +333,30 @@ footer {
 
 .js-navigation {
     opacity: 0;
+}
+
+
+.bottom-navigation {
+
+    position        : fixed;
+    bottom          : 0;
+    width           : 100vw;
+    height          : 6vh;
+    left            : 0;
+    z-index         : 3333333;
+    background-color: var(--highlight);
+    display         : flex;
+    justify-content : space-around;
+    align-items     : center;
+
+    i {
+        color    : #2c2c2c;
+        font-size: clamp(20px, 2vw, 30px)
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .bottom-navigation {
+        display: none;
+    }
 }

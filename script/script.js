@@ -14,11 +14,43 @@ if (true) {
   //servicesMoreContentMorph();
 
   servicesMoreContentScrollVertical();
+
+  techSkills();
+
   titleLikeLogo();
 
   // // services();
   welcomeText();
   cta();
+}
+function techSkills(params) {
+  const tl1 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".tech-skills",
+      start: "top bottom",
+      end: "+=1000vh",
+      scrub: true,
+    },
+  });
+  tl1.to(
+    ".line.first",
+    {
+      x: "-10%",
+    },
+    {
+      x: "10%",
+    }
+  );
+  tl1.from(
+    ".line.second",
+    {
+      x: "-10%",
+    },
+    {
+      x: "10%",
+    },
+    0
+  );
 }
 
 function firstSkit() {
@@ -257,7 +289,7 @@ function logoFlip() {
 
   gsap.set("#fd", {
     position: "fixed",
-    top: "30%",
+    top: "34%",
     left: "0",
     right: 0,
     //bottom: 0,
@@ -271,7 +303,8 @@ function logoFlip() {
       top: "1vh",
       left: "2vw",
       right: "unset",
-      height: "clamp(8px,4vh,50px)",
+      height: "calc(clamp(20px,2vw,30px) + 2vh)",
+      //width: "clamp(100px, 60%, 500px)",
       margin: "0",
       width: "unset",
     },
@@ -613,8 +646,8 @@ function servicesMoreContentScrollVertical() {
         trigger: ".service",
         start: "top top+=50vh",
         id: "scrollServicesPin",
-        //end: "+=" + (container.offsetWidth + 1200 + "vh"),
-        end: "+=" + container.offsetWidth,
+        end: "+=" + (container.offsetWidth + 3200 + "vh"),
+        //end: "+=" + container.offsetWidth ,
         pin: true,
       },
     });
@@ -633,7 +666,7 @@ function servicesMoreContentScrollVertical() {
         scrub: 1,
         snap: 0.2,
         //end: () => "+=" + container.offsetWidth + "vh",
-        end: () => "+=" + container.offsetWidth + "vh",
+        end: () => "+=" + (container.offsetWidth + 1500) + "vh",
       },
     });
 
@@ -645,6 +678,7 @@ function servicesMoreContentScrollVertical() {
     // if (!tweenVertical)
 
     tweenVertical = anim();
+    serviceEndSkit();
   });
   $(".details-close").click(function (e) {
     console.log(this);
@@ -654,19 +688,43 @@ function servicesMoreContentScrollVertical() {
     tweenVertical.pause(0).kill(true);
     tweenServicesPin.pause(0).kill(true);
     $(".vertical-scroll-container").addClass("tiles");
-
-    // gsap.set(".moreContent", {
-    //   x: 0,
-    // });
-
-    // if (tweenVertical) {
-    //   console.log("kill", tweenVertical);
-    //   tweenVertical.pause();
-    //   console.log("kill", tweenVertical.isActive());
-    //   ScrollTrigger.refresh();
-    // }
   });
 }
+
+function serviceEndSkit(params) {
+  console.log("serviceendkit");
+  const tweenServicesEnd = gsap.timeline({
+    scrollTrigger: {
+      // markers:true,
+      trigger: ".service-container",
+      start: "+=7000vh",
+
+      end: "+=2000",
+      scrub: true,
+    },
+  });
+  tweenServicesEnd.to(".service-container h2", {
+    autoAlpha: 0,
+  });
+  tweenServicesEnd.to(
+    ".more-container",
+    {
+      rotate: "180deg",
+    },
+    0
+  );
+  tweenServicesEnd.to(
+    ".more-container",
+    {
+      // scaleX: 0.1,
+      // scaleY: 0.3,
+      scale: 10,
+      borderRadius: "50%",
+    },
+    0
+  );
+}
+
 function services() {
   const tweenServicesPin = gsap.timeline({
     scrollTrigger: {

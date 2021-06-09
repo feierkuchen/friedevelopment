@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:900);
 :root {
   --clr-neon: hsl(317 100% 54%);
   --clr-neon: #36a9e1;
@@ -7,8 +8,10 @@
   --middle-blue: #1d71b8;
   --light-blue: #36a9e1;
   --clr-bg: hsl(323 21% 16%);
+  --highlight: #D0FDEA;
+  --newhighlight: #FF9F9F;
   --highlight: #FF9F9F;
-  --newhighlight: #FF9FD3;
+  --newhighlight: #D0FDEA;
 }
 
 body {
@@ -40,6 +43,7 @@ header {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
+  background-color: #2c2c2c;
 }
 
 header .cta-container {
@@ -52,54 +56,6 @@ header .cta-container {
 *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-}
-
-.neon-button {
-  margin-right: 40vw !important;
-  font-size: 2rem;
-  display: inline-block;
-  display: none;
-  cursor: pointer;
-  text-decoration: none;
-  color: var(--clr-neon);
-  border: var(--clr-neon) 0.125em solid;
-  border-radius: 0.25em;
-  padding: 0.3em .3em;
-  -webkit-box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
-          box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
-  position: relative;
-}
-
-.sneon-button::before {
-  pointer-events: none;
-  content: "asdf";
-  color: orangered;
-  position: absolute;
-  background: var(--clr-neon);
-  top: 120%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  -webkit-transform: perspective(1em) rotateX(40deg) scale(1, 0.1);
-          transform: perspective(1em) rotateX(40deg) scale(1, 0.1);
-  -webkit-filter: blur(1em);
-          filter: blur(1em);
-  opacity: 0.7;
-}
-
-.funnytext {
-  pointer-events: none;
-  content: "asdf";
-  color: orangered;
-  position: absolute;
-  background: var(--clr-neon);
-  top: 120%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  -webkit-transform: perspective(1em) rotateX(40deg) scale(1, 1);
-          transform: perspective(1em) rotateX(40deg) scale(1, 1);
-  opacity: 0.5;
 }
 
 .lightanim {
@@ -123,38 +79,6 @@ header .cta-container {
   padding-top: 20%;
 }
 
-.neon-button::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  -webkit-box-shadow: 0 0 2em 0.5em var(--clr-neon);
-          box-shadow: 0 0 2em 0.5em var(--clr-neon);
-  opacity: 0;
-  background-color: var(--clr-neon);
-  z-index: -1;
-  -webkit-transition: opacity 100ms linear;
-  transition: opacity 100ms linear;
-}
-
-.neon-button:hover,
-.neon-button:focus {
-  color: var(--clr-bg);
-  text-shadow: none;
-}
-
-.neon-button:hover::before,
-.neon-button:focus::before {
-  opacity: 1;
-}
-
-.neon-button:hover::after,
-.neon-button:focus::after {
-  opacity: 1;
-}
-
 * {
   font-family: "Raleway";
   -webkit-box-sizing: border-box;
@@ -171,6 +95,7 @@ main h2 {
   text-align: center;
   font-family: 'Kaushan Script', cursive;
   color: var(--newhighlight);
+  margin-bottom: 10vh;
 }
 
 main .portrait h2 {
@@ -377,6 +302,38 @@ div {
   position: relative;
 }
 
+.tech-skills {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10vh;
+  overflow: hidden;
+}
+
+.tech-skills .line {
+  width: 400%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.tech-stack {
+  color: #1d71b8;
+  -webkit-background-clip: text;
+  font-weight: 900;
+  font-size: 3em;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#36a9e1), to(#006494));
+  background-image: linear-gradient(#36a9e1, #006494);
+  -webkit-text-fill-color: transparent;
+}
+
 .service-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -553,6 +510,15 @@ div {
 
 .service-container .services .more {
   display: none;
+}
+
+.service-container .services .skit {
+  display: block;
+  font-size: 40px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .service-container .clickable {
@@ -782,11 +748,11 @@ div {
   font-family: 'Kaushan Script', cursive;
   color: var(--highlightrosa);
   font-size: clamp(20px, 15vw, 100px);
-  color: #FF9FD3;
+  color: var(--newhighlight);
   opacity: 1;
   z-index: 100;
   font-size: clamp(15px, 10vw, 100px);
-  font-size: clamp(50px, 7vw, 90px);
+  font-size: clamp(30px, 7vw, 90px);
 }
 
 .start .hero-text span {
@@ -833,5 +799,118 @@ div {
       -ms-flex-align: center;
           align-items: center;
   padding: 0 10vw;
+}
+
+body {
+  margin: 0;
+}
+
+.darker {
+  text-align: center;
+  position: relative;
+}
+
+.darker h1 {
+  margin: 0;
+  font-size: 20vw;
+  text-transform: uppercase;
+  font-family: Montserrat, sans-serif;
+  font-weight: bolder;
+  line-height: 0.8;
+}
+
+.darker h1 {
+  color: #fff;
+}
+
+.lighter h1 {
+  color: #000;
+  font-size: 19vw;
+}
+
+.darker img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.darker {
+  background: #000;
+}
+
+.lighter {
+  background: #fff;
+}
+
+.darker img {
+  mix-blend-mode: darken;
+}
+
+.lighter img {
+  mix-blend-mode: lighten;
+}
+
+#gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.gallery {
+  background-color: url(/images/hamburg_2013_0856.JPG);
+  background-size: contain;
+  font-size: 6em;
+  font-weight: bold;
+  line-height: 1;
+  position: relative;
+  display: inline-block;
+  margin: 0.25em;
+  padding: 0.5em 0.75em;
+  text-align: center;
+  color: #fff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  font-size: 20vw;
+  text-transform: uppercase;
+  font-family: Montserrat, sans-serif;
+  font-weight: bolder;
+  line-height: 0.8;
+}
+
+.gallery::before {
+  z-index: -2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url(/images/hamburg_2013_0856.JPG);
+  background-size: contain;
+  position: absolute;
+  content: "";
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-position: -0.75em 0;
+}
+
+.galledry:after {
+  position: absolute;
+  z-index: -1;
+  top: 0.125em;
+  right: 0.125em;
+  bottom: 0.125em;
+  left: 0.125em;
+  background-color: #000;
+  position: absolute;
+  content: "";
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 /*# sourceMappingURL=styles.css.map */
