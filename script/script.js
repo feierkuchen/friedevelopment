@@ -16,6 +16,7 @@ if (true) {
   servicesMoreContentScrollVertical();
 
   techSkills();
+  pictures();
 
   titleLikeLogo();
 
@@ -33,7 +34,7 @@ function techSkills(params) {
     },
   });
   tl1.to(
-    ".line.first",
+    ".tech-skills .line.first",
     {
       x: "-10%",
     },
@@ -42,12 +43,41 @@ function techSkills(params) {
     }
   );
   tl1.from(
-    ".line.second",
+    ".tech-skills .line.second",
     {
       x: "-10%",
     },
     {
       x: "10%",
+    },
+    0
+  );
+}
+function pictures(params) {
+  const tl1 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".pictures",
+      start: "top bottom",
+      end: "+=1000vh",
+      scrub: true,
+    },
+  });
+  tl1.to(
+    ".pictures .line.first",
+    {
+      x: "-10%",
+    },
+    {
+      x: "10%",
+    }
+  );
+  tl1.from(
+    ".pictures .line.second",
+    {
+      x: "-20%",
+    },
+    {
+      x: "20%",
     },
     0
   );

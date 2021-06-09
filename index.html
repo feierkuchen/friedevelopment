@@ -107,10 +107,10 @@
         </div>
       </div>
       <div class="go-up-container js-navigation">
-        <a href="#main" class="link"><i class=" fas fa-arrow-up"></i></a>
+        <a href="#cta-kontakt" class="link"><i class=" fas fa-arrow-up"></i></a>
       </div>
       <div class="bottom-navigation">
-        <div class="contact-cta"><i class="fas fa-address-book"></i></div>
+        <div class="contact-cta" onclick="window.open('friedevelopment.vcf')"><i class="fas fa-address-book"></i></div>
         <div class="contact-cta"><i class="fas fa-at"></i></div>
         <div class="contact-cta"><i class="fas fa-phone"></i></div>
       </div>
@@ -130,7 +130,7 @@
     <main id="main">
       <section class="start" id="start">
         <div class="scroll">scroll</div>
-        <div class="triggerLogo"></div>
+        <div class="triggerLogo" id="test"></div>
 
 
         <div class="hero-lass hero-text " data-depth='1' data-vdepth="1">Lass</div>
@@ -149,12 +149,12 @@
 
 
       </section>
-      <div class="triggerCta"></div>
+      <div class="triggerCta" id="cta-kontakt"></div>
 
-      <!-- <section class="frieDevelopment"> -->
+      <!-- <section class="frieDevelopment"> 
 
+      </section>-->
 
-      </section>
       <!-- <section class="skit first">
       <div class="skew">
         Lorem ipsum dolor sit amet
@@ -290,11 +290,13 @@
       <a href="#contact">direkt zur projektanfrage</a>
     </section> -->
 
-
+      <section>
+        <h2 class="middle">Das brauchst du von mir</h2>
+      </section>
       <section class="service" id="services">
 
         <div class="service-container">
-          <h2 class="middle">Das leiste ich für dich</h2>
+          <h2 class="middle">Das bekommst du von mir</h2>
           <div class="vertical-scroll-container tiles">
             <i class="details-close clickable fas fa-times"></i>
             <div class="services moreContent " id="all-services-conainer">
@@ -457,6 +459,7 @@
         </div>
       </section>
       <section id="technologien">
+        <h2 class="middle">Das kann ich </h2>
         <div class="tech-skills">
           <div class="line first"><i class="icon-jquery tech-stack"></i>
             <i class="icon-git tech-stack"></i>
@@ -520,46 +523,56 @@
           </div>
         </div>
       </section>
-      <section></section>
-      <section id="gallery">
-        <!-- <div class="gallery">
-          <h1>Friede<br />Freude</br>Eier</br>kuchen</h1>
+      <section>
+        <h2 class="middle">Das bin ich</h2>
+        <div class="pictures">
 
-        </div> -->
-        <div class="darker">
-          <h1>Friede<br />Freude</br>Eier</br>kuchen</h1>
-          <img src="images/hamburg_2013_0868.JPG">
-        </div>
+          <div class="line first">
+            <div class="img-spacer"></div>
+            <div class="img">
 
-      </section>
-      <section class="welcomeText" id="welcomeText">
-        <div class="welcomeContainer">
-          <div class="welcomeTextElem text">
-            <h2>Friede Freude Eierkuchen</h2>
-            <div class="tcontent">
-              <p>
-                Wer sich mit dem Thema „Webseiten“ und “Webentwicklung” befasst, kommt an WordPress nicht
-                vorbei.
-                Das Erfolgsgeheimnis von WordPress ist simpel: Die Bedienung ist einfach und Inhalte lassen sich
-                ganz ohne Programmierkenntnisse schnell und unkompliziert ändern. Genau das war das Ziel der
-                beiden
-                Webentwickler Matt Mullenweg und Mike Little, als sie sich im Jahr 2003 zusammen taten, um die
-                einfache Blogsoftware „b2/cafelog“ weiterzuentwickeln. Mittlerweile ist WordPress das
-                bekannteste
-                und meistgenutzte Content-Management-System der Welt. Man muss kein WordPress-Experte sein, um
-                WordPress zu lieben.
-              </p>
+              <img src="images/DSC_0080_zoom.jpg">
+            </div>
+
+            <div class="img">
+
+              <img src="images/hamburg_2013_0856.jpg">
+            </div>
+            <div class="img-spacer"></div>
+            <div class="img">
+
+              <img src="images/DSC_0080_zoom.jpg">
             </div>
           </div>
-          <div class="welcomeTextElem image">
-            <div class="imgMoved">
-              <div class="imgOverlayd"></div>
-              <img src="images/friede softpark.jpg" alt="" class="mask">
+          <div class="line second">
+
+            <div class="img">
+
+              <img src="images/hamburg_2013_0868.JPG">
+            </div>
+            <div class="img-spacer"></div>
+            <div class="text">
+              <h2>Friede Freude Eierkuchen</h2>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id, asperiores! Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Odio quasi rerum qui voluptate! Corrurcitationem nihil dignissimos.</p>
+            </div>
+
+            <div class="img">
+
+              <img src="images/hamburg_2013_0868.JPG">
+            </div>
+            <div class="text">
+              <h2>Friede Freude Eierkuchen</h2>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id, asperiores! Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Odio quasi rerum qui voluptate! Corrurcitationem nihil dignissimos.</p>
             </div>
           </div>
         </div>
       </section>
+
+
       <section id="contact" class="contact">
+        <h2>Da kontaktierst du mich</h2>
         <div class="card">
           <div class="card-background"></div>
           <div class="title-container">
@@ -569,8 +582,8 @@
           </div>
           <div class="extended-content">
             <div>Name</div><input type="text">Name</input>
-            <input class="btn" title="Tooltip" onclick="window.open('friedevelopment.vcf')" style="Style (CSS3)"
-              type="button" value="Kontakt speichern" />
+            <!-- <input class="btn" title="Tooltip" onclick="window.open('friedevelopment.vcf')" style="Style (CSS3)"
+              type="button" value="Kontakt speichern" /> -->
 
           </div>
 
