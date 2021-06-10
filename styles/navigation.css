@@ -320,7 +320,7 @@ footer {
   height: 6vh;
   left: 0;
   z-index: 3333333;
-  background-color: var(--highlight);
+  background-color: var(--dark-blue);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

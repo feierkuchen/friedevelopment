@@ -58,7 +58,7 @@ tl1 = gsap.from(".menu-item", {
   onReverseComplete: () => {
     gsap.set("nav", { display: "none" });
 
-    gsap.set("header", { zIndex: 0 });
+    // gsap.set("header", { zIndex: 0 });
     gsap.set("main", { opacity: 1 });
   },
 });
@@ -69,7 +69,7 @@ let startNavigationAnimation = function (param) {
     tl1.play();
     tlburger.play();
     tlburgerClose.play();
-    gsap.set("header", { zIndex: 2 });
+    // gsap.set("header", { zIndex: 2 });
     gsap.set("main", { opacity: 0.3 });
   } else {
     tl1.reverse();
