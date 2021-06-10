@@ -23,6 +23,8 @@
 
 .button-background {
   opacity: 1;
+  background-image: linear-gradient(132deg, #2c2c2c 0%, #006494 100%);
+  font-weight: 500;
 }
 
 .button {

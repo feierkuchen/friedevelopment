@@ -936,12 +936,39 @@
   }
 
   #special-offer {
-    position: relative;
+    position    : relative;
+    margin-left : 10vw;
+    margin-right: 10vw;
 
-    .star {
-      position: absolute;
-      top     : 20vh;
-      width   : 30vw;
+    a {
+      font-weight: 500;
+    }
+
+    .stars {
+      svg {
+        position: absolute;
+        opacity : .6;
+      }
+
+      .star-1 {
+        bottom: -5vh;
+        width : clamp(20px, 30vw, 400px);
+        height: clamp(20px, 30vw, 400px);
+      }
+
+      .star-2 {
+        right : 0;
+        top   : 60vh;
+        width : clamp(20px, 10vw, 150px);
+        height: clamp(20px, 10vw, 150px);
+      }
+
+      .star-3 {
+        right : 5vh;
+        bottom: -4vh;
+        width : clamp(20px, 18vw, 160px);
+        height: clamp(20px, 18vw, 160px);
+      }
     }
 
     .date {
@@ -967,8 +994,8 @@
       gap                        : 10vh;
 
       .offer {
-        font-size: clamp(20px, 4vw, 40px);
-        color    : var(--light-blue);
+        font-size: clamp(20px, 5vw, 60px);
+        color    : #5296B6;
       }
 
       .price {

@@ -14,15 +14,65 @@ if (true) {
   //servicesMoreContentMorph();
 
   servicesMoreContentScrollVertical();
-
+  specialOffer();
   techSkills();
   pictures();
 
   titleLikeLogo();
 
   // // services();
-  welcomeText();
-  cta();
+  // welcomeText();
+  // cta();
+}
+function specialOffer(params) {
+  const tl1 = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#special-offer",
+      start: "top center",
+      end: "+=1000vh",
+      scrub: 1,
+    },
+  });
+  tl1.fromTo(
+    "#special-offer .star-1",
+    {
+      y: "60%",
+    },
+    {
+      y: "-60%",
+    },
+    0
+  );
+  tl1.fromTo(
+    "#special-offer .star-2",
+    {
+      y: "70%",
+    },
+    {
+      y: "-70%",
+    },
+    0
+  );
+  tl1.fromTo(
+    "#special-offer .star-3",
+    {
+      y: "75%",
+    },
+    {
+      y: "-75%",
+    },
+    0
+  );
+  // tl1.from(
+  //   ".tech-skills .line.second",
+  //   {
+  //     y: "-10%",
+  //   },
+  //   {
+  //     y: "10%",
+  //   },
+  //   0
+  // );
 }
 function techSkills(params) {
   const tl1 = gsap.timeline({

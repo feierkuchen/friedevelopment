@@ -871,12 +871,37 @@ body {
 
 #special-offer {
   position: relative;
+  margin-left: 10vw;
+  margin-right: 10vw;
 }
 
-#special-offer .star {
+#special-offer a {
+  font-weight: 500;
+}
+
+#special-offer .stars svg {
   position: absolute;
-  top: 20vh;
-  width: 30vw;
+  opacity: .6;
+}
+
+#special-offer .stars .star-1 {
+  bottom: -5vh;
+  width: clamp(20px, 30vw, 400px);
+  height: clamp(20px, 30vw, 400px);
+}
+
+#special-offer .stars .star-2 {
+  right: 0;
+  top: 60vh;
+  width: clamp(20px, 10vw, 150px);
+  height: clamp(20px, 10vw, 150px);
+}
+
+#special-offer .stars .star-3 {
+  right: 5vh;
+  bottom: -4vh;
+  width: clamp(20px, 18vw, 160px);
+  height: clamp(20px, 18vw, 160px);
 }
 
 #special-offer .date {
@@ -901,8 +926,8 @@ body {
 }
 
 #special-offer .special-offer-card .offer {
-  font-size: clamp(20px, 4vw, 40px);
-  color: var(--light-blue);
+  font-size: clamp(20px, 5vw, 60px);
+  color: #5296B6;
 }
 
 #special-offer .special-offer-card .price {
