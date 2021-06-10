@@ -921,7 +921,6 @@ body {
   background: rgba(54, 169, 225, 0.25);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  border-radius: 10px;
   gap: 10vh;
 }
 
