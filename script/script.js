@@ -102,6 +102,16 @@ function techSkills(params) {
     },
     0
   );
+  tl1.from(
+    ".tech-skills .line.third",
+    {
+      x: "-20%",
+    },
+    {
+      x: "20%",
+    },
+    0
+  );
 }
 function pictures(params) {
   const tl1 = gsap.timeline({
@@ -115,10 +125,10 @@ function pictures(params) {
   tl1.to(
     ".pictures .line.first",
     {
-      x: "-10%",
+      x: "-30%",
     },
     {
-      x: "10%",
+      x: "30%",
     }
   );
   tl1.from(
@@ -128,6 +138,16 @@ function pictures(params) {
     },
     {
       x: "20%",
+    },
+    0
+  );
+  tl1.to(
+    ".pictures .line.third",
+    {
+      x: "-40%",
+    },
+    {
+      x: "40%",
     },
     0
   );
@@ -383,10 +403,11 @@ function logoFlip() {
       top: "1vh",
       left: "2vw",
       right: "unset",
-      height: "calc(clamp(20px,2vw,30px) + 2vh)",
-      //width: "clamp(100px, 60%, 500px)",
+      //height: "calc(clamp(20px,2vw,30px) + 2vh)",
+      width: "clamp(10px, 80vw, 300px)",
+      //width: "90vw",
       margin: "0",
-      width: "unset",
+      //width: "unset",
     },
     0
   );

@@ -338,4 +338,10 @@ footer {
     display: none;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .header-cta {
+    display: none;
+  }
+}
 /*# sourceMappingURL=navigation.css.map */

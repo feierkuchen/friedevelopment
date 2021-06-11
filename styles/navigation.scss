@@ -359,7 +359,15 @@ footer {
 }
 
 @media screen and (min-width: 500px) {
+
     .bottom-navigation {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .header-cta {
         display: none;
     }
 }
