@@ -3,9 +3,8 @@ const colors = ["#36a9e1", "#1abc9c", "#006494"];
 
 if (true) {
   frieDevelopment();
-  //morphIcon();
-
   logoFlip();
+  //morphIcon();
 
   //heroText();
   //firstSkit();
@@ -387,31 +386,48 @@ function logoFlip() {
     );
   });
 
-  gsap.set("#fd", {
-    position: "fixed",
-    top: "34%",
-    left: "0",
-    right: 0,
-    //bottom: 0,
-    margin: "auto auto",
+  // gsap.set("#fd", {
+  //   position: "fixed",
+  //   top: "34%",
+  //   left: "0",
+  //   right: 0,
+  //   //bottom: 0,
+  //   margin: "auto auto",
+  // });
+  // tl1.to(
+  //   "#fd",
+  //   {
+  //     position: "fixed",
+  //     //duration: 0.9,
+  //     top: "1vh",
+  //     left: "2vw",
+  //     right: "unset",
+  //     //height: "calc(clamp(20px,2vw,30px) + 2vh)",
+  //     width: "clamp(10px, 80vw, 300px)",
+  //     //width: "90vw",
+  //     margin: "0",
+  //     //width: "unset",
+  //   },
+  //   0
+  // );
+  gsap.set(".fd", {
+    position: "relative",
+    marginLeft: "2vw",
   });
-  tl1.to(
+  tl1.from(
     "#fd",
     {
-      position: "fixed",
-      //duration: 0.9,
-      top: "1vh",
+      width: "70vw",
+      marginLeft: "10vw",
+      y: "+30vh",
       left: "2vw",
-      right: "unset",
-      //height: "calc(clamp(20px,2vw,30px) + 2vh)",
-      width: "clamp(10px, 80vw, 300px)",
-      //width: "90vw",
-      margin: "0",
-      //width: "unset",
+      right: 0,
+      position: "absolute",
     },
     0
   );
-
+  tl1.set(".fd", { marginLeft: "0vw" });
+  tl1.set(".fd", { width: "clamp(20px, 80vw, 350px)" });
   tl1.to(
     ".js-navigation",
     {

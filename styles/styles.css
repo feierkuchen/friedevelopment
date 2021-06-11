@@ -25,13 +25,29 @@ footer {
   min-height: 20vh;
 }
 
+main .dark {
+  color: #006494;
+}
+
+main .light {
+  color: #36a9e1;
+}
+
+main .middle {
+  color: #1d71b8;
+}
+
 header {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
   padding: 2vh 2vw;
-  padding-bottom: 0.2vh;
+  padding-bottom: 0;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  height: 8vh;
   position: fixed;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -110,7 +126,7 @@ main p {
 }
 
 main section {
-  min-height: 80vh;
+  min-height: 92vh;
   margin-bottom: 30vh;
 }
 
@@ -171,7 +187,7 @@ div {
   background-size: 800%;
   -webkit-animation: bg-animation 70s infinite;
           animation: bg-animation 70s infinite;
-  height: 100vh;
+  height: 100%;
   z-index: -2;
 }
 
@@ -614,13 +630,7 @@ div {
 
 .fd {
   z-index: 100;
-  position: fixed;
-  margin: auto auto;
-  width: 80%;
-  left: 0;
-  right: 0;
-  top: 30%;
-  padding: 5px;
+  width: clamp(20px, 80vw, 350px);
 }
 
 #fd {
@@ -676,8 +686,6 @@ div {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  -ms-flex-line-pack: end;
-      align-content: flex-end;
 }
 
 .start .hero-kontakt {
@@ -832,6 +840,7 @@ body {
 .pictures .img {
   position: relative;
   width: 50%;
+  min-width: 150px;
 }
 
 .pictures .img::before {
@@ -867,6 +876,10 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 0 2vw;
+}
+
+.pictures .text p {
+  font-size: clamp(12px, 2vw, 18px);
 }
 
 #special-offer {

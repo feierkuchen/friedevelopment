@@ -81,6 +81,7 @@ a {
     // top            : 2vh;
     // z-index        : 9999;
     // right          : 2vw;
+    align-items         : center;
 
     .cta-button,
     .burger {
@@ -358,6 +359,7 @@ footer {
     }
 }
 
+//desktop
 @media screen and (min-width: 500px) {
 
     .bottom-navigation {
@@ -366,8 +368,16 @@ footer {
 }
 
 @media screen and (max-width: 500px) {
-
     .header-cta {
         display: none;
+    }
+
+    #main {
+
+
+        section {
+            min-height: 86vh;
+            height    : 86vh;
+        }
     }
 }
