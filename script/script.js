@@ -1,28 +1,203 @@
-gsap.registerPlugin(ScrollTrigger, MorphSVGPlugin, SplitText);
+gsap.registerPlugin(ScrollTrigger, MorphSVGPlugin, SplitText, MotionPathPlugin);
 const colors = ["#36a9e1", "#1abc9c", "#006494"];
 
 if (true) {
   frieDevelopment();
   logoFlip();
   //morphIcon();
-
+  sunshine();
   //heroText();
   //firstSkit();
-  heroAnim();
+  //heroAnim();
   //wordpressParallax();
   //servicesMoreContentMorph();
-
-  servicesMoreContentScrollVertical();
-  specialOffer();
+  servicesScrollVertical();
+  //servicesMoreContentScrollVertical();
+  //specialOffer();
   techSkills();
   pictures();
 
   titleLikeLogo();
+  contact();
 
   // // services();
   // welcomeText();
   // cta();
 }
+
+function sunshine() { 
+  const tlsunshine = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#fd-content",
+      start: "top center",
+      end: "+=2000vh",
+      scrub: 1,
+    },
+  });
+  tlsunshine.set(
+    ".fd-content-container",
+    {
+      background:"#7f9cb9"  
+    }
+  )
+  tlsunshine.to(
+    ".fd-content-container",
+    {
+      background:"#03090f"  
+    }
+  )
+  tlsunshine.from(
+    ".fd-content-text",
+    {
+      autoAlpha:0  
+    }
+    ,"0"
+  )
+  tlsunshine.to(
+      ".fd-content-text",
+      {
+        autoAlpha: 0
+      }
+      , ">2"
+    );
+ }
+function contact() { 
+  gsap.set(
+        "#contact .card-background",
+        {
+          background: "#ff3a3af5",
+          autoAlpha: 0,
+        }
+      )
+ 
+
+
+      
+      const tlsunshine = gsap.timeline({
+        paused: true,
+      })
+   tlsunshine.set(
+        "#contact .card-background",
+        {
+          background: "#ff3a3af5",
+          autoAlpha: 0,
+        }
+      )
+      tlsunshine.to(
+        "#contact .card-background",
+        {
+          autoAlpha: 1
+        }
+        , "0"
+      )
+      tlsunshine.to(
+        "#contact .card-background",
+        {
+          background: "#1d1919f5",
+          duration:5
+        },
+        ">"
+  )
+  // const tlsunshineReversed = gsap.timeline({
+  //       paused: true,
+  //     })
+      
+  //     // tlsunshineReversed.to(
+  //     //   "#contact .card-background",
+  //     //   {
+  //     //     background: "#1d1919f5",
+  //     //     duration:duration
+  //     //   },
+  //     //   ">"
+  // //)
+  // tlsunshineReversed.from(
+  //       "#contact .card-background",
+  //       {
+  //         autoAlpha: 1
+  //       }
+  //       , "0"
+  //     )
+
+  ScrollTrigger.create({
+  trigger: "#contact",
+  start: "top center",
+      end: "+=400vh",
+      scrub: 1,
+    onEnter: self => {
+       const tlsunshine = gsap.timeline({
+        paused: true,
+      })
+   tlsunshine.set(
+        "#contact .card-background",
+        {
+          background: "#ff3a3af5",
+          autoAlpha: 0,
+        }
+      )
+      tlsunshine.set(
+        "#contact .card-background .container",
+        {
+          width:'160%',
+        },
+  )
+      tlsunshine.to(
+        "#contact .card-background",
+        {
+          autoAlpha: 1
+        }
+        , "0"
+      )
+      tlsunshine.to(
+        "#contact .card-background",
+        {
+          background: "#1d1919f5",
+          duration:5
+        },
+        ">"
+      )
+      tlsunshine.to(
+        "#contact .card-background .container",
+        {
+          width:'40%',
+          duration:2
+        },
+        "<"
+  )
+      tlsunshine.play();
+      console.log("enter")
+    },
+    
+     onLeaveBack: self => {
+      gsap.to(
+        "#contact .card-background",
+        {
+          autoAlpha: 0,
+          duration:4
+        }
+        , "0"
+      )
+ gsap.set(
+        "#contact .card-background .container",
+        {
+          width:'160%',
+        },
+  )
+       console.log("leaveback")
+    },
+     
+  onUpdate: self => {
+    console.log("progress:", self.progress.toFixed(3), "direction:", self.direction, "velocity", self.getVelocity());
+  }
+  });
+  // tlsunshine.to(
+  //     "#contact .card-background",
+  //     {
+  //       autoAlpha: 0
+  //     }
+  //     , ">2"
+  //   );
+ }
+
 function specialOffer(params) {
   const tl1 = gsap.timeline({
     scrollTrigger: {
@@ -74,43 +249,80 @@ function specialOffer(params) {
   // );
 }
 function techSkills(params) {
+
   const tl1 = gsap.timeline({
     scrollTrigger: {
-      trigger: ".tech-skills",
-      start: "top bottom",
-      end: "+=1000vh",
-      scrub: true,
+      trigger: "#technologien",
+      // start: "top bottom",
+      // end: "bottm top",
+      scrub: 1,
     },
   });
+  // tl1.set(
+  //   ".tech-skills .icon-wraper", {
+  //     autoAlpha:0
+    
+  // });
   tl1.to(
-    ".tech-skills .line.first",
-    {
-      x: "-10%",
+    "#technologien h2", {
+      autoAlpha:1
+    
+  });
+  // tl1.to(
+  //   ".tech-skills .line.first",
+  //   {
+  //     x: "-10%",
+  //   },
+  //   {
+  //     x: "10%",
+  //   }
+  // );
+  // tl1.from(
+  //   ".tech-skills .line.second",
+  //   {
+  //     x: "-10%",
+  //   },
+  //   {
+  //     x: "10%",
+  //   },
+  //   0
+  // );
+  // tl1.from(
+  //   ".tech-skills .line.third",
+  //   {
+  //     x: "-20%",
+  //   },
+  //   {
+  //     x: "20%",
+  //   },
+  //   0
+  // );
+  tl1.to(
+    ".tech-skills .icon-wraper", {
+      autoAlpha:1
+    
+  });
+    tl1.to(".tech-skills .icon-wraper", {
+     motionPath: {
+        path: [{ x: 100, y: 100 }, { x: 700, y: 200 },{ x: 1400, y: 100 }],
+        // align: "#path",
+        // alignOrigin: [0.5, 0.5],
+        // autoRotate: true
+       ease:"none"
     },
-    {
-      x: "10%",
-    }
-  );
+    duration: 5,
+    }, 0)
   tl1.from(
-    ".tech-skills .line.second",
-    {
-      x: "-10%",
-    },
-    {
-      x: "10%",
-    },
-    0
-  );
-  tl1.from(
-    ".tech-skills .line.third",
-    {
-      x: "-20%",
-    },
-    {
-      x: "20%",
-    },
-    0
-  );
+    ".tech-skills .icon-wraper", {
+      autoAlpha: 0,
+      duration:3
+    
+  });
+    tl1.to(
+    "#technologien h2", {
+      autoAlpha:0    
+    });
+  
 }
 function pictures(params) {
   const tl1 = gsap.timeline({
@@ -120,6 +332,11 @@ function pictures(params) {
       end: "+=1000vh",
       scrub: true,
     },
+  });
+   tl1.to(
+    "#friede h2", {
+      autoAlpha:1
+    
   });
   tl1.to(
     ".pictures .line.first",
@@ -150,6 +367,11 @@ function pictures(params) {
     },
     0
   );
+   tl1.to(
+    "#friede h2", {
+      autoAlpha:0
+    
+  });
 }
 
 function firstSkit() {
@@ -249,7 +471,7 @@ function frieDevelopment(param) {
     scrollTrigger: {
       trigger: ".start",
       start: "top top",
-      end: "+=6000vh",
+      end: "+=2000vh",
       pin: true,
     },
   });
@@ -302,24 +524,24 @@ function frieDevelopment(param) {
     },
   });
 
-  tl2.from(
-    ".hero-text, .hero-kontakt",
-    {
-      // duration: 10,
-      autoAlpha: 0,
-      ease: Linear.easeNone,
-      duration: 100,
-    },
-    0
-  );
-  tl2.to(
-    ".fd-dev",
-    {
-      opacity: 0,
-      ease: Linear.easeNone,
-    },
-    0
-  );
+  // tl2.from(
+  //   ".hero-text, .hero-kontakt",
+  //   {
+  //     // duration: 10,
+  //     autoAlpha: 0,
+  //     ease: Linear.easeNone,
+  //     duration: 100,
+  //   },
+  //   0
+  // );
+  // tl2.to(
+  //   ".fd-dev",
+  //   {
+  //     opacity: 0,
+  //     ease: Linear.easeNone,
+  //   },
+  //   0
+  // );
 }
 
 function friedevLogoAnim(selector, scrollTrigger) {
@@ -358,7 +580,7 @@ function logoFlip() {
     scrollTrigger: {
       trigger: ".triggerLogo",
       //start: "+=4000vh",
-      start: "+=5000vh",
+      start: "+=2000vh",
       //start: "top bottom+200vh",
       //end: "+=50vh",
       end: "+=1500vh",
@@ -410,6 +632,15 @@ function logoFlip() {
   //   },
   //   0
   // );
+
+
+  tl1.to(
+    "#fd", {
+      background: "#0000",
+      duration:0.2
+  } ,0
+  )
+
   gsap.set(".fd", {
     position: "relative",
     marginLeft: "2vw",
@@ -419,12 +650,12 @@ function logoFlip() {
     {
       width: "70vw",
       marginLeft: "10vw",
-      y: "+30vh",
+      y: "+29vh",
       left: "2vw",
       right: 0,
       position: "absolute",
     },
-    0
+    ">"
   );
   tl1.set(".fd", { marginLeft: "0vw" });
   tl1.set(".fd", { width: "clamp(20px, 80vw, 350px)" });
@@ -433,7 +664,7 @@ function logoFlip() {
     {
       opacity: 1,
     },
-    0
+    "<"
   );
   tl1.to(".fd-dev", {
     opacity: 1,
@@ -445,6 +676,7 @@ function logoFlip() {
   //   },
   //   ">"
   // );
+
 }
 
 function heroAnim() {
@@ -752,6 +984,67 @@ function servicesMoreContentMorph() {
     }
   });
 }
+
+function servicesScrollVertical() {
+  gsap.set("#all-services-conainer", {
+    left:"2000px"
+  });
+  let tweenServicesTiles = gsap.timeline( {
+
+      scrollTrigger: {
+        trigger: ".service-container",
+        //start: "top top-=600vh",
+        invalidateOnRefresh: true,
+        id: "scrollServicesTiles",
+        //pin: true,
+        scrub: 1,
+        snap: 0.2,
+        //end: () => "+=" + container.offsetWidth + "vh",
+        end: () => "+=1000vh",
+    }
+  }
+  );
+    // gsap.set(
+    //   ".moreContent", {autoAlpha:0}
+    // )
+    tweenServicesTiles.to(
+    "#services h2", {
+      autoAlpha:1
+    
+  });
+    //  tweenServicesTiles.to(
+    //   ".moreContent", {autoAlpha:1, duration:1}
+    // )
+  
+
+  tweenServicesTiles.to("#all-services-conainer", {
+    left: "-2000px",
+    ease: "none",
+  }, 0)
+  
+  tweenServicesTiles.to(
+    "#services h2", {
+      autoAlpha:0
+    
+  });
+  // let tweenServicesBackground = gsap.to("body", {
+  //     background:"#00649400",
+  //     ease: "none",
+  //     //paused: true,
+  //     scrollTrigger: {
+  //       trigger: ".service-container",
+  //       start: "top top-=600vh",
+  //       invalidateOnRefresh: true,
+  //       id: "scrollServicesTiles",
+  //       //pin: true,
+  //       scrub: 1,
+  //       snap: 0.2,
+  //       //end: () => "+=" + container.offsetWidth + "vh",
+  //       end: () => "+=1000vh",
+  //   }
+  // }
+  // );
+}
 var tweenVertical;
 var tweenServicesPin;
 function servicesMoreContentScrollVertical() {
@@ -768,12 +1061,11 @@ function servicesMoreContentScrollVertical() {
         pin: true,
       },
     });
+    
 
     //if (container) {
-    let tweenServices = gsap.to(".moreContent", {
-      x: () => -container.scrollWidth + "px",
-      ease: "none",
-      //paused: true,
+    let tweenServices = gsap.timeline( {
+    
       scrollTrigger: {
         trigger: ".service-container",
         start: "top top-=600vh",
@@ -787,6 +1079,13 @@ function servicesMoreContentScrollVertical() {
       },
     });
 
+    tweenServices.to(".moreContent", {
+      x: () => -container.scrollWidth + "px",
+      ease: "none",
+    })
+
+
+    
     return tweenServices;
   };
   //};

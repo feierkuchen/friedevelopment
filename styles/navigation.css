@@ -253,8 +253,6 @@ header::before {
   bottom: 0;
   width: 98vw;
   height: 5px;
-  border-bottom: 2px solid var(--highlightrosa);
-  border-bottom: 2px solid var(--clr-neon);
 }
 
 footer {

@@ -100,19 +100,21 @@ $font       : white;
     .services {
 
         //  border                  : 1px solid yellow;
-        width                     : 70%;
+        //width                     : 70%;
         //height                  : 70vh;
         // display              : grid;
         // grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
         // grid-template-rows   : masonry;
         // margin               : 0;
-        flex-wrap                 : wrap;
-        gap                       : 2vw;
-        margin-left               : 0;
-        width                     : 100%;
-        justify-content           : space-between;
-        padding                   : 0 clamp(0, 10vw, 200px);
-        margin-top                : 4vh;
+        // flex-wrap                 : wrap;
+        gap            : 2vw;
+        margin-left    : 0;
+        width          : 100%;
+        justify-content: space-between;
+        padding        : 0 clamp(0, 10vw, 200px);
+        margin-top     : 4vh;
+        position       : fixed;
+        top            : 43vh;
 
         .card {
             //flex      : 1;
